@@ -1,0 +1,16 @@
+[Unit]
+Description=Train Tracker OLED Display
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=plenox
+WorkingDirectory=/home/plenox/workspace/train_tracker
+EnvironmentFile=/home/plenox/workspace/train_tracker/.env
+ExecStart=/home/plenox/workspace/train_tracker/venv/bin/python display.py
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
