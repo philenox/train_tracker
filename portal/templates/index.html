@@ -150,8 +150,14 @@
     fetch('/credentials', { method: 'POST', body })
       .then(r => r.json())
       .then(data => {
-        if (data.status === 'saved') showStatus('cred-status', '✓ Saved. Display restarting.', 'ok');
-        else showStatus('cred-status', 'Error: ' + JSON.stringify(data), 'error');
+        if (data.status === 'saved') {
+          const msg = data.display_restarted
+            ? '✓ Saved. Display restarting.'
+            : '✓ Saved. Credentials will apply when WiFi connects.';
+          showStatus('cred-status', msg, 'ok');
+        } else {
+          showStatus('cred-status', 'Error: ' + JSON.stringify(data), 'error');
+        }
       })
       .catch(e => showStatus('cred-status', 'Request failed: ' + e, 'error'));
   }

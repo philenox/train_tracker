@@ -26,6 +26,7 @@ HOTSPOT_IP = "192.168.4.1"
 PORTAL_PORT = 80
 
 _setup_requested = threading.Event()
+_portal_started = False
 
 
 # ---------------------------------------------------------------------------
@@ -158,6 +159,10 @@ def stop_display_service():
 # ---------------------------------------------------------------------------
 
 def start_portal():
+    global _portal_started
+    if _portal_started:
+        return
+    _portal_started = True
     from portal.app import app as flask_app
     t = threading.Thread(
         target=lambda: flask_app.run(
@@ -175,6 +180,8 @@ def start_portal():
 
 def normal_mode():
     print("Entering normal mode")
+    # Clear any stale request that may have accumulated during setup mode
+    _setup_requested.clear()
     start_display_service()
 
     # Wait for a setup request from the button

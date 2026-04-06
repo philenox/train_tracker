@@ -117,8 +117,12 @@ def save_credentials():
     tmp.write_text("".join(lines))
     os.replace(tmp, ENV_PATH)
 
-    # Restart display service to pick up new credentials
-    subprocess.run(["systemctl", "restart", "train-display.service"],
-                   capture_output=True)
+    # Restart display service to pick up new credentials (only if it's running)
+    r = subprocess.run(["systemctl", "is-active", "train-display.service"],
+                       capture_output=True, text=True)
+    display_active = r.stdout.strip() == "active"
+    if display_active:
+        subprocess.run(["systemctl", "restart", "train-display.service"],
+                       capture_output=True)
 
-    return jsonify({"status": "saved"})
+    return jsonify({"status": "saved", "display_restarted": display_active})
