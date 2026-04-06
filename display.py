@@ -1,21 +1,20 @@
 #!/usr/bin/env python3
 """
-Display upcoming trains passing the window west of Reading station.
+Display trains passing the window west of Reading station.
 
 Layout (256x64, 3 rows of 21px):
-  Row 0: next westbound train  (WB  HH:MM  Destination)
-  Row 1: next westbound train  (WB  HH:MM  Destination)
-  Row 2: last eastbound seen   (EB  HH:MM  Xm ago) or next predicted EB
+  Row 0: WB approaching ETA (from trigger berth 1733) or blank
+  Row 1: WB last seen at berth 1757
+  Row 2: EB approaching ETA (from trigger berth 1772) or last seen at berth 1724
 
-Darwin is polled every 60s for westbound predictions.
-The TD feed (STOMP) runs in a background thread for real-time eastbound detection.
+All data comes from the Network Rail TD feed — no Darwin dependency.
 """
 
 import os
 import signal
 import sys
 import time
-from datetime import datetime, timedelta
+from datetime import datetime
 
 import RPi.GPIO as GPIO
 from dotenv import load_dotenv
@@ -24,14 +23,12 @@ from luma.core.render import canvas
 from luma.oled.device import ssd1322
 
 import td_client
-from trains import get_westbound_departures, effective_time
 
 GPIO.setwarnings(False)
 load_dotenv()
 
-WB_OFFSET_MINS = 2   # minutes from Reading departure to berth 1757
-REFRESH_SECS   = 60
-ROW_H          = 21  # pixels per row
+REFRESH_SECS = 1   # display refresh rate
+ROW_H        = 21  # pixels per row
 
 
 def make_device():
@@ -42,77 +39,86 @@ def make_device():
     return device
 
 
-def _berth_time(svc) -> str:
-    """Predicted time at berth 1757 for a westbound Darwin service."""
-    dep = effective_time(svc)
-    if not dep:
-        return "?"
-    return (dep + timedelta(minutes=WB_OFFSET_MINS)).strftime("%H:%M")
+def _mins_ago(dt) -> str:
+    secs = int((datetime.now() - dt).total_seconds())
+    if secs < 60:
+        return f"{secs}s ago"
+    mins = secs // 60
+    if mins < 60:
+        return f"{mins}m ago"
+    return dt.strftime("%H:%M")
 
 
-def _dest(svc) -> str:
-    return svc.get("destination", [{}])[0].get("locationName", "Unknown")
+def _secs_until(dt) -> str:
+    secs = int((dt - datetime.now()).total_seconds())
+    if secs <= 0:
+        return "now"
+    if secs < 60:
+        return f"{secs}s"
+    return f"{secs // 60}m {secs % 60:02d}s"
 
 
-def _late(svc) -> bool:
-    etd = svc.get("etd", "")
-    return bool(etd and etd not in ("On time", "Cancelled", "") and ":" in etd)
-
-
-def render(device, wb_services):
+def render(device):
     now = datetime.now()
 
-    # Eastbound: last seen at berth 1742
-    eb = td_client.get_last(td_client.EASTBOUND_BERTH)
+    wb_approaching = td_client.get_approaching("WB")
+    wb_last        = td_client.get_last(td_client.WESTBOUND_BERTH)
+    eb_approaching = td_client.get_approaching("EB")
+    eb_last        = td_client.get_last(td_client.EASTBOUND_BERTH)
 
     with canvas(device) as draw:
-        # --- Westbound rows ---
-        for i, svc in enumerate(wb_services[:2]):
-            y = i * ROW_H
-            t = _berth_time(svc)
-            dest = _dest(svc)[:16]
-            late_mark = "*" if _late(svc) else ""
-            draw.text((0,   y), "WB", fill='white')
-            draw.text((20,  y), t,    fill='white')
-            draw.text((58,  y), dest, fill='white')
-            if late_mark:
-                draw.text((248, y), late_mark, fill='white')
-            if i == 0:
-                draw.line([(0, ROW_H - 1), (255, ROW_H - 1)], fill='white')
+        # --- Row 0: WB approaching ---
+        y = 0
+        if wb_approaching:
+            eta_str  = wb_approaching["eta"].strftime("%H:%M:%S")
+            secs_str = _secs_until(wb_approaching["eta"])
+            hc       = wb_approaching["headcode"]
+            draw.text((0,  y), "WB", fill='white')
+            draw.text((20, y), eta_str, fill='white')
+            draw.text((90, y), f"{hc}  in {secs_str}", fill='white')
+        else:
+            draw.text((0, y), "WB", fill='white')
+            draw.text((20, y), "no train approaching", fill='white')
 
-        # --- Eastbound row ---
+        draw.line([(0, ROW_H - 1), (255, ROW_H - 1)], fill='white')
+
+        # --- Row 1: WB last seen ---
+        y = ROW_H
+        draw.text((0, y), "WB", fill='white')
+        if wb_last:
+            draw.text((20, y), wb_last["time"].strftime("%H:%M:%S"), fill='white')
+            draw.text((90, y), f"{wb_last['headcode']}  ({_mins_ago(wb_last['time'])})", fill='white')
+        else:
+            draw.text((20, y), "no data yet", fill='white')
+
+        draw.line([(0, 2 * ROW_H - 1), (255, 2 * ROW_H - 1)], fill='white')
+
+        # --- Row 2: EB approaching or last seen ---
         y = 2 * ROW_H
-        draw.line([(0, y - 1), (255, y - 1)], fill='white')
         draw.text((0, y), "EB", fill='white')
-
-        if eb:
-            mins_ago = int((now - eb["time"]).total_seconds() / 60)
-            if mins_ago < 60:
-                ago_str = f"{mins_ago}m ago"
-            else:
-                ago_str = eb["time"].strftime("%H:%M")
-            draw.text((20,  y), eb["time"].strftime("%H:%M"), fill='white')
-            draw.text((58,  y), f"{eb['headcode']}  ({ago_str})",  fill='white')
+        if eb_approaching:
+            eta_str  = eb_approaching["eta"].strftime("%H:%M:%S")
+            secs_str = _secs_until(eb_approaching["eta"])
+            hc       = eb_approaching["headcode"]
+            draw.text((20, y), eta_str, fill='white')
+            draw.text((90, y), f"{hc}  in {secs_str}", fill='white')
+        elif eb_last:
+            mins_ago_str = _mins_ago(eb_last["time"])
+            draw.text((20, y), eb_last["time"].strftime("%H:%M:%S"), fill='white')
+            draw.text((90, y), f"{eb_last['headcode']}  ({mins_ago_str})", fill='white')
         else:
             draw.text((20, y), "no data yet", fill='white')
 
 
 def main():
-    api_key = os.environ.get("LDBWS_CONSUMER_KEY")
-    if not api_key:
-        print("Error: LDBWS_CONSUMER_KEY not set in .env")
-        sys.exit(1)
     if not os.environ.get("NR_USERNAME") or not os.environ.get("NR_PASSWORD"):
-        print("Warning: NR_USERNAME/NR_PASSWORD not set — eastbound detection disabled")
-        nr_ok = False
-    else:
-        nr_ok = True
+        print("Error: NR_USERNAME/NR_PASSWORD not set in .env")
+        sys.exit(1)
 
     device = make_device()
 
-    if nr_ok:
-        print("Starting TD feed listener...")
-        td_client.start()
+    print("Starting TD feed listener...")
+    td_client.start()
 
     def shutdown(sig, frame):
         device.cleanup()
@@ -124,15 +130,25 @@ def main():
     print("Running — press Ctrl+C to stop")
     while True:
         try:
-            wb = get_westbound_departures(api_key)
-            render(device, wb)
-            eb = td_client.get_last(td_client.EASTBOUND_BERTH)
-            eb_str = eb["headcode"] if eb else "none"
-            print(f"[{datetime.now().strftime('%H:%M:%S')}] WB:{len(wb)} services  EB last:{eb_str}")
+            render(device)
+            wb_a = td_client.get_approaching("WB")
+            eb_a = td_client.get_approaching("EB")
+            wb_l = td_client.get_last(td_client.WESTBOUND_BERTH)
+            eb_l = td_client.get_last(td_client.EASTBOUND_BERTH)
+            print(
+                f"[{datetime.now().strftime('%H:%M:%S')}] "
+                f"WB approaching:{wb_a['headcode'] if wb_a else 'none'}  "
+                f"WB last:{wb_l['headcode'] if wb_l else 'none'}  "
+                f"EB approaching:{eb_a['headcode'] if eb_a else 'none'}  "
+                f"EB last:{eb_l['headcode'] if eb_l else 'none'}"
+            )
         except Exception as e:
             print(f"Error: {e}")
-            with canvas(device) as draw:
-                draw.text((0, 24), f'Error: {str(e)[:30]}', fill='white')
+            try:
+                with canvas(device) as draw:
+                    draw.text((0, 24), f'Error: {str(e)[:30]}', fill='white')
+            except Exception:
+                pass
 
         time.sleep(REFRESH_SECS)
 

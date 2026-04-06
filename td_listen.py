@@ -5,7 +5,7 @@ section of track visible from the window west of Reading station.
 
 Confirmed berths:
   1757 — westbound (down) line
-  1742 — eastbound (up) line
+  1724 — eastbound (up) line
 
 Usage:
   venv/bin/python -u td_listen.py              # watch window berths only
@@ -139,7 +139,7 @@ def main():
 
     else:
         # Focused mode — use td_client shared module
-        conn = td_client.start(csv_writer=csv_writer)
+        conn = td_client.start(csv_writer=csv_writer, csv_file=csv_file)
 
         if not args.csv:
             print(f"Watching berth {WESTBOUND_BERTH} (westbound) and {EASTBOUND_BERTH} (eastbound)")
