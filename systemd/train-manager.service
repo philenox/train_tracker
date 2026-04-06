@@ -1,0 +1,16 @@
+[Unit]
+Description=Train Tracker Mode Manager
+After=NetworkManager.service
+Wants=NetworkManager.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/plenox/workspace/train_tracker
+EnvironmentFile=/home/plenox/workspace/train_tracker/.env
+ExecStart=/home/plenox/workspace/train_tracker/venv/bin/python mode_manager.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
