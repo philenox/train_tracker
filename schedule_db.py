@@ -87,6 +87,12 @@ def create_schema(conn):
             PRIMARY KEY (uid, stp_indicator, start_date, seq)
         );
 
+        CREATE TABLE IF NOT EXISTS tiplocs (
+            code        TEXT PRIMARY KEY,
+            description TEXT,
+            crs         TEXT
+        );
+
         CREATE INDEX IF NOT EXISTS idx_headcode   ON schedules(headcode);
         CREATE INDEX IF NOT EXISTS idx_dates      ON schedules(start_date, end_date);
         CREATE INDEX IF NOT EXISTS idx_loc_tiploc ON schedule_locations(tiploc);
@@ -276,11 +282,66 @@ def cmd_lookup(conn, headcode):
             print(f"  {t}  {flag}  {loc['tiploc']:<12}{plat}")
 
 
+def import_tiplocs(conn):
+    """Stream just the TIPLOC section of the CIF (first ~12k lines) into the tiplocs table."""
+    username = os.environ["NR_USERNAME"]
+    password = os.environ["NR_PASSWORD"]
+
+    print("Downloading TIPLOC names from CIF...")
+    r = requests.get(CIF_URL, auth=(username, password), stream=True, timeout=60)
+    r.raise_for_status()
+    r.raw.decode_content = True
+
+    buf  = gzip.GzipFile(fileobj=r.raw)
+    text = io.TextIOWrapper(buf, encoding="utf-8")
+
+    conn.execute("DELETE FROM tiplocs")
+    n = 0
+    try:
+        for line in text:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if "TiplocV1" in obj:
+                t    = obj["TiplocV1"]
+                code = t.get("tiploc_code", "")
+                desc = t.get("tps_description") or t.get("description") or ""
+                crs  = t.get("crs_code") or ""
+                if code:
+                    conn.execute(
+                        "INSERT OR REPLACE INTO tiplocs (code, description, crs) VALUES (?,?,?)",
+                        (code, desc.title(), crs or None),
+                    )
+                    n += 1
+            elif "JsonScheduleV1" in obj:
+                break  # past the TIPLOC section
+    finally:
+        r.close()
+        conn.commit()
+
+    print(f"Imported {n:,} TIPLOC entries.")
+
+
+def tiploc_name(conn, code: str) -> str:
+    """Return a human-readable station name for a TIPLOC code, or the code itself."""
+    if not code:
+        return ""
+    row = conn.execute("SELECT description, crs FROM tiplocs WHERE code=?", (code,)).fetchone()
+    if row and row["description"]:
+        return row["description"]
+    return code
+
+
 def main():
     parser = argparse.ArgumentParser(description="Network Rail CIF schedule database")
-    parser.add_argument("--db",     default=DB_PATH, help="SQLite database path")
-    parser.add_argument("--stats",  action="store_true", help="Show database stats")
-    parser.add_argument("--lookup", metavar="HEADCODE",  help="Look up schedules for a headcode")
+    parser.add_argument("--db",      default=DB_PATH, help="SQLite database path")
+    parser.add_argument("--stats",   action="store_true", help="Show database stats")
+    parser.add_argument("--tiplocs", action="store_true", help="Import TIPLOC names only")
+    parser.add_argument("--lookup",  metavar="HEADCODE",  help="Look up schedules for a headcode")
     args = parser.parse_args()
 
     conn = db_connect(args.db)
@@ -288,10 +349,13 @@ def main():
 
     if args.stats:
         cmd_stats(conn)
+    elif args.tiplocs:
+        import_tiplocs(conn)
     elif args.lookup:
         cmd_lookup(conn, args.lookup.upper())
     else:
         import_cif(conn)
+        import_tiplocs(conn)
         print()
         cmd_stats(conn)
 
