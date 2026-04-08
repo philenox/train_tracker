@@ -73,12 +73,14 @@ def _inject_td(trains):
         secs_until = (approaching["eta"] - datetime.now()).total_seconds()
         if secs_until < -30:
             continue   # stale
-        # Find destination from schedule list
         dest = next(
             (t["destination"] for t in trains
              if t["headcode"] == approaching["headcode"] and t["direction"] == direction),
-            "(schedule unknown)",
+            None,
         )
+        if dest is None:
+            sched = predict.lookup_headcode(approaching["headcode"])
+            dest  = sched["destination"] if sched else "not in CIF (freight/ECS?)"
         entry = {
             "direction":    direction,
             "headcode":     approaching["headcode"],
@@ -109,8 +111,11 @@ def _inject_td(trains):
         dest = next(
             (t["destination"] for t in trains
              if t["headcode"] == last["headcode"] and t["direction"] == direction),
-            "(schedule unknown)",
+            None,
         )
+        if dest is None:
+            sched = predict.lookup_headcode(last["headcode"])
+            dest  = sched["destination"] if sched else "not in CIF (freight/ECS?)"
         entry = {
             "direction":    direction,
             "headcode":     last["headcode"],

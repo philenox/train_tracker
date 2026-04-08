@@ -204,6 +204,61 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
     return unique[:n]
 
 
+def lookup_headcode(headcode: str) -> dict | None:
+    """
+    Look up a headcode directly in today's schedule, regardless of time window.
+    Returns a minimal dict with direction, destination, atoc_code, uid — or None
+    if not found (e.g. freight with no CIF entry).
+
+    Used to enrich TD-detected trains that fall outside the get_upcoming() window.
+    """
+    conn    = schedule_db.db_connect()
+    today   = date.today()
+    day_idx = today.weekday()
+
+    rows = conn.execute(
+        """
+        SELECT s.* FROM schedules s
+        WHERE s.headcode    =  ?
+          AND s.start_date  <= ?
+          AND s.end_date    >= ?
+          AND substr(s.days_runs, ?, 1) = '1'
+          AND s.stp_indicator != 'C'
+          AND s.stp_indicator = (
+              SELECT MIN(s2.stp_indicator)
+              FROM schedules s2
+              WHERE s2.uid           = s.uid
+                AND s2.headcode      = s.headcode
+                AND s2.start_date   <= ?
+                AND s2.end_date     >= ?
+                AND substr(s2.days_runs, ?, 1) = '1'
+                AND s2.stp_indicator != 'C'
+          )
+        LIMIT 1
+        """,
+        (headcode,
+         today.isoformat(), today.isoformat(), day_idx + 1,
+         today.isoformat(), today.isoformat(), day_idx + 1),
+    ).fetchone()
+
+    if not rows:
+        conn.close()
+        return None
+
+    locs      = _get_locations(conn, rows["uid"], rows["stp_indicator"], rows["start_date"])
+    direction = _get_direction(locs)
+    terminus  = _get_terminus(locs)
+    dest      = schedule_db.tiploc_name(conn, terminus) if terminus else terminus or "?"
+    conn.close()
+
+    return {
+        "direction":   direction or "??",
+        "destination": dest,
+        "atoc_code":   rows["atoc_code"],
+        "uid":         rows["uid"],
+    }
+
+
 if __name__ == "__main__":
     print(f"Upcoming trains (next 2 hours):\n")
     trains = get_upcoming(n=10)
