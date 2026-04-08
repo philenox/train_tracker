@@ -336,6 +336,50 @@ def tiploc_name(conn, code: str) -> str:
     return code
 
 
+def db_age_hours(path=DB_PATH) -> float | None:
+    """
+    Return how many hours ago the schedule database was last imported,
+    or None if the database doesn't exist or is empty.
+    """
+    import os
+    if not os.path.exists(path):
+        return None
+    try:
+        conn = db_connect(path)
+        row  = conn.execute("SELECT MAX(imported_at) FROM schedules").fetchone()
+        conn.close()
+        if not row or not row[0]:
+            return None
+        last = datetime.fromisoformat(row[0])
+        return (datetime.now() - last).total_seconds() / 3600
+    except Exception:
+        return None
+
+
+def refresh_if_stale(max_age_hours: float = 20, path=DB_PATH):
+    """
+    Download and import a fresh CIF database if the current one is older than
+    max_age_hours, or if it doesn't exist.  Prints progress to stdout.
+    """
+    age = db_age_hours(path)
+    if age is None:
+        print("Schedule database missing — downloading now...")
+    elif age >= max_age_hours:
+        h = int(age)
+        print(f"Schedule database is {h}h old (threshold {max_age_hours}h) — refreshing...")
+    else:
+        h, m = divmod(int(age * 60), 60)
+        print(f"Schedule database is {h}h {m}m old — up to date.")
+        return
+
+    conn = db_connect(path)
+    create_schema(conn)
+    import_cif(conn)
+    import_tiplocs(conn)
+    conn.close()
+    print("Schedule refresh complete.\n")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Network Rail CIF schedule database")
     parser.add_argument("--db",      default=DB_PATH, help="SQLite database path")

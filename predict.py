@@ -15,6 +15,7 @@ import sqlite3
 from datetime import datetime, date, timedelta
 
 import schedule_db
+import trust_client
 
 # Measured offsets (seconds)
 WB_OFFSET_SECS =  70
@@ -158,6 +159,11 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
         if not sched_dt:
             continue
 
+        # Apply real-time delay from TRUST feed (if available)
+        delay_secs = trust_client.get_delay(s["headcode"] or "")
+        if delay_secs is not None:
+            sched_dt = sched_dt + timedelta(seconds=delay_secs)
+
         eta = sched_dt + offset
 
         # Handle overnight: if ETA is more than 12h in the past, it's tomorrow's service
@@ -180,6 +186,7 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
             "sched_reading": t_str or "????",
             "atoc_code":    s["atoc_code"],
             "uid":          s["uid"],
+            "delay_secs":   delay_secs,   # None if no TRUST data
         })
 
     conn.close()

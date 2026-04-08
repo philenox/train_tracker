@@ -171,9 +171,9 @@ def _connect(conn):
     username = os.environ["NR_USERNAME"]
     password = os.environ["NR_PASSWORD"]
     conn.connect(username=username, passcode=password, wait=True,
-                 headers={"client-id": username})
+                 headers={"client-id": f"{username}-td"})
     conn.subscribe(destination=TOPIC, id="td-reading", ack="client-individual",
-                   headers={"activemq.subscriptionName": "td-reading"})
+                   headers={"activemq.subscriptionName": f"{username}-td-reading"})
 
 
 def start(csv_writer=None, csv_file=None):

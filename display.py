@@ -32,7 +32,9 @@ from luma.core.render import canvas
 from luma.oled.device import ssd1322
 
 import predict
+import schedule_db
 import td_client
+import trust_client
 
 GPIO.setwarnings(False)
 load_dotenv()
@@ -97,10 +99,15 @@ def main():
         print("Error: NR_USERNAME/NR_PASSWORD not set in .env")
         sys.exit(1)
 
+    schedule_db.refresh_if_stale()
+
     device = make_device()
 
     print("Starting TD feed listener...")
     td_client.start()
+
+    print("Starting TRUST feed listener...")
+    trust_client.start()
 
     trains   = []
     last_refresh = 0
