@@ -6,3 +6,5 @@ __pycache__/
 .claude/
 data/
 routing_table.json
+.td_cache.json
+.trust_cache.json

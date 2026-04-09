@@ -30,7 +30,41 @@ _activations: dict = {}
 # headcode → {"delay_secs": int, "stanox": str, "updated_at": datetime}
 _delays: dict = {}
 
-EXPIRY_SECS = 4 * 3600
+EXPIRY_SECS         = 4 * 3600
+CACHE_PATH          = ".trust_cache.json"
+CACHE_SAVE_INTERVAL = 30
+
+
+def _save_cache():
+    with _lock:
+        data = {
+            hc: {"delay_secs": d["delay_secs"], "updated_at": d["updated_at"].isoformat()}
+            for hc, d in _delays.items()
+        }
+    try:
+        with open(CACHE_PATH, "w") as f:
+            json.dump(data, f)
+    except Exception:
+        pass
+
+
+def _load_cache():
+    try:
+        with open(CACHE_PATH) as f:
+            data = json.load(f)
+    except Exception:
+        return
+    now    = datetime.now()
+    loaded = {}
+    for hc, d in data.items():
+        try:
+            ts = datetime.fromisoformat(d["updated_at"])
+            if (now - ts).total_seconds() < EXPIRY_SECS:
+                loaded[hc] = {"delay_secs": d["delay_secs"], "updated_at": ts}
+        except Exception:
+            pass
+    with _lock:
+        _delays.update(loaded)
 
 
 def get_delay(headcode: str) -> int | None:
@@ -154,6 +188,8 @@ def _connect(conn):
 
 def start():
     """Start the TRUST client in a daemon thread. Returns the connection."""
+    _load_cache()
+
     conn = stomp.Connection(
         [(HOST, PORT)],
         heartbeats=(15000, 15000),
@@ -168,5 +204,11 @@ def start():
                 time.sleep(5)
             time.sleep(1)
 
-    threading.Thread(target=_keepalive, daemon=True, name="trust-keepalive").start()
+    def _cache_loop():
+        while True:
+            time.sleep(CACHE_SAVE_INTERVAL)
+            _save_cache()
+
+    threading.Thread(target=_keepalive,  daemon=True, name="trust-keepalive").start()
+    threading.Thread(target=_cache_loop, daemon=True, name="trust-cache").start()
     return conn

@@ -14,7 +14,9 @@ Offsets measured empirically from td_data.csv vs CIF schedule:
 import sqlite3
 from datetime import datetime, date, timedelta
 
+import routing
 import schedule_db
+import td_client
 import trust_client
 
 # Measured offsets (seconds)
@@ -73,6 +75,14 @@ def _get_terminus(locs):
         if loc["location_type"] in ("LT", "LO"):
             return loc["tiploc"]
     return locs[-1]["tiploc"] if locs else None
+
+
+def _get_origin(locs):
+    """Return the TIPLOC code of the first scheduled stop."""
+    for loc in locs:
+        if loc["location_type"] in ("LO", "LT"):
+            return loc["tiploc"]
+    return locs[0]["tiploc"] if locs else None
 
 
 def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
@@ -159,12 +169,27 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
         if not sched_dt:
             continue
 
-        # Apply real-time delay from TRUST feed (if available)
-        delay_secs = trust_client.get_delay(s["headcode"] or "")
-        if delay_secs is not None:
-            sched_dt = sched_dt + timedelta(seconds=delay_secs)
+        headcode_str = s["headcode"] or "????"
+        delay_secs   = trust_client.get_delay(headcode_str)
+        source       = "SCHED"
 
-        eta = sched_dt + offset
+        # Check if the train is already in the TD area with a known routing
+        pos = td_client.get_position(headcode_str)
+        if pos and direction:
+            berth = pos["berth"]
+            if routing.is_off_path(berth):
+                continue  # confirmed not passing our section
+            if routing.is_on_path(berth, direction):
+                eta_s = routing.eta_secs(berth, direction)
+                if eta_s is not None:
+                    eta    = pos["ts"] + timedelta(seconds=eta_s)
+                    source = "TD"
+
+        if source != "TD":
+            if delay_secs is not None:
+                sched_dt += timedelta(seconds=delay_secs)
+                source    = "TRUST"
+            eta = sched_dt + offset
 
         # Handle overnight: if ETA is more than 12h in the past, it's tomorrow's service
         if (now - eta).total_seconds() > 12 * 3600:
@@ -172,27 +197,30 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
             sched_dt   += timedelta(days=1)
 
         # Only include trains within our window
-        if eta < now - timedelta(minutes=1) or eta > cutoff:
+        if eta < now - timedelta(minutes=5) or eta > cutoff:
             continue
 
-        terminus = _get_terminus(locs)
-        destination = schedule_db.tiploc_name(conn, terminus) if terminus else terminus or "?"
+        terminus    = _get_terminus(locs)
+        destination = schedule_db.tiploc_name(conn, terminus) if terminus else "?"
+        origin_tip  = _get_origin(locs)
+        origin      = schedule_db.tiploc_name(conn, origin_tip) if origin_tip else "?"
 
         results.append({
             "direction":    direction,
-            "headcode":     s["headcode"] or "????",
+            "headcode":     headcode_str,
             "eta":          eta,
+            "origin":       origin,
             "destination":  destination,
             "sched_reading": t_str or "????",
             "atoc_code":    s["atoc_code"],
             "uid":          s["uid"],
-            "delay_secs":   delay_secs,   # None if no TRUST data
+            "delay_secs":   delay_secs,
+            "source":       source,
         })
 
     conn.close()
 
-    # Deduplicate by (headcode, ETA minute) — same physical train can appear
-    # in multiple overlapping CIF schedule records
+    # Phase 1: dedup by (headcode, ETA minute) — same CIF record in multiple windows
     seen = set()
     unique = []
     for r in sorted(results, key=lambda x: x["eta"]):
@@ -201,7 +229,20 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
             seen.add(key)
             unique.append(r)
 
-    return unique[:n]
+    # Phase 2: dedup by (direction, ETA proximity) — same physical train under
+    # different headcodes (e.g. STP overlay with a different reporting number).
+    # Minimum real headway is ~3 min; 2 min threshold is safe.
+    deduped = []
+    for r in unique:
+        too_close = any(
+            r["direction"] == prev["direction"]
+            and abs((r["eta"] - prev["eta"]).total_seconds()) < 120
+            for prev in deduped
+        )
+        if not too_close:
+            deduped.append(r)
+
+    return deduped[:n]
 
 
 def lookup_headcode(headcode: str) -> dict | None:
@@ -245,14 +286,17 @@ def lookup_headcode(headcode: str) -> dict | None:
         conn.close()
         return None
 
-    locs      = _get_locations(conn, rows["uid"], rows["stp_indicator"], rows["start_date"])
-    direction = _get_direction(locs)
-    terminus  = _get_terminus(locs)
-    dest      = schedule_db.tiploc_name(conn, terminus) if terminus else terminus or "?"
+    locs       = _get_locations(conn, rows["uid"], rows["stp_indicator"], rows["start_date"])
+    direction  = _get_direction(locs)
+    terminus   = _get_terminus(locs)
+    dest       = schedule_db.tiploc_name(conn, terminus) if terminus else "?"
+    origin_tip = _get_origin(locs)
+    origin     = schedule_db.tiploc_name(conn, origin_tip) if origin_tip else "?"
     conn.close()
 
     return {
         "direction":   direction or "??",
+        "origin":      origin,
         "destination": dest,
         "atoc_code":   rows["atoc_code"],
         "uid":         rows["uid"],
