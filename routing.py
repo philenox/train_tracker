@@ -90,6 +90,23 @@ def is_off_path(berth: str) -> bool:
     return False
 
 
+def max_eta_secs(direction: str) -> float | None:
+    """
+    Return the largest eta_mean across all known berths for this direction.
+
+    This is the ETA from the furthest-out berth in the chain to the visible berth.
+    Used as a floor when a train has no TD position: if it hasn't been seen anywhere
+    in the area it must still be at least this far away.
+    """
+    _load()
+    values = [
+        v["eta_mean"]
+        for k, v in _table.items()
+        if k.endswith(f"__{direction}") and v.get("eta_mean") is not None
+    ]
+    return max(values) if values else None
+
+
 def loaded() -> bool:
     """Return True if a routing table has been successfully loaded."""
     _load()
