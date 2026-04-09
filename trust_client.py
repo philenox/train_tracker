@@ -22,20 +22,6 @@ HOST  = "publicdatafeeds.networkrail.co.uk"
 PORT  = 61618
 TOPIC = "/topic/TRAIN_MVT_ALL_TOC"
 
-# STANOX codes for stations near our berths.
-# We only update delay state when a movement is reported at one of these,
-# so we get progressively sharper estimates as a train approaches Reading.
-#
-# WB trains: Reading departure (87701) is the definitive update.
-# EB trains:  Pangbourne / Tilehurst departures give early warning.
-READING_AREA_STANOX = {
-    "87701",   # Reading
-    "87707",   # Tilehurst
-    "87721",   # Pangbourne
-    "87744",   # Didcot Parkway
-    "87749",   # Cholsey
-}
-
 _lock = threading.Lock()
 
 # train_id (10-char TRUST ID) → headcode (4-char signalling ID)
@@ -107,8 +93,10 @@ class _Listener(stomp.ConnectionListener):
                 self._handle_movement(body)
 
     def _handle_activation(self, body):
-        train_id  = body.get("train_id", "").strip()
-        headcode  = body.get("signalling_id", "").strip()
+        train_id = body.get("train_id", "").strip()
+        # schedule_wtt_id is the headcode (4 chars) + a check character, e.g. "1G331"
+        wtt_id   = body.get("schedule_wtt_id", "").strip()
+        headcode = wtt_id[:4] if len(wtt_id) >= 4 else wtt_id
         if not train_id or not headcode:
             return
         with _lock:
@@ -119,17 +107,13 @@ class _Listener(stomp.ConnectionListener):
                     del _activations[k]
 
     def _handle_movement(self, body):
-        # Only process movements at/near Reading
-        stanox = body.get("loc_stanox", "").strip()
-        if stanox not in READING_AREA_STANOX:
-            return
-
         train_id  = body.get("train_id", "").strip()
         variation = body.get("timetable_variation", "").strip()
         status    = body.get("variation_status", "").strip()
 
-        with _lock:
-            headcode = _activations.get(train_id)
+        # Headcode is embedded in train_id at [2:6], e.g. "845Z371Y09" → "5Z37".
+        # Fall back to the activation map if we have it (slightly more reliable).
+        headcode = _activations.get(train_id) or (train_id[2:6] if len(train_id) >= 6 else None)
         if not headcode or not variation:
             return
 
@@ -147,7 +131,6 @@ class _Listener(stomp.ConnectionListener):
         with _lock:
             _delays[headcode] = {
                 "delay_secs": minutes * 60,
-                "stanox":     stanox,
                 "updated_at": datetime.now(),
             }
 
