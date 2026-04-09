@@ -191,10 +191,10 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
                 source    = "TRUST"
             eta = sched_dt + offset
 
-            # Floor ETA: if the train hasn't been seen anywhere in the TD area,
-            # it can't arrive sooner than the time from the chain entry point.
+            # Floor ETA: without a confirmed on-path TD position we can't trust
+            # the schedule or TRUST data to be accurate within the chain entry time.
             # Only applied to future ETAs — past ETAs expire normally.
-            if pos is None and eta > now:
+            if eta > now:
                 chain_floor = routing.max_eta_secs(direction)
                 if chain_floor is not None:
                     floor_eta = now + timedelta(seconds=chain_floor)
