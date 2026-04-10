@@ -26,8 +26,8 @@ EB_OFFSET_SECS = 210   # subtracted from Reading arrival
 # Any schedule that contains one of these is on the main line west of Reading
 WEST_TIPLOCS = {"GORASTR", "TILHRST", "RDNGMLW", "PANGBRN", "TILHEJN"}
 
-# Passenger operators only — exclude freight/departmental (ZZ, etc.)
-PASSENGER_ATOC = {"GW", "XC", "XR", "SW", "HX", "LS", "WR", "AW", "EM", "VT", "LM", "NT", "TP", "CS"}
+# Operators to include — passenger + freight/departmental (ZZ)
+PASSENGER_ATOC = {"GW", "XC", "XR", "SW", "HX", "LS", "WR", "AW", "EM", "VT", "LM", "NT", "TP", "CS", "ZZ"}
 
 
 def _parse_cif_time(t_str, ref_date: date) -> datetime | None:
