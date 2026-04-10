@@ -5,6 +5,5 @@ __pycache__/
 *.pdf
 .claude/
 data/
-routing_table.json
 .td_cache.json
 .trust_cache.json
