@@ -19,9 +19,12 @@ TD real-time detections update the display immediately when a train
 crosses a visible berth.
 """
 
+import contextlib
+import io
 import os
 import signal
 import sys
+import threading
 import time
 from datetime import datetime
 
@@ -39,11 +42,12 @@ import trust_client
 GPIO.setwarnings(False)
 load_dotenv()
 
-REFRESH_SECS    = 5     # schedule prediction refresh
-TD_REFRESH      = 1     # display redraw rate
-ROW_H           = 21    # pixels per row
-MAX_JOURNEY_CHARS = 28  # origin → destination truncation
-TD_INJECT_TTL   = 120   # seconds to keep a TD-detected train visible after passing
+REFRESH_SECS      = 5     # schedule prediction refresh
+TD_REFRESH        = 1     # display redraw rate
+ROW_H             = 21    # pixels per row
+MAX_JOURNEY_CHARS = 28    # origin → destination truncation
+TD_INJECT_TTL     = 120   # seconds to keep a TD-detected train visible after passing
+DB_CHECK_INTERVAL = 3600  # check schedule staleness every hour
 
 
 def make_device():
@@ -112,8 +116,13 @@ def main():
     print("Starting TRUST feed listener...")
     trust_client.start()
 
-    trains   = []
-    last_refresh = 0
+    trains        = []
+    last_refresh  = 0
+    last_db_check = 0
+
+    def _bg_db_refresh():
+        with contextlib.redirect_stdout(io.StringIO()):
+            schedule_db.refresh_if_stale()
 
     def shutdown(sig, frame):
         device.cleanup()
@@ -125,6 +134,10 @@ def main():
     print("Running — press Ctrl+C to stop")
     while True:
         now = time.time()
+
+        if now - last_db_check >= DB_CHECK_INTERVAL:
+            threading.Thread(target=_bg_db_refresh, daemon=True, name="db-refresh").start()
+            last_db_check = now
 
         # Refresh prediction list periodically
         if now - last_refresh >= REFRESH_SECS:
