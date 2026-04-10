@@ -11,10 +11,13 @@ Usage:
   venv/bin/python monitor.py
 """
 
+import contextlib
 import curses
+import io
 import os
 import signal
 import sys
+import threading
 import time
 from datetime import datetime
 
@@ -30,6 +33,7 @@ load_dotenv()
 N_TRAINS      = 8     # rows to show
 SCHED_REFRESH = 5     # seconds between schedule re-queries
 TD_INJECT_TTL = 120   # seconds to keep a TD-detected train visible after passing
+DB_CHECK_INTERVAL = 3600  # check schedule staleness every hour
 
 
 def _fmt_eta(eta: datetime) -> str:
@@ -207,9 +211,14 @@ def run(stdscr):
     curses.curs_set(0)
     stdscr.nodelay(True)
 
-    trains       = []
-    last_refresh = 0
-    status_msg   = "connecting..."
+    trains        = []
+    last_refresh  = 0
+    last_db_check = 0
+    status_msg    = "connecting..."
+
+    def _bg_db_refresh():
+        with contextlib.redirect_stdout(io.StringIO()):
+            schedule_db.refresh_if_stale()
 
     while True:
         # Non-blocking key check — q or Ctrl+C exits
@@ -218,6 +227,10 @@ def run(stdscr):
             return
 
         now = time.time()
+
+        if now - last_db_check >= DB_CHECK_INTERVAL:
+            threading.Thread(target=_bg_db_refresh, daemon=True, name="db-refresh").start()
+            last_db_check = now
 
         if now - last_refresh >= SCHED_REFRESH:
             try:
