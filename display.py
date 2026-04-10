@@ -39,10 +39,11 @@ import trust_client
 GPIO.setwarnings(False)
 load_dotenv()
 
-REFRESH_SECS  = 5     # schedule prediction refresh
-TD_REFRESH    = 1     # display redraw rate
-ROW_H         = 21    # pixels per row
-MAX_DEST_CHARS = 22   # destination truncation
+REFRESH_SECS    = 5     # schedule prediction refresh
+TD_REFRESH      = 1     # display redraw rate
+ROW_H           = 21    # pixels per row
+MAX_JOURNEY_CHARS = 28  # origin → destination truncation
+TD_INJECT_TTL   = 120   # seconds to keep a TD-detected train visible after passing
 
 
 def make_device():
@@ -63,7 +64,7 @@ def _fmt_eta(eta: datetime) -> str:
 
 
 def _truncate(s: str, n: int) -> str:
-    return s if len(s) <= n else s[:n - 1] + "\u2026"  # ellipsis
+    return s if len(s) <= n else s[:n - 1] + "~"
 
 
 def render(device, trains):
@@ -74,8 +75,10 @@ def render(device, trains):
         for row, train in enumerate(trains[:3]):
             y       = row * ROW_H
             eta_str = _fmt_eta(train["eta"])
-            dest    = _truncate(train["destination"], MAX_DEST_CHARS)
-            line    = f"{train['direction']}  {eta_str:<6} {dest}"
+            origin  = train.get("origin", "?")
+            dest    = train["destination"]
+            journey = _truncate(f"{origin} > {dest}", MAX_JOURNEY_CHARS)
+            line    = f"{train['direction']}  {eta_str:<6} {journey}"
 
             # Highlight row if train is at/past its ETA (just crossed the berth)
             secs_until = int((train["eta"] - now).total_seconds())
@@ -137,24 +140,40 @@ def main():
             (td_client.EASTBOUND_BERTH, "EB"),
         ]:
             last = td_client.get_last(berth)
-            if last:
-                secs_ago = (datetime.now() - last["time"]).total_seconds()
-                if secs_ago < 120:
-                    # A train just crossed — bubble it to the top of the list
-                    detected = {
-                        "direction":   direction,
-                        "headcode":    last["headcode"],
-                        "eta":         last["time"],
-                        "destination": f"{last['headcode']} (detected)",
-                        "sched_reading": "--",
-                        "atoc_code":   "??",
-                        "uid":         "live",
-                    }
-                    # Replace matching entry or prepend
-                    trains = [t for t in trains
-                              if not (t["headcode"] == last["headcode"] and t["direction"] == direction)]
-                    trains.insert(0, detected)
-                    trains = trains[:3]
+            if not last:
+                continue
+            secs_ago = (datetime.now() - last["time"]).total_seconds()
+            if secs_ago > TD_INJECT_TTL:
+                continue
+            existing = next(
+                (t for t in trains
+                 if t["headcode"] == last["headcode"] and t["direction"] == direction),
+                None,
+            )
+            if existing:
+                dest   = existing["destination"]
+                origin = existing.get("origin", "?")
+            else:
+                sched  = predict.lookup_headcode(last["headcode"])
+                dest   = sched["destination"] if sched else "not in CIF"
+                origin = sched["origin"]      if sched else "?"
+            detected = {
+                "direction":     direction,
+                "headcode":      last["headcode"],
+                "eta":           last["time"],
+                "origin":        origin,
+                "destination":   dest,
+                "sched_reading": "--",
+                "atoc_code":     "??",
+                "uid":           "td-visible",
+                "delay_secs":    None,
+                "source":        "TD",
+            }
+            trains = [t for t in trains
+                      if not (t["headcode"] == last["headcode"]
+                              and t["direction"] == direction)]
+            trains.insert(0, detected)
+            trains = trains[:3]
 
         try:
             render(device, trains)
@@ -168,7 +187,8 @@ def main():
 
         # Log to stdout
         for t in trains[:3]:
-            print(f"  {t['direction']}  {_fmt_eta(t['eta']):<6}  {t['destination']}")
+            origin = t.get("origin", "?")
+            print(f"  {t['direction']}  {_fmt_eta(t['eta']):<6}  {origin} > {t['destination']}")
         print()
 
         time.sleep(TD_REFRESH)
