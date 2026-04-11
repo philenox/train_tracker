@@ -45,9 +45,12 @@ load_dotenv()
 REFRESH_SECS      = 5     # schedule prediction refresh
 TD_REFRESH        = 1     # display redraw rate
 ROW_H             = 21    # pixels per row
-MAX_JOURNEY_CHARS = 28    # origin → destination truncation
+MAX_JOURNEY_CHARS = 28    # characters visible in journey field
 TD_INJECT_TTL     = 120   # seconds to keep a TD-detected train visible after passing
 DB_CHECK_INTERVAL = 3600  # check schedule staleness every hour
+SCROLL_PERIOD     = 20    # seconds of static (truncated) display before scrolling
+SCROLL_STEPS      = 8     # number of 1-second scroll steps
+SCROLL_SPEED      = 2     # characters advanced per scroll step
 
 
 def make_device():
@@ -67,11 +70,26 @@ def _fmt_eta(eta: datetime) -> str:
     return eta.strftime("%H:%M")
 
 
-def _truncate(s: str, n: int) -> str:
-    return s if len(s) <= n else s[:n - 1] + "~"
+def _journey_text(origin: str, dest: str, scroll_tick: int) -> str:
+    """Return the journey string for the current scroll_tick.
+
+    For short journeys (fits in MAX_JOURNEY_CHARS) always returns the full string.
+    For long journeys: shows truncated text for SCROLL_PERIOD seconds, then slides
+    a MAX_JOURNEY_CHARS-wide window across the full string over SCROLL_STEPS seconds,
+    then repeats.
+    """
+    full = f"{origin} > {dest}"
+    if len(full) <= MAX_JOURNEY_CHARS:
+        return full
+    overflow = len(full) - MAX_JOURNEY_CHARS
+    phase = scroll_tick % (SCROLL_PERIOD + SCROLL_STEPS)
+    if phase < SCROLL_PERIOD:
+        return full[:MAX_JOURNEY_CHARS - 1] + "~"
+    offset = min((phase - SCROLL_PERIOD) * SCROLL_SPEED, overflow)
+    return full[offset:offset + MAX_JOURNEY_CHARS]
 
 
-def render(device, trains):
+def render(device, trains, scroll_tick: int):
     """Render up to 3 upcoming trains onto the display."""
     now = datetime.now()
 
@@ -81,7 +99,7 @@ def render(device, trains):
             eta_str = _fmt_eta(train["eta"])
             origin  = train.get("origin", "?")
             dest    = train["destination"]
-            journey = _truncate(f"{origin} > {dest}", MAX_JOURNEY_CHARS)
+            journey = _journey_text(origin, dest, scroll_tick)
             line    = f"{train['direction']}  {eta_str:<6} {journey}"
 
             # Highlight row if train is at/past its ETA (just crossed the berth)
@@ -189,7 +207,7 @@ def main():
             trains = trains[:3]
 
         try:
-            render(device, trains)
+            render(device, trains, int(time.time()))
         except Exception as e:
             print(f"[render] Error: {e}")
             try:
