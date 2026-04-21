@@ -15,13 +15,8 @@ from flask import Flask, jsonify, render_template, request
 ENV_PATH = Path(__file__).parent.parent / ".env"
 
 CREDENTIAL_FIELDS = [
-    "LDBWS_CONSUMER_KEY",
-    "LDBWS_CONSUMER_SECRET",
-    "TD_KAFKA_BOOTSTRAP",
-    "TD_KAFKA_USERNAME",
-    "TD_KAFKA_PASSWORD",
-    "TD_KAFKA_GROUP",
-    "TD_KAFKA_TOPIC",
+    "NR_USERNAME",
+    "NR_PASSWORD",
 ]
 
 app = Flask(__name__)
