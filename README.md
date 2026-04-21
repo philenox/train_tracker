@@ -81,6 +81,7 @@ Long journey strings scroll after a static period. ETA is shown as `HH:MM` when 
 | `routing.py` | Loads and queries `routing_table.json` |
 | `analyse_routes.py` | Analyses collected TD data to build the routing table |
 | `collect.py` | Long-running logger — writes TD and TRUST data to daily CSV files |
+| `mode_manager.py` | Boot manager — starts display or setup mode, monitors setup button |
 | `portal/app.py` | Flask setup portal — WiFi config and credential management |
 
 ## Setup
@@ -167,14 +168,42 @@ Data is written to `data/td_YYYY-MM-DD.csv` and `data/trust_YYYY-MM-DD.csv`, rot
 
 Two services manage the Pi:
 
-- `train-manager.service` — runs as root on boot, checks WiFi, starts display or hotspot
+- `train-manager.service` — runs `mode_manager.py` as root on boot
 - `train-display.service` — runs `display.py` as the `plenox` user
 
 ```bash
 sudo bash install.sh
 ```
 
-On first boot without WiFi configured, the Pi creates a hotspot (`TrainTrackerHotspot`) and serves a setup page at `http://192.168.4.1` where you can configure WiFi and enter your Network Rail credentials.
+`mode_manager.py` decides which mode to run:
+
+1. **Normal mode** — WiFi is connected and button not held at boot → starts `train-display.service`
+2. **Setup mode** — no WiFi after 30s, or button held at boot, or button held for 3s at runtime → stops the display, starts a hotspot and serves the setup portal
+
+### Setup mode
+
+When setup mode activates the LED matrix shows connection instructions:
+
+```
+-- Setup Mode --
+WiFi: TrainTracker
+Pass: traintracker
+Go: 192.168.4.1
+```
+
+Connect to the `TrainTracker` hotspot, open `http://192.168.4.1` in a browser, and configure WiFi credentials and Network Rail API keys. Once WiFi connects successfully the Pi exits setup mode and restarts the display automatically.
+
+### Setup button
+
+A momentary push button lets you trigger setup mode at any time without SSH access — useful for changing WiFi networks or re-entering credentials.
+
+| Connection | Detail |
+|-----------|--------|
+| GPIO pin | GPIO 25 (Pi header pin 22) |
+| Other leg | GND (any GND pin, e.g. header pin 20) |
+| Hold duration | 3 seconds to activate setup mode |
+
+The pin is configured with an internal pull-up, so no external resistor is needed — just wire the button directly between GPIO 25 and GND.
 
 ## LED matrix wiring
 
