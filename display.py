@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 """
-display.py — Train tracker OLED display.
+display.py — Train tracker LED matrix display.
 
-Shows the next 3 trains predicted to pass the visible berths west of
+Shows the next 5 trains predicted to pass the visible berths west of
 Reading, sorted by ETA, with direction, time, and destination.
 
-Layout (256x64, 3 rows of 21px):
-  ┌─────────────────────────────────────────┐
-  │ WB  22:29  Bristol Temple Meads         │
-  ├─────────────────────────────────────────┤
-  │ EB  22:30  London Paddington            │
-  ├─────────────────────────────────────────┤
-  │ WB  22:45  Oxford                       │
-  └─────────────────────────────────────────┘
+Layout (128x64, 5 rows of 12px):
+  ┌────────────────────────┐
+  │ WB 22:29 Bristol TM    │
+  ├────────────────────────┤
+  │ EB 22:30 London Pad    │
+  ├────────────────────────┤
+  │ WB 22:45 Oxford        │
+  ├────────────────────────┤
+  │ EB 22:51 London Pad    │
+  ├────────────────────────┤
+  │ WB 23:10 Cardiff       │
+  └────────────────────────┘
 
 ETA shown as HH:MM when >90s away, or "XXs" countdown when imminent.
 TD real-time detections update the display immediately when a train
@@ -28,37 +32,52 @@ import threading
 import time
 from datetime import datetime
 
-import RPi.GPIO as GPIO
 from dotenv import load_dotenv
-from luma.core.interface.serial import spi
-from luma.core.render import canvas
-from luma.oled.device import ssd1322
+from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 
 import predict
 import schedule_db
 import td_client
 import trust_client
 
-GPIO.setwarnings(False)
 load_dotenv()
 
 REFRESH_SECS      = 5     # schedule prediction refresh
 TD_REFRESH        = 1     # display redraw rate
-ROW_H             = 21    # pixels per row
-MAX_JOURNEY_CHARS = 28    # characters visible in journey field
+ROW_H             = 12    # pixels per row — 5 rows fit in 64 physical rows
+MAX_JOURNEY_CHARS = 16    # characters visible in journey field (128px wide display)
 TD_INJECT_TTL     = 120   # seconds to keep a TD-detected train visible after passing
 DB_CHECK_INTERVAL = 3600  # check schedule staleness every hour
 SCROLL_PERIOD     = 20    # seconds of static (truncated) display before scrolling
 SCROLL_STEPS      = 8     # number of 1-second scroll steps
 SCROLL_SPEED      = 2     # characters advanced per scroll step
 
+# Path to the rpi-rgb-led-matrix fonts directory
+FONT_DIR = os.environ.get("LED_FONT_DIR", "/home/plenox/rpi-rgb-led-matrix/fonts")
 
-def make_device():
-    serial = spi(device=0, port=0, bus_speed_hz=2000000, transfer_size=4096,
-                 gpio_DC=24, gpio_RST=25)
-    device = ssd1322(serial, width=256, height=64, rotate=0, mode='1')
-    device.contrast(255)
-    return device
+# Authentic UK departure board amber — warm sodium-lamp orange, not yellow
+COLOR_AMBER     = graphics.Color(255, 140, 0)
+COLOR_DIM_AMBER = graphics.Color(160, 88, 0)
+
+
+def make_matrix():
+    options = RGBMatrixOptions()
+    options.rows = 64
+    options.cols = 128
+    options.hardware_mapping = 'adafruit-hat'
+    options.led_rgb_sequence = 'BRG'
+    options.gpio_slowdown = 5
+    options.multiplexing = 0
+    options.disable_hardware_pulsing = False
+    options.drop_privileges = False
+    matrix = RGBMatrix(options=options)
+    return matrix
+
+
+def load_font(name="5x8.bdf"):
+    font = graphics.Font()
+    font.LoadFont(os.path.join(FONT_DIR, name))
+    return font
 
 
 def _fmt_eta(eta: datetime) -> str:
@@ -89,34 +108,42 @@ def _journey_text(origin: str, dest: str, scroll_tick: int) -> str:
     return full[offset:offset + MAX_JOURNEY_CHARS]
 
 
-def render(device, trains, scroll_tick: int):
-    """Render up to 3 upcoming trains onto the display."""
-    now = datetime.now()
+def render(matrix, canvas, font, trains, scroll_tick: int):
+    """Render up to 4 upcoming trains + current time onto the LED matrix canvas.
 
-    with canvas(device) as draw:
-        for row, train in enumerate(trains[:3]):
-            y       = row * ROW_H
-            eta_str = _fmt_eta(train["eta"])
-            origin  = train.get("origin", "?")
-            dest    = train["destination"]
-            journey = _journey_text(origin, dest, scroll_tick)
-            line    = f"{train['direction']}  {eta_str:<6} {journey}"
+    Rows 0-3 show trains; row 4 always shows the current time.
+    Returns the new canvas (after SwapOnVSync).
+    """
+    canvas.Clear()
 
-            # Highlight row if train is at/past its ETA (just crossed the berth)
-            secs_until = int((train["eta"] - now).total_seconds())
-            fill = "white"
+    for row, train in enumerate(trains[:4]):
+        # 5x7 font: ascent ~6px; baseline at row_top+8 keeps text within 12px row
+        y_baseline = row * ROW_H + 8
 
-            draw.text((2, y + 2), line, fill=fill)
+        eta_str = _fmt_eta(train["eta"])
+        origin  = train.get("origin", "?")
+        dest    = train["destination"]
+        journey = _journey_text(origin, dest, scroll_tick)
+        line    = f"{train['direction']} {eta_str:<5} {journey}"
 
-            if row < 2:
-                draw.line([(0, y + ROW_H - 1), (255, y + ROW_H - 1)], fill="white")
+        graphics.DrawText(canvas, font, 2, y_baseline, COLOR_AMBER, line)
 
-        # If fewer than 3 trains, fill remaining rows with placeholder
-        for row in range(len(trains[:3]), 3):
-            y = row * ROW_H
-            draw.text((2, y + 2), "-- no data --", fill="white")
-            if row < 2:
-                draw.line([(0, y + ROW_H - 1), (255, y + ROW_H - 1)], fill="white")
+        div_y = (row + 1) * ROW_H - 1
+        graphics.DrawLine(canvas, 0, div_y, 127, div_y, COLOR_DIM_AMBER)
+
+    # Fill remaining train rows with placeholder if fewer than 4 trains
+    for row in range(len(trains[:4]), 4):
+        y_baseline = row * ROW_H + 8
+        graphics.DrawText(canvas, font, 2, y_baseline, COLOR_DIM_AMBER, "-- no data --")
+        div_y = (row + 1) * ROW_H - 1
+        graphics.DrawLine(canvas, 0, div_y, 127, div_y, COLOR_DIM_AMBER)
+
+    # Row 4: current time, right-aligned
+    time_str = datetime.now().strftime("%H:%M:%S")
+    time_x = 128 - len(time_str) * 5 - 2
+    graphics.DrawText(canvas, font, time_x, 4 * ROW_H + 8, COLOR_AMBER, time_str)
+
+    return matrix.SwapOnVSync(canvas)
 
 
 def main():
@@ -126,7 +153,9 @@ def main():
 
     schedule_db.refresh_if_stale()
 
-    device = make_device()
+    matrix = make_matrix()
+    canvas = matrix.CreateFrameCanvas()
+    font   = load_font("5x7.bdf")
 
     print("Starting TD feed listener...")
     td_client.start()
@@ -143,7 +172,7 @@ def main():
             schedule_db.refresh_if_stale()
 
     def shutdown(sig, frame):
-        device.cleanup()
+        matrix.Clear()
         sys.exit(0)
 
     signal.signal(signal.SIGINT, shutdown)
@@ -160,7 +189,7 @@ def main():
         # Refresh prediction list periodically
         if now - last_refresh >= REFRESH_SECS:
             try:
-                trains = predict.get_upcoming(n=3)
+                trains = predict.get_upcoming(n=4)
                 last_refresh = now
             except Exception as e:
                 print(f"[predict] Error: {e}")
@@ -204,20 +233,23 @@ def main():
                       if not (t["headcode"] == last["headcode"]
                               and t["direction"] == direction)]
             trains.insert(0, detected)
-            trains = trains[:3]
+            trains = trains[:4]
 
         try:
-            render(device, trains, int(time.time()))
+            canvas = render(matrix, canvas, font, trains, int(time.time()))
         except Exception as e:
             print(f"[render] Error: {e}")
             try:
-                with canvas(device) as draw:
-                    draw.text((0, 24), f"Error: {str(e)[:30]}", fill="white")
+                canvas.Clear()
+                err_font = load_font("4x6.bdf")
+                graphics.DrawText(canvas, err_font, 0, 6, COLOR_AMBER,
+                                  f"Err: {str(e)[:28]}")
+                canvas = matrix.SwapOnVSync(canvas)
             except Exception:
                 pass
 
         # Log to stdout
-        for t in trains[:3]:
+        for t in trains[:4]:
             origin = t.get("origin", "?")
             print(f"  {t['direction']}  {_fmt_eta(t['eta']):<6}  {origin} > {t['destination']}")
         print()

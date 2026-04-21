@@ -3,23 +3,24 @@
 Train Tracker mode manager.
 
 Decides whether to run in normal mode (display.py shows trains) or setup
-mode (hotspot + captive portal). Monitors a physical button on GPIO 17
+mode (hotspot + captive portal). Monitors a physical button on GPIO 25
 to allow the user to force setup mode at any time.
 
 Must run as root (for nmcli hotspot management and binding port 80).
 """
 
+import os
 import subprocess
 import sys
 import threading
 import time
 import RPi.GPIO as GPIO
-from luma.core.interface.serial import spi
-from luma.oled.device import ssd1322
-from luma.core.render import canvas
+from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 
-BUTTON_PIN = 17          # GPIO 17, Pi header pin 11 — connect to GND
-BUTTON_HOLD_SECS = 3     # hold duration to trigger setup mode
+FONT_DIR = os.environ.get("LED_FONT_DIR", "/home/plenox/rpi-rgb-led-matrix/fonts")
+
+BUTTON_PIN = 25          # GPIO 25, Pi header pin 22 — connect to GND
+BUTTON_HOLD_SECS = 3     # hold duration to trigger setup mode (button on GPIO 25)
 WIFI_TIMEOUT_SECS = 30   # wait for WiFi on boot before falling back to hotspot
 HOTSPOT_CON_NAME = "TrainTrackerHotspot"
 HOTSPOT_IP = "192.168.4.1"
@@ -61,28 +62,38 @@ def button_held_at_boot() -> bool:
 
 
 # ---------------------------------------------------------------------------
-# OLED
+# LED Matrix
 # ---------------------------------------------------------------------------
 
-def make_device():
-    serial = spi(device=0, port=0, bus_speed_hz=2000000, transfer_size=4096,
-                 gpio_DC=24, gpio_RST=25)
-    device = ssd1322(serial, width=256, height=64, rotate=0, mode='1')
-    device.contrast(255)
-    return device
+def make_matrix():
+    options = RGBMatrixOptions()
+    options.rows = 64
+    options.cols = 128
+    options.hardware_mapping = 'adafruit-hat'
+    options.led_rgb_sequence = 'BRG'
+    options.gpio_slowdown = 5
+    options.multiplexing = 0
+    options.disable_hardware_pulsing = False
+    options.drop_privileges = False
+    return RGBMatrix(options=options)
 
 
-def show_setup_screen(device):
-    with canvas(device) as draw:
-        draw.text((0,  0), "-- Setup Mode --",   fill='white')
-        draw.text((0, 16), "WiFi: TrainTracker",  fill='white')
-        draw.text((0, 32), "Pass: traintracker",  fill='white')
-        draw.text((0, 48), f"Visit: {HOTSPOT_IP}", fill='white')
+def show_setup_screen(matrix):
+    font = graphics.Font()
+    font.LoadFont(os.path.join(FONT_DIR, "6x10.bdf"))
+    amber = graphics.Color(255, 170, 0)
+    white = graphics.Color(255, 255, 255)
+    c = matrix.CreateFrameCanvas()
+    c.Clear()
+    graphics.DrawText(c, font,  0, 12, amber, "-- Setup Mode --")
+    graphics.DrawText(c, font,  0, 28, white, "WiFi: TrainTracker")
+    graphics.DrawText(c, font,  0, 44, white, "Pass: traintracker")
+    graphics.DrawText(c, font,  0, 60, white, f"Go: {HOTSPOT_IP}")
+    matrix.SwapOnVSync(c)
 
 
-def clear_display(device):
-    with canvas(device) as draw:
-        draw.rectangle([0, 0, 255, 63], fill='black')
+def clear_display(matrix):
+    matrix.Clear()
 
 
 # ---------------------------------------------------------------------------
@@ -190,7 +201,7 @@ def normal_mode():
 
     print("Setup requested — stopping display service")
     stop_display_service()
-    time.sleep(1)  # allow display.py to release SPI/GPIO
+    time.sleep(2)  # allow display.py to release the matrix driver
 
 
 def setup_mode():
@@ -198,8 +209,8 @@ def setup_mode():
     ensure_hotspot_profile()
     start_hotspot()
 
-    device = make_device()
-    show_setup_screen(device)
+    matrix = make_matrix()
+    show_setup_screen(matrix)
     start_portal()
 
     # Poll until WiFi connects (triggered by portal /wifi POST)
@@ -211,8 +222,8 @@ def setup_mode():
         time.sleep(5)
 
     stop_hotspot()
-    clear_display(device)
-    device.cleanup()
+    clear_display(matrix)
+    del matrix   # release the LED matrix driver before display.py starts
     time.sleep(1)  # allow NM to stabilise before display starts
 
 
