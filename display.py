@@ -108,7 +108,7 @@ def _journey_text(origin: str, dest: str, scroll_tick: int) -> str:
     return full[offset:offset + MAX_JOURNEY_CHARS]
 
 
-def render(matrix, canvas, font, trains, scroll_tick: int):
+def render(matrix, canvas, font, time_font, trains, scroll_tick: int):
     """Render up to 4 upcoming trains + current time onto the LED matrix canvas.
 
     Rows 0-3 show trains; row 4 always shows the current time.
@@ -138,10 +138,9 @@ def render(matrix, canvas, font, trains, scroll_tick: int):
         div_y = (row + 1) * ROW_H - 1
         graphics.DrawLine(canvas, 0, div_y, 127, div_y, COLOR_DIM_AMBER)
 
-    # Row 4: current time, right-aligned
+    # Row 4: current time, centered (7x13 font: 8 chars × 7px = 56px → x=36, baseline=60)
     time_str = datetime.now().strftime("%H:%M:%S")
-    time_x = 128 - len(time_str) * 5 - 2
-    graphics.DrawText(canvas, font, time_x, 4 * ROW_H + 8, COLOR_AMBER, time_str)
+    graphics.DrawText(canvas, time_font, 36, 60, COLOR_AMBER, time_str)
 
     return matrix.SwapOnVSync(canvas)
 
@@ -153,9 +152,10 @@ def main():
 
     schedule_db.refresh_if_stale()
 
-    matrix = make_matrix()
-    canvas = matrix.CreateFrameCanvas()
-    font   = load_font("5x7.bdf")
+    matrix    = make_matrix()
+    canvas    = matrix.CreateFrameCanvas()
+    font      = load_font("5x7.bdf")
+    time_font = load_font("7x13.bdf")
 
     print("Starting TD feed listener...")
     td_client.start()
@@ -236,7 +236,7 @@ def main():
             trains = trains[:4]
 
         try:
-            canvas = render(matrix, canvas, font, trains, int(time.time()))
+            canvas = render(matrix, canvas, font, time_font, trains, int(time.time()))
         except Exception as e:
             print(f"[render] Error: {e}")
             try:
