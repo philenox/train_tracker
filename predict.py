@@ -191,6 +191,16 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
                 source    = "TRUST"
             eta = sched_dt + offset
 
+            # Drop trains with no TD position and no TRUST data whose schedule
+            # ETA is already more than max_eta_secs in the past — they're either
+            # cancelled or severely delayed with no evidence of actually coming.
+            chain_floor = routing.max_eta_secs(direction)
+            if (chain_floor is not None
+                    and pos is None
+                    and delay_secs is None
+                    and (now - eta).total_seconds() > chain_floor):
+                continue
+
             # Floor ETA: without a confirmed on-path TD position we can't trust
             # the schedule or TRUST data. Push ETA out to the chain entry time
             # so trains don't appear imminent before we've seen them in the area.
