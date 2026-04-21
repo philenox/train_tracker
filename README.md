@@ -1,128 +1,191 @@
 # Train Tracker
 
-A real-time train tracker for a specific section of track visible from a window just west of Reading station. Displays approaching and passing trains on a 256×64 SSD1322 OLED display using live Network Rail TD feed data.
-
-## How it works
-
-All data comes from the **Network Rail TD (Train Describer) feed** via STOMP. No Darwin/departure board data is used.
-
-Four berths are watched:
-
-| Berth | Direction | Role |
-|-------|-----------|------|
-| 1733 | Westbound | Trigger — train detected here, ETA computed |
-| 1757 | Westbound | Visible — train is passing the window |
-| 1772 | Eastbound | Trigger — train detected here, ETA computed |
-| 1724 | Eastbound | Visible — train is passing the window |
-
-When a train crosses a trigger berth, the display shows a live countdown to when it will reach the visible berth (~52s westbound, ~174s eastbound). When it crosses the visible berth, the display updates to show the actual pass time.
-
-## Display layout
-
-```
-┌─────────────────────────────────────────┐
-│ WB  HH:MM:SS  headcode  in Xs           │  ← WB approaching (ETA from 1733)
-├─────────────────────────────────────────┤
-│ WB  HH:MM:SS  headcode  (Xm ago)        │  ← WB last seen at 1757
-├─────────────────────────────────────────┤
-│ EB  HH:MM:SS  headcode  in Xs / Xm ago  │  ← EB approaching or last seen
-└─────────────────────────────────────────┘
-```
+A real-time train tracker for a section of track visible from a window just west of Reading station. Predicts and displays upcoming trains using live Network Rail data, with a 3-tier prediction engine that gets more accurate as a train approaches.
 
 ## Hardware
 
 - Raspberry Pi 4B
-- SSD1322-based 256×64 SPI OLED display (yellow/amber)
+- 128×64 RGB LED matrix panel with Adafruit RGB Matrix HAT
+
+## How it works
+
+### Data sources
+
+Two Network Rail feeds are consumed simultaneously via STOMP:
+
+| Feed | Topic | Used for |
+|------|-------|----------|
+| TD (Train Describer) | `TD_ALL_SIG_AREA` | Real-time train positions in the Reading signal area (D1/D2) |
+| TRUST (Train Movement) | `TRAIN_MVT_ALL_TOC` | Reported delays at timing points |
+
+Schedule data comes from the **Network Rail CIF timetable**, downloaded daily and stored in a local SQLite database (`schedules.db`).
+
+### Prediction engine
+
+Predictions use a 3-tier hierarchy — the highest-confidence source available wins:
+
+| Source | When used | How ETA is calculated |
+|--------|-----------|----------------------|
+| **TD** | Train has been seen at a known berth in the Reading area | `position timestamp + routing table eta_mean` |
+| **TRUST** | Train not yet in TD area, but has a reported delay | Schedule time ± TRUST delay |
+| **SCHED** | No real-time data available | Raw CIF schedule time |
+
+For TD and TRUST/SCHED predictions, an **ETA floor** is applied: if a train hasn't been seen anywhere in the Reading TD area, its ETA can't be sooner than the furthest-out berth in the routing table (~12 min westbound, ~7 min eastbound). This prevents optimistic schedule ETAs from showing trains as imminent before they've entered the area.
+
+Trains with no TD position, no TRUST data, and a schedule ETA already past the floor are dropped from the display entirely.
+
+### Routing table
+
+`routing_table.json` is built from collected TD data by `analyse_routes.py`. It maps each observed berth to statistics about how often trains from that berth reach the visible window, and how long it takes:
+
+```
+berth1621__WB → { p_visible: 1.0, eta_mean: 640s, eta_std: 184s, n_trains: 143 }
+berth1743__WB → { p_visible: 1.0, eta_mean: 21s,  eta_std: 5s,   n_trains: 202 }
+```
+
+The westbound chain covers ~12 minutes of advance warning (30+ berths). The eastbound chain covers ~7 minutes (12 berths). Berths that consistently lead to platforms or sidings rather than the visible window are flagged as off-path and used to suppress those trains from the display.
+
+Regenerate the routing table after collecting more data:
+```
+venv/bin/python analyse_routes.py
+```
+
+### Display layout
+
+```
+┌──────────────────────────┐
+│ WB 22:29 Bristol TM~     │
+├──────────────────────────┤
+│ EB 22:30 London Pad~     │
+├──────────────────────────┤
+│ WB 22:45 Oxford          │
+├──────────────────────────┤
+│ EB 22:51 London Pad~     │
+├──────────────────────────┤
+│        22:29:45          │  ← live clock
+└──────────────────────────┘
+```
+
+Long journey strings scroll after a static period. ETA is shown as `HH:MM` when more than 90s away, or a live `XXs` countdown when imminent.
+
+## Files
+
+| File | Purpose |
+|------|---------|
+| `display.py` | LED matrix display driver — runs on the Pi |
+| `monitor.py` | Terminal-based monitor — for development/MacBook use |
+| `predict.py` | Prediction engine — schedule + TRUST + TD routing |
+| `td_client.py` | Background TD STOMP client, tracks positions for all D1/D2 berths |
+| `trust_client.py` | Background TRUST STOMP client, tracks delays by headcode |
+| `schedule_db.py` | CIF schedule database — downloads, imports, and queries |
+| `routing.py` | Loads and queries `routing_table.json` |
+| `analyse_routes.py` | Analyses collected TD data to build the routing table |
+| `collect.py` | Long-running logger — writes TD and TRUST data to daily CSV files |
+| `portal/app.py` | Flask setup portal — WiFi config and credential management |
 
 ## Setup
 
-### 1. Enable SPI on the Pi
+### 1. Install dependencies
 
-```
-sudo raspi-config
-# Interface Options → SPI → Yes
-```
-
-Then activate without rebooting:
-
-```
-sudo dtparam spi=on
-```
-
-### 2. Install dependencies
-
-```
+**On the Pi** (LED matrix display):
+```bash
 python3 -m venv venv
-venv/bin/pip install stomp.py python-dotenv luma.oled RPi.GPIO spidev flask
+venv/bin/pip install stomp.py python-dotenv flask requests
+# rgbmatrix is installed from the rpi-rgb-led-matrix source — see below
 ```
 
-### 3. Configure credentials
-
+**On a Mac** (terminal monitor only):
+```bash
+uv venv --python 3.12 venv
+venv/bin/pip install stomp.py python-dotenv flask requests pandas tabulate
 ```
+
+The `rgbmatrix` Python bindings are built from the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) library. Clone it on the Pi and build the Python extension:
+```bash
+git clone https://github.com/hzeller/rpi-rgb-led-matrix
+cd rpi-rgb-led-matrix
+make build-python PYTHON=$(which python3)
+sudo make install-python PYTHON=$(which python3)
+```
+
+Set the font directory path if it differs from the default:
+```bash
+echo "LED_FONT_DIR=/home/plenox/rpi-rgb-led-matrix/fonts" >> .env
+```
+
+### 2. Configure credentials
+
+```bash
 cp .env.example .env
 ```
 
-Edit `.env` with your credentials:
+Edit `.env`:
 
 | Variable | Description |
-|---|---|
+|----------|-------------|
 | `NR_USERNAME` | Network Rail Open Data email |
 | `NR_PASSWORD` | Network Rail Open Data password |
 
-Register at [Network Rail Open Data](https://datafeeds.networkrail.co.uk). Subscribe to **TD_ALL_SIG_AREA** (free, no approval required).
+Register at [Network Rail Open Data](https://datafeeds.networkrail.co.uk). Subscribe to **TD_ALL_SIG_AREA** and **TRAIN_MVT_ALL_TOC** (free, no approval required).
+
+### 3. Download the schedule database
+
+```bash
+venv/bin/python -c "import schedule_db; schedule_db.refresh_if_stale(max_age_hours=0)"
+```
+
+This downloads the current CIF timetable (~100MB) and imports it into `schedules.db`. The schedule is refreshed automatically if it's more than 20 hours old when the display or monitor starts.
+
+### 4. Build the routing table
+
+The routing table requires collected TD data. Either copy an existing `routing_table.json` from another instance, or collect data first (see below) then run:
+
+```bash
+venv/bin/python analyse_routes.py
+```
 
 ## Usage
 
-Run the OLED display (auto-refreshes every second):
+**Run the terminal monitor** (MacBook / development):
+```bash
+caffeinate -i venv/bin/python monitor.py
+```
 
-```
-venv/bin/python display.py
+**Run the LED matrix display** (Pi, requires root for GPIO):
+```bash
+sudo venv/bin/python display.py
 ```
 
-Watch berth events in the terminal:
+**Collect TD + TRUST data to CSV** (for routing table analysis):
+```bash
+caffeinate -i venv/bin/python -u collect.py
+```
 
-```
-venv/bin/python td_listen.py              # watch trigger + visible berths only
-venv/bin/python td_listen.py --all        # log all Reading area berth steps
-venv/bin/python td_listen.py --csv FILE   # record all steps to CSV
-```
+Data is written to `data/td_YYYY-MM-DD.csv` and `data/trust_YYYY-MM-DD.csv`, rotating at midnight. Run for at least a few peak-hour periods before regenerating the routing table.
 
 ## Auto-boot (systemd)
 
-The display starts automatically on boot via two systemd services:
+Two services manage the Pi:
 
-- `train-manager.service` — runs as root, checks WiFi on boot, starts display or hotspot setup mode
-- `train-display.service` — runs the OLED display as the `plenox` user
+- `train-manager.service` — runs as root on boot, checks WiFi, starts display or hotspot
+- `train-display.service` — runs `display.py` as the `plenox` user
 
-Install:
-```
+```bash
 sudo bash install.sh
 ```
 
-On first boot without WiFi configured, the Pi creates a hotspot (`TrainTrackerHotspot`) and serves a setup page at `http://192.168.4.1` where you can enter WiFi credentials and API keys.
+On first boot without WiFi configured, the Pi creates a hotspot (`TrainTrackerHotspot`) and serves a setup page at `http://192.168.4.1` where you can configure WiFi and enter your Network Rail credentials.
 
-## Recording TD data
+## LED matrix wiring
 
-To record all berth steps to CSV for later analysis (persists across SSH disconnects via tmux):
+The display uses an **Adafruit RGB Matrix HAT** which handles all GPIO wiring. Connect the HAT to the Pi's 40-pin header and attach the LED matrix panel to the HAT's output connector per the [Adafruit wiring guide](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi).
 
-```
-tmux new -s td-record
-venv/bin/python -u td_listen.py --csv td_data.csv
-# Ctrl+B then D to detach
-```
+Key settings used in `display.py`:
 
-## Display wiring
-
-| Display pin | Label | Raspberry Pi pin | GPIO |
-|---|---|---|---|
-| 1 | VSS | Pin 6 | GND |
-| 2 | VCC_IN | Pin 2 | 5V |
-| 4 | D0/CLK | Pin 23 | GPIO 11 (SPI SCLK) |
-| 5 | DI/DIN | Pin 19 | GPIO 10 (SPI MOSI) |
-| 14 | D/C# | Pin 18 | GPIO 24 |
-| 15 | RES# | Pin 22 | GPIO 25 |
-| 16 | CS# | Pin 24 | GPIO 8 (SPI CE0) |
-
-The display must be configured for 4-wire SPI mode via its solder jumpers (R5 + R8 on the tested module).
-
-> **Note:** VCC_IN requires 5V (not 3.3V) — the module has an onboard boost converter that needs 5V input.
+| Option | Value |
+|--------|-------|
+| `rows` | 64 |
+| `cols` | 128 |
+| `hardware_mapping` | `adafruit-hat` |
+| `led_rgb_sequence` | `BRG` |
+| `gpio_slowdown` | 5 |
