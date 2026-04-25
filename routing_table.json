@@ -13,7 +13,7 @@
   "0784__??": {
     "berth": "0784",
     "direction": "??",
-    "n_trains": 55,
+    "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -24,11 +24,11 @@
   "0784__EB": {
     "berth": "0784",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 224.5,
-    "eta_std": 36.9,
+    "eta_std": 36.8,
     "eta_min": 198.9,
     "eta_max": 702.2
   },
@@ -68,11 +68,11 @@
   "0792__EB": {
     "berth": "0792",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 262.0,
-    "eta_std": 39.8,
+    "eta_std": 39.7,
     "eta_min": 236.2,
     "eta_max": 778.6
   },
@@ -134,11 +134,11 @@
   "0800__EB": {
     "berth": "0800",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
-    "eta_mean": 300.1,
-    "eta_std": 41.8,
+    "eta_mean": 300.0,
+    "eta_std": 41.7,
     "eta_min": 273.6,
     "eta_max": 856.2
   },
@@ -200,11 +200,11 @@
   "0808__EB": {
     "berth": "0808",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 338.8,
-    "eta_std": 44.1,
+    "eta_std": 44.0,
     "eta_min": 310.4,
     "eta_max": 939.2
   },
@@ -277,11 +277,11 @@
   "0816__EB": {
     "berth": "0816",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
-    "eta_mean": 378.6,
-    "eta_std": 47.9,
+    "eta_mean": 378.5,
+    "eta_std": 47.7,
     "eta_min": 348.1,
     "eta_max": 1029.1
   },
@@ -299,7 +299,7 @@
   "0818__??": {
     "berth": "0818",
     "direction": "??",
-    "n_trains": 618,
+    "n_trains": 619,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -354,11 +354,11 @@
   "0824__EB": {
     "berth": "0824",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
-    "eta_mean": 421.6,
-    "eta_std": 51.0,
+    "eta_mean": 421.5,
+    "eta_std": 50.9,
     "eta_min": 385.9,
     "eta_max": 1131.1
   },
@@ -376,7 +376,7 @@
   "0826__??": {
     "berth": "0826",
     "direction": "??",
-    "n_trains": 618,
+    "n_trains": 619,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -420,7 +420,7 @@
   "0839__??": {
     "berth": "0839",
     "direction": "??",
-    "n_trains": 854,
+    "n_trains": 855,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -442,7 +442,7 @@
   "0845__??": {
     "berth": "0845",
     "direction": "??",
-    "n_trains": 391,
+    "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -453,7 +453,7 @@
   "0847__??": {
     "berth": "0847",
     "direction": "??",
-    "n_trains": 391,
+    "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -563,7 +563,7 @@
   "1612__??": {
     "berth": "1612",
     "direction": "??",
-    "n_trains": 775,
+    "n_trains": 776,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -585,7 +585,7 @@
   "1616__??": {
     "berth": "1616",
     "direction": "??",
-    "n_trains": 775,
+    "n_trains": 776,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -607,7 +607,7 @@
   "1620__??": {
     "berth": "1620",
     "direction": "??",
-    "n_trains": 775,
+    "n_trains": 776,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -618,7 +618,7 @@
   "1621__??": {
     "berth": "1621",
     "direction": "??",
-    "n_trains": 336,
+    "n_trains": 335,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -629,18 +629,18 @@
   "1621__WB": {
     "berth": "1621",
     "direction": "WB",
-    "n_trains": 799,
-    "n_visible": 799,
+    "n_trains": 805,
+    "n_visible": 805,
     "p_visible": 1.0,
-    "eta_mean": 613.8,
-    "eta_std": 136.7,
+    "eta_mean": 613.9,
+    "eta_std": 136.3,
     "eta_min": 292.5,
     "eta_max": 1781.2
   },
   "1622__??": {
     "berth": "1622",
     "direction": "??",
-    "n_trains": 784,
+    "n_trains": 785,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -651,7 +651,7 @@
   "1623__??": {
     "berth": "1623",
     "direction": "??",
-    "n_trains": 760,
+    "n_trains": 762,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -673,7 +673,7 @@
   "1624__??": {
     "berth": "1624",
     "direction": "??",
-    "n_trains": 784,
+    "n_trains": 785,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -684,7 +684,7 @@
   "1625__??": {
     "berth": "1625",
     "direction": "??",
-    "n_trains": 337,
+    "n_trains": 336,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -695,11 +695,11 @@
   "1625__WB": {
     "berth": "1625",
     "direction": "WB",
-    "n_trains": 800,
-    "n_visible": 800,
+    "n_trains": 806,
+    "n_visible": 806,
     "p_visible": 1.0,
     "eta_mean": 591.3,
-    "eta_std": 136.1,
+    "eta_std": 135.8,
     "eta_min": 271.7,
     "eta_max": 1760.0
   },
@@ -717,7 +717,7 @@
   "1627__??": {
     "berth": "1627",
     "direction": "??",
-    "n_trains": 760,
+    "n_trains": 762,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -739,7 +739,7 @@
   "1628__??": {
     "berth": "1628",
     "direction": "??",
-    "n_trains": 783,
+    "n_trains": 784,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -750,7 +750,7 @@
   "1629__??": {
     "berth": "1629",
     "direction": "??",
-    "n_trains": 315,
+    "n_trains": 314,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -761,18 +761,18 @@
   "1629__WB": {
     "berth": "1629",
     "direction": "WB",
-    "n_trains": 800,
-    "n_visible": 800,
+    "n_trains": 806,
+    "n_visible": 806,
     "p_visible": 1.0,
     "eta_mean": 567.0,
-    "eta_std": 135.6,
+    "eta_std": 135.2,
     "eta_min": 249.0,
     "eta_max": 1737.2
   },
   "1630__??": {
     "berth": "1630",
     "direction": "??",
-    "n_trains": 794,
+    "n_trains": 795,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -783,7 +783,7 @@
   "1631__??": {
     "berth": "1631",
     "direction": "??",
-    "n_trains": 782,
+    "n_trains": 784,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -805,7 +805,7 @@
   "1632__??": {
     "berth": "1632",
     "direction": "??",
-    "n_trains": 250,
+    "n_trains": 251,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -816,7 +816,7 @@
   "1633__??": {
     "berth": "1633",
     "direction": "??",
-    "n_trains": 315,
+    "n_trains": 314,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -827,18 +827,18 @@
   "1633__WB": {
     "berth": "1633",
     "direction": "WB",
-    "n_trains": 800,
-    "n_visible": 800,
+    "n_trains": 806,
+    "n_visible": 806,
     "p_visible": 1.0,
-    "eta_mean": 535.9,
-    "eta_std": 134.2,
+    "eta_mean": 535.8,
+    "eta_std": 133.8,
     "eta_min": 219.2,
     "eta_max": 1706.7
   },
   "1635__??": {
     "berth": "1635",
     "direction": "??",
-    "n_trains": 782,
+    "n_trains": 784,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -860,7 +860,7 @@
   "1636__??": {
     "berth": "1636",
     "direction": "??",
-    "n_trains": 248,
+    "n_trains": 249,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -871,7 +871,7 @@
   "1637__??": {
     "berth": "1637",
     "direction": "??",
-    "n_trains": 781,
+    "n_trains": 783,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -915,7 +915,7 @@
   "1642__??": {
     "berth": "1642",
     "direction": "??",
-    "n_trains": 788,
+    "n_trains": 789,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -926,7 +926,7 @@
   "1643__??": {
     "berth": "1643",
     "direction": "??",
-    "n_trains": 250,
+    "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -937,7 +937,7 @@
   "1644__??": {
     "berth": "1644",
     "direction": "??",
-    "n_trains": 781,
+    "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -959,7 +959,7 @@
   "1648__??": {
     "berth": "1648",
     "direction": "??",
-    "n_trains": 781,
+    "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -981,7 +981,7 @@
   "1652__??": {
     "berth": "1652",
     "direction": "??",
-    "n_trains": 781,
+    "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1003,7 +1003,7 @@
   "1655__??": {
     "berth": "1655",
     "direction": "??",
-    "n_trains": 315,
+    "n_trains": 314,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1014,18 +1014,18 @@
   "1655__WB": {
     "berth": "1655",
     "direction": "WB",
-    "n_trains": 800,
-    "n_visible": 800,
+    "n_trains": 806,
+    "n_visible": 806,
     "p_visible": 1.0,
-    "eta_mean": 513.0,
-    "eta_std": 132.2,
+    "eta_mean": 512.9,
+    "eta_std": 131.9,
     "eta_min": 198.2,
     "eta_max": 1683.5
   },
   "1657__??": {
     "berth": "1657",
     "direction": "??",
-    "n_trains": 782,
+    "n_trains": 783,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1058,7 +1058,7 @@
   "1659__??": {
     "berth": "1659",
     "direction": "??",
-    "n_trains": 319,
+    "n_trains": 318,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1069,18 +1069,18 @@
   "1659__WB": {
     "berth": "1659",
     "direction": "WB",
-    "n_trains": 808,
-    "n_visible": 808,
+    "n_trains": 814,
+    "n_visible": 814,
     "p_visible": 1.0,
-    "eta_mean": 493.5,
-    "eta_std": 129.8,
+    "eta_mean": 493.3,
+    "eta_std": 129.4,
     "eta_min": 180.4,
     "eta_max": 1662.5
   },
   "1660__??": {
     "berth": "1660",
     "direction": "??",
-    "n_trains": 781,
+    "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1091,7 +1091,7 @@
   "1661__??": {
     "berth": "1661",
     "direction": "??",
-    "n_trains": 785,
+    "n_trains": 786,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1124,7 +1124,7 @@
   "1663__??": {
     "berth": "1663",
     "direction": "??",
-    "n_trains": 320,
+    "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1135,18 +1135,18 @@
   "1663__WB": {
     "berth": "1663",
     "direction": "WB",
-    "n_trains": 808,
-    "n_visible": 808,
+    "n_trains": 814,
+    "n_visible": 814,
     "p_visible": 1.0,
-    "eta_mean": 460.9,
-    "eta_std": 126.4,
+    "eta_mean": 460.6,
+    "eta_std": 126.0,
     "eta_min": 151.5,
     "eta_max": 1632.1
   },
   "1664__??": {
     "berth": "1664",
     "direction": "??",
-    "n_trains": 781,
+    "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1157,7 +1157,7 @@
   "1665__??": {
     "berth": "1665",
     "direction": "??",
-    "n_trains": 785,
+    "n_trains": 786,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1190,7 +1190,7 @@
   "1667__??": {
     "berth": "1667",
     "direction": "??",
-    "n_trains": 320,
+    "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1201,18 +1201,18 @@
   "1667__WB": {
     "berth": "1667",
     "direction": "WB",
-    "n_trains": 808,
-    "n_visible": 808,
+    "n_trains": 814,
+    "n_visible": 814,
     "p_visible": 1.0,
-    "eta_mean": 430.5,
-    "eta_std": 122.6,
+    "eta_mean": 430.2,
+    "eta_std": 122.3,
     "eta_min": 126.6,
     "eta_max": 1607.6
   },
   "1668__??": {
     "berth": "1668",
     "direction": "??",
-    "n_trains": 781,
+    "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1223,7 +1223,7 @@
   "1669__??": {
     "berth": "1669",
     "direction": "??",
-    "n_trains": 785,
+    "n_trains": 786,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1278,7 +1278,7 @@
   "1675__??": {
     "berth": "1675",
     "direction": "??",
-    "n_trains": 320,
+    "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1289,18 +1289,18 @@
   "1675__WB": {
     "berth": "1675",
     "direction": "WB",
-    "n_trains": 808,
-    "n_visible": 808,
+    "n_trains": 814,
+    "n_visible": 814,
     "p_visible": 1.0,
-    "eta_mean": 404.6,
-    "eta_std": 119.8,
+    "eta_mean": 404.4,
+    "eta_std": 119.5,
     "eta_min": 105.5,
     "eta_max": 1587.3
   },
   "1676__??": {
     "berth": "1676",
     "direction": "??",
-    "n_trains": 743,
+    "n_trains": 744,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1311,7 +1311,7 @@
   "1677__??": {
     "berth": "1677",
     "direction": "??",
-    "n_trains": 767,
+    "n_trains": 768,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1355,7 +1355,7 @@
   "1682__??": {
     "berth": "1682",
     "direction": "??",
-    "n_trains": 122,
+    "n_trains": 123,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1399,7 +1399,7 @@
   "1685__??": {
     "berth": "1685",
     "direction": "??",
-    "n_trains": 312,
+    "n_trains": 311,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1410,11 +1410,11 @@
   "1685__WB": {
     "berth": "1685",
     "direction": "WB",
-    "n_trains": 816,
-    "n_visible": 816,
+    "n_trains": 822,
+    "n_visible": 822,
     "p_visible": 1.0,
-    "eta_mean": 361.7,
-    "eta_std": 124.5,
+    "eta_mean": 361.5,
+    "eta_std": 124.2,
     "eta_min": 75.2,
     "eta_max": 1568.6
   },
@@ -1432,7 +1432,7 @@
   "1687__??": {
     "berth": "1687",
     "direction": "??",
-    "n_trains": 758,
+    "n_trains": 759,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1542,7 +1542,7 @@
   "1697__??": {
     "berth": "1697",
     "direction": "??",
-    "n_trains": 290,
+    "n_trains": 291,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1553,7 +1553,7 @@
   "1698__??": {
     "berth": "1698",
     "direction": "??",
-    "n_trains": 409,
+    "n_trains": 410,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1608,7 +1608,7 @@
   "1706__??": {
     "berth": "1706",
     "direction": "??",
-    "n_trains": 426,
+    "n_trains": 427,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1619,7 +1619,7 @@
   "1707__??": {
     "berth": "1707",
     "direction": "??",
-    "n_trains": 317,
+    "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1652,11 +1652,11 @@
   "1709__WB": {
     "berth": "1709",
     "direction": "WB",
-    "n_trains": 224,
-    "n_visible": 224,
+    "n_trains": 227,
+    "n_visible": 227,
     "p_visible": 1.0,
-    "eta_mean": 309.2,
-    "eta_std": 114.7,
+    "eta_mean": 308.9,
+    "eta_std": 114.0,
     "eta_min": 109.5,
     "eta_max": 1137.7
   },
@@ -1674,11 +1674,11 @@
   "1711__WB": {
     "berth": "1711",
     "direction": "WB",
-    "n_trains": 606,
-    "n_visible": 606,
+    "n_trains": 609,
+    "n_visible": 609,
     "p_visible": 1.0,
-    "eta_mean": 292.6,
-    "eta_std": 99.6,
+    "eta_mean": 292.7,
+    "eta_std": 99.5,
     "eta_min": 47.9,
     "eta_max": 1416.5
   },
@@ -1707,7 +1707,7 @@
   "1716__??": {
     "berth": "1716",
     "direction": "??",
-    "n_trains": 468,
+    "n_trains": 469,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1773,7 +1773,7 @@
   "1721__??": {
     "berth": "1721",
     "direction": "??",
-    "n_trains": 308,
+    "n_trains": 309,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1806,8 +1806,8 @@
   "1724__EB": {
     "berth": "1724",
     "direction": "EB",
-    "n_trains": 820,
-    "n_visible": 820,
+    "n_trains": 825,
+    "n_visible": 825,
     "p_visible": 1.0,
     "eta_mean": null,
     "eta_std": null,
@@ -1828,7 +1828,7 @@
   "1727__??": {
     "berth": "1727",
     "direction": "??",
-    "n_trains": 713,
+    "n_trains": 714,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1872,7 +1872,7 @@
   "1731__??": {
     "berth": "1731",
     "direction": "??",
-    "n_trains": 114,
+    "n_trains": 115,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1905,8 +1905,8 @@
   "1733__WB": {
     "berth": "1733",
     "direction": "WB",
-    "n_trains": 813,
-    "n_visible": 813,
+    "n_trains": 819,
+    "n_visible": 819,
     "p_visible": 1.0,
     "eta_mean": 58.4,
     "eta_std": 12.7,
@@ -1960,7 +1960,7 @@
   "1741__??": {
     "berth": "1741",
     "direction": "??",
-    "n_trains": 114,
+    "n_trains": 115,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -1982,22 +1982,22 @@
   "1742__EB": {
     "berth": "1742",
     "direction": "EB",
-    "n_trains": 820,
-    "n_visible": 820,
+    "n_trains": 825,
+    "n_visible": 825,
     "p_visible": 1.0,
     "eta_mean": 28.2,
-    "eta_std": 9.2,
+    "eta_std": 9.1,
     "eta_min": 0.7,
     "eta_max": 142.2
   },
   "1743__WB": {
     "berth": "1743",
     "direction": "WB",
-    "n_trains": 865,
-    "n_visible": 865,
+    "n_trains": 871,
+    "n_visible": 871,
     "p_visible": 1.0,
     "eta_mean": 20.5,
-    "eta_std": 5.0,
+    "eta_std": 4.9,
     "eta_min": 11.1,
     "eta_max": 69.6
   },
@@ -2081,11 +2081,11 @@
   "1752__EB": {
     "berth": "1752",
     "direction": "EB",
-    "n_trains": 820,
-    "n_visible": 820,
+    "n_trains": 825,
+    "n_visible": 825,
     "p_visible": 1.0,
     "eta_mean": 54.1,
-    "eta_std": 14.5,
+    "eta_std": 14.4,
     "eta_min": 1.2,
     "eta_max": 233.7
   },
@@ -2125,8 +2125,8 @@
   "1757__WB": {
     "berth": "1757",
     "direction": "WB",
-    "n_trains": 865,
-    "n_visible": 865,
+    "n_trains": 871,
+    "n_visible": 871,
     "p_visible": 1.0,
     "eta_mean": null,
     "eta_std": null,
@@ -2136,7 +2136,7 @@
   "1758__??": {
     "berth": "1758",
     "direction": "??",
-    "n_trains": 55,
+    "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2147,11 +2147,11 @@
   "1758__EB": {
     "berth": "1758",
     "direction": "EB",
-    "n_trains": 820,
-    "n_visible": 820,
+    "n_trains": 825,
+    "n_visible": 825,
     "p_visible": 1.0,
-    "eta_mean": 101.4,
-    "eta_std": 25.5,
+    "eta_mean": 101.3,
+    "eta_std": 25.4,
     "eta_min": 2.0,
     "eta_max": 448.4
   },
@@ -2169,7 +2169,7 @@
   "1759__??": {
     "berth": "1759",
     "direction": "??",
-    "n_trains": 633,
+    "n_trains": 634,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2213,7 +2213,7 @@
   "1764__??": {
     "berth": "1764",
     "direction": "??",
-    "n_trains": 55,
+    "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2224,11 +2224,11 @@
   "1764__EB": {
     "berth": "1764",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
-    "eta_mean": 150.5,
-    "eta_std": 32.5,
+    "eta_mean": 150.4,
+    "eta_std": 32.4,
     "eta_min": 128.6,
     "eta_max": 543.1
   },
@@ -2257,7 +2257,7 @@
   "1769__??": {
     "berth": "1769",
     "direction": "??",
-    "n_trains": 633,
+    "n_trains": 634,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2279,7 +2279,7 @@
   "1772__??": {
     "berth": "1772",
     "direction": "??",
-    "n_trains": 55,
+    "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2290,11 +2290,11 @@
   "1772__EB": {
     "berth": "1772",
     "direction": "EB",
-    "n_trains": 819,
-    "n_visible": 819,
+    "n_trains": 824,
+    "n_visible": 824,
     "p_visible": 1.0,
-    "eta_mean": 187.7,
-    "eta_std": 34.7,
+    "eta_mean": 187.6,
+    "eta_std": 34.6,
     "eta_min": 162.2,
     "eta_max": 628.2
   },
@@ -2334,7 +2334,7 @@
   "1777__??": {
     "berth": "1777",
     "direction": "??",
-    "n_trains": 626,
+    "n_trains": 627,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2378,7 +2378,7 @@
   "2778__??": {
     "berth": "2778",
     "direction": "??",
-    "n_trains": 533,
+    "n_trains": 535,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2400,7 +2400,7 @@
   "2782__??": {
     "berth": "2782",
     "direction": "??",
-    "n_trains": 544,
+    "n_trains": 546,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2411,7 +2411,7 @@
   "2783__??": {
     "berth": "2783",
     "direction": "??",
-    "n_trains": 536,
+    "n_trains": 538,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2433,7 +2433,7 @@
   "2785__??": {
     "berth": "2785",
     "direction": "??",
-    "n_trains": 530,
+    "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2444,7 +2444,7 @@
   "2787__??": {
     "berth": "2787",
     "direction": "??",
-    "n_trains": 484,
+    "n_trains": 486,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2466,7 +2466,7 @@
   "2801__??": {
     "berth": "2801",
     "direction": "??",
-    "n_trains": 794,
+    "n_trains": 795,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2477,7 +2477,7 @@
   "2802__??": {
     "berth": "2802",
     "direction": "??",
-    "n_trains": 1038,
+    "n_trains": 1039,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2521,7 +2521,7 @@
   "2805__??": {
     "berth": "2805",
     "direction": "??",
-    "n_trains": 95,
+    "n_trains": 96,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2532,7 +2532,7 @@
   "2806__??": {
     "berth": "2806",
     "direction": "??",
-    "n_trains": 1034,
+    "n_trains": 1035,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2565,7 +2565,7 @@
   "2809__??": {
     "berth": "2809",
     "direction": "??",
-    "n_trains": 1072,
+    "n_trains": 1074,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2576,7 +2576,7 @@
   "2812__??": {
     "berth": "2812",
     "direction": "??",
-    "n_trains": 531,
+    "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2587,7 +2587,7 @@
   "2815__??": {
     "berth": "2815",
     "direction": "??",
-    "n_trains": 1065,
+    "n_trains": 1068,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2598,7 +2598,7 @@
   "2817__??": {
     "berth": "2817",
     "direction": "??",
-    "n_trains": 535,
+    "n_trains": 536,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2609,7 +2609,7 @@
   "2824__??": {
     "berth": "2824",
     "direction": "??",
-    "n_trains": 531,
+    "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2620,7 +2620,7 @@
   "2826__??": {
     "berth": "2826",
     "direction": "??",
-    "n_trains": 531,
+    "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2642,7 +2642,7 @@
   "2829__??": {
     "berth": "2829",
     "direction": "??",
-    "n_trains": 535,
+    "n_trains": 536,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2664,7 +2664,7 @@
   "2831__??": {
     "berth": "2831",
     "direction": "??",
-    "n_trains": 535,
+    "n_trains": 536,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2686,7 +2686,7 @@
   "2834__??": {
     "berth": "2834",
     "direction": "??",
-    "n_trains": 528,
+    "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2708,7 +2708,7 @@
   "2836__??": {
     "berth": "2836",
     "direction": "??",
-    "n_trains": 528,
+    "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2719,7 +2719,7 @@
   "2837__??": {
     "berth": "2837",
     "direction": "??",
-    "n_trains": 527,
+    "n_trains": 528,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2741,7 +2741,7 @@
   "2840__??": {
     "berth": "2840",
     "direction": "??",
-    "n_trains": 529,
+    "n_trains": 530,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2752,7 +2752,7 @@
   "2841__??": {
     "berth": "2841",
     "direction": "??",
-    "n_trains": 532,
+    "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2763,7 +2763,7 @@
   "2842__??": {
     "berth": "2842",
     "direction": "??",
-    "n_trains": 528,
+    "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2774,7 +2774,7 @@
   "2844__??": {
     "berth": "2844",
     "direction": "??",
-    "n_trains": 528,
+    "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2796,7 +2796,7 @@
   "2846__??": {
     "berth": "2846",
     "direction": "??",
-    "n_trains": 528,
+    "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2807,7 +2807,7 @@
   "2848__??": {
     "berth": "2848",
     "direction": "??",
-    "n_trains": 528,
+    "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2818,7 +2818,7 @@
   "2849__??": {
     "berth": "2849",
     "direction": "??",
-    "n_trains": 532,
+    "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2829,7 +2829,7 @@
   "2851__??": {
     "berth": "2851",
     "direction": "??",
-    "n_trains": 532,
+    "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2851,7 +2851,7 @@
   "2853__??": {
     "berth": "2853",
     "direction": "??",
-    "n_trains": 532,
+    "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2873,7 +2873,7 @@
   "2855__??": {
     "berth": "2855",
     "direction": "??",
-    "n_trains": 533,
+    "n_trains": 534,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2884,7 +2884,7 @@
   "2856__??": {
     "berth": "2856",
     "direction": "??",
-    "n_trains": 437,
+    "n_trains": 438,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2895,7 +2895,7 @@
   "2857__??": {
     "berth": "2857",
     "direction": "??",
-    "n_trains": 533,
+    "n_trains": 534,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2906,7 +2906,7 @@
   "2859__??": {
     "berth": "2859",
     "direction": "??",
-    "n_trains": 532,
+    "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2928,7 +2928,7 @@
   "2862__??": {
     "berth": "2862",
     "direction": "??",
-    "n_trains": 215,
+    "n_trains": 216,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2939,7 +2939,7 @@
   "2865__??": {
     "berth": "2865",
     "direction": "??",
-    "n_trains": 514,
+    "n_trains": 515,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2961,7 +2961,7 @@
   "2868__??": {
     "berth": "2868",
     "direction": "??",
-    "n_trains": 392,
+    "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -2972,7 +2972,7 @@
   "2870__??": {
     "berth": "2870",
     "direction": "??",
-    "n_trains": 392,
+    "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3126,7 +3126,7 @@
   "A641__??": {
     "berth": "A641",
     "direction": "??",
-    "n_trains": 244,
+    "n_trains": 246,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3181,7 +3181,7 @@
   "A786__??": {
     "berth": "A786",
     "direction": "??",
-    "n_trains": 160,
+    "n_trains": 161,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3192,7 +3192,7 @@
   "A788__??": {
     "berth": "A788",
     "direction": "??",
-    "n_trains": 170,
+    "n_trains": 172,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3225,7 +3225,7 @@
   "B501__??": {
     "berth": "B501",
     "direction": "??",
-    "n_trains": 531,
+    "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3280,7 +3280,7 @@
   "B786__??": {
     "berth": "B786",
     "direction": "??",
-    "n_trains": 160,
+    "n_trains": 161,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3291,7 +3291,7 @@
   "B788__??": {
     "berth": "B788",
     "direction": "??",
-    "n_trains": 165,
+    "n_trains": 167,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3313,7 +3313,7 @@
   "BYDN__??": {
     "berth": "BYDN",
     "direction": "??",
-    "n_trains": 248,
+    "n_trains": 250,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3324,7 +3324,7 @@
   "BYUP__??": {
     "berth": "BYUP",
     "direction": "??",
-    "n_trains": 248,
+    "n_trains": 249,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3544,7 +3544,7 @@
   "K103__??": {
     "berth": "K103",
     "direction": "??",
-    "n_trains": 392,
+    "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3555,7 +3555,7 @@
   "K105__??": {
     "berth": "K105",
     "direction": "??",
-    "n_trains": 392,
+    "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3566,7 +3566,7 @@
   "R641__??": {
     "berth": "R641",
     "direction": "??",
-    "n_trains": 245,
+    "n_trains": 246,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3610,7 +3610,7 @@
   "R786__??": {
     "berth": "R786",
     "direction": "??",
-    "n_trains": 161,
+    "n_trains": 162,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3621,7 +3621,7 @@
   "R788__??": {
     "berth": "R788",
     "direction": "??",
-    "n_trains": 173,
+    "n_trains": 174,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3643,7 +3643,7 @@
   "R864__??": {
     "berth": "R864",
     "direction": "??",
-    "n_trains": 129,
+    "n_trains": 130,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3709,7 +3709,7 @@
   "UW57__??": {
     "berth": "UW57",
     "direction": "??",
-    "n_trains": 392,
+    "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3720,7 +3720,7 @@
   "UW63__??": {
     "berth": "UW63",
     "direction": "??",
-    "n_trains": 391,
+    "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
@@ -3731,7 +3731,7 @@
   "UW64__??": {
     "berth": "UW64",
     "direction": "??",
-    "n_trains": 391,
+    "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
