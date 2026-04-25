@@ -32,6 +32,12 @@ VISIBLE_EB = "1724"
 VISIBLE_BERTHS = {VISIBLE_WB, VISIBLE_EB}
 RUN_GAP_SECS   = 3 * 3600   # gap between two appearances of same headcode = new run
 
+# Train classes used in the segmented routing table
+TRAIN_CLASSES = ("passenger_express", "passenger_local", "ecs", "freight")
+
+# Threshold: stops after Reading that separates express from local passenger
+LOCAL_STOPS_THRESHOLD = 3
+
 
 # ── Data loading ──────────────────────────────────────────────────────────────
 
@@ -46,6 +52,76 @@ def load_td(data_dir: str) -> pd.DataFrame:
           f"({df['ts'].min().strftime('%Y-%m-%d %H:%M')} → "
           f"{df['ts'].max().strftime('%Y-%m-%d %H:%M')})")
     return df
+
+
+def classify_headcodes(headcodes: set) -> dict:
+    """
+    Return a dict mapping each headcode to one of:
+      'freight'           — headcode first digit in 0, 4, 6
+      'ecs'               — headcode first digit 5 (empty coaching stock)
+      'passenger_express' — passenger train with ≤LOCAL_STOPS_THRESHOLD stops after Reading
+      'passenger_local'   — passenger train with more stops after Reading
+
+    Passenger express/local distinction comes from the CIF schedule DB.
+    Falls back to 'passenger_express' for any headcode not found in the DB.
+    """
+    conn = schedule_db.db_connect()
+    result = {}
+
+    for hc in headcodes:
+        if not hc or hc == "????":
+            result[hc] = "passenger_express"
+            continue
+        first = hc[0]
+        if first in "046":
+            result[hc] = "freight"
+            continue
+        if first == "5":
+            result[hc] = "ecs"
+            continue
+
+        # Passenger — look up stops after Reading in the CIF schedule
+        found = False
+        for offset in range(10):
+            d = (date.today() - timedelta(days=offset)).isoformat()
+            row = conn.execute(
+                """
+                SELECT uid, stp_indicator, start_date FROM schedules
+                WHERE headcode = ? AND start_date <= ? AND end_date >= ?
+                ORDER BY CASE stp_indicator WHEN 'N' THEN 0 WHEN 'O' THEN 1
+                                            WHEN 'P' THEN 2 ELSE 3 END
+                LIMIT 1
+                """,
+                (hc, d, d),
+            ).fetchone()
+            if not row:
+                continue
+            locs = conn.execute(
+                "SELECT tiploc, arrival, departure FROM schedule_locations "
+                "WHERE uid=? AND stp_indicator=? AND start_date=? ORDER BY seq",
+                (row["uid"], row["stp_indicator"], row["start_date"]),
+            ).fetchall()
+            rdng_idx = next(
+                (i for i, l in enumerate(locs) if l["tiploc"] == "RDNGSTN"), None
+            )
+            if rdng_idx is not None:
+                stops_after = sum(
+                    1 for l in locs[rdng_idx + 1:]
+                    if l["arrival"] or l["departure"]
+                )
+                result[hc] = (
+                    "passenger_local"
+                    if stops_after > LOCAL_STOPS_THRESHOLD
+                    else "passenger_express"
+                )
+                found = True
+                break
+
+        if not found:
+            result[hc] = "passenger_express"
+
+    conn.close()
+    return result
 
 
 def load_destinations(headcodes: set) -> dict:
@@ -139,10 +215,12 @@ def analyse(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     # Direction for non-visible trains: unknown ("??")
     df_before["direction"] = df_before["direction"].fillna("??")
 
-    # Load destinations
-    all_hc   = set(df_before["headcode"].unique())
-    dest_map = load_destinations(all_hc)
-    df_before["destination"] = df_before["headcode"].map(dest_map).fillna("(unknown)")
+    # Load destinations and classify train types
+    all_hc    = set(df_before["headcode"].unique())
+    dest_map  = load_destinations(all_hc)
+    class_map = classify_headcodes(all_hc)
+    df_before["destination"]  = df_before["headcode"].map(dest_map).fillna("(unknown)")
+    df_before["train_class"]  = df_before["headcode"].map(class_map).fillna("passenger_express")
 
     # ── Per (berth, direction) stats ──────────────────────────────────────────
     def berth_agg(grp):
@@ -170,6 +248,13 @@ def analyse(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
                  .reset_index()
     )
 
+    # ── Per (berth, direction, train_class) stats ─────────────────────────────
+    class_df = (
+        df_before.groupby(["to_berth", "direction", "train_class"])
+                 .apply(berth_agg, include_groups=False)
+                 .reset_index()
+    )
+
     # ── Per (berth, direction, destination) stats ─────────────────────────────
     dest_df = (
         df_before.groupby(["to_berth", "direction", "destination"])
@@ -177,7 +262,7 @@ def analyse(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
                  .reset_index()
     )
 
-    return berth_df, dest_df, df_before
+    return berth_df, class_df, dest_df, df_before
 
 
 # ── Output helpers ────────────────────────────────────────────────────────────
@@ -242,29 +327,60 @@ def print_dest_table(dest_df: pd.DataFrame, berth: str, direction: str, min_samp
         tablefmt="simple"))
 
 
-def build_lookup_table(berth_df: pd.DataFrame, min_samples: int) -> dict:
+def _row_to_entry(r: pd.Series, extra: dict | None = None) -> dict:
+    entry = {
+        "n_trains":  int(r["n_trains"]),
+        "n_visible": int(r["n_visible"]),
+        "p_visible": round(float(r["p_visible"]), 3),
+        "eta_mean":  round(float(r["eta_mean"]), 1) if not pd.isna(r["eta_mean"]) else None,
+        "eta_std":   round(float(r["eta_std"]),  1) if not pd.isna(r["eta_std"])  else None,
+        "eta_min":   round(float(r["eta_min"]),  1) if not pd.isna(r["eta_min"])  else None,
+        "eta_max":   round(float(r["eta_max"]),  1) if not pd.isna(r["eta_max"])  else None,
+    }
+    if extra:
+        entry.update(extra)
+    return entry
+
+
+def build_lookup_table(
+    berth_df: pd.DataFrame,
+    class_df: pd.DataFrame,
+    min_samples: int,
+) -> dict:
     """
-    Build a JSON-serialisable lookup table:
-      { "BERTH__DIR": { p_visible, eta_mean, eta_std, n_trains } }
+    Build a JSON-serialisable lookup table with two tiers of keys:
+
+      "BERTH__DIR"             — overall stats across all train classes (backwards compat)
+      "BERTH__DIR__CLASS"      — per-class stats for more accurate predictions
 
     Suitable for direct use in the prediction engine.
     """
     lookup = {}
+
+    # Overall stats
     for _, r in berth_df.iterrows():
         if r["n_trains"] < min_samples:
             continue
         key = f"{r['to_berth']}__{r['direction']}"
-        lookup[key] = {
+        lookup[key] = _row_to_entry(r, {
             "berth":     r["to_berth"],
             "direction": r["direction"],
-            "n_trains":  int(r["n_trains"]),
-            "n_visible": int(r["n_visible"]),
-            "p_visible": round(float(r["p_visible"]), 3),
-            "eta_mean":  round(float(r["eta_mean"]), 1) if not pd.isna(r["eta_mean"]) else None,
-            "eta_std":   round(float(r["eta_std"]),  1) if not pd.isna(r["eta_std"])  else None,
-            "eta_min":   round(float(r["eta_min"]),  1) if not pd.isna(r["eta_min"])  else None,
-            "eta_max":   round(float(r["eta_max"]),  1) if not pd.isna(r["eta_max"])  else None,
-        }
+        })
+
+    # Per-class stats
+    for _, r in class_df.iterrows():
+        if r["n_trains"] < min_samples:
+            continue
+        # Only add directional class entries (WB/EB), not ??
+        if r["direction"] not in ("WB", "EB"):
+            continue
+        key = f"{r['to_berth']}__{r['direction']}__{r['train_class']}"
+        lookup[key] = _row_to_entry(r, {
+            "berth":       r["to_berth"],
+            "direction":   r["direction"],
+            "train_class": r["train_class"],
+        })
+
     return lookup
 
 
@@ -281,7 +397,7 @@ def main():
     # ── Load & analyse ────────────────────────────────────────────────────────
     df = load_td(args.data)
     print("Analysing runs...")
-    berth_df, dest_df, df_before = analyse(df)
+    berth_df, class_df, dest_df, df_before = analyse(df)
 
     n_runs    = df_before["run_id"].nunique()
     n_visible = berth_df.loc[berth_df["to_berth"].isin(VISIBLE_BERTHS), "n_trains"].sum()
@@ -352,8 +468,39 @@ def main():
                 print(f"\nBerth {berth} ({direction}, {p_str} visible, n={int(total)}):")
                 print_dest_table(dest_df, berth, direction, min_samples=1)
 
+    # ── Train class breakdown at the visible berths ───────────────────────────
+    print()
+    print("=" * 70)
+    print("TRAIN CLASS BREAKDOWN at visible berths")
+    print("=" * 70)
+    key_berths = [
+        (VISIBLE_WB, "WB"), (VISIBLE_EB, "EB"),
+        ("1621", "WB"), ("1709", "WB"), ("0824", "EB"),
+    ]
+    for berth, direction in key_berths:
+        sub = class_df[
+            (class_df["to_berth"] == berth) &
+            (class_df["direction"] == direction)
+        ]
+        if sub.empty:
+            continue
+        total = sub["n_trains"].sum()
+        print(f"\nBerth {berth} ({direction}, n={int(total)}):")
+        rows = []
+        for _, r in sub.sort_values("n_trains", ascending=False).iterrows():
+            rows.append([
+                r["train_class"],
+                int(r["n_trains"]),
+                f"{r['p_visible']*100:.0f}%",
+                fmt_secs(r["eta_mean"]),
+                fmt_secs(r["eta_std"]),
+            ])
+        print(tabulate(rows,
+            headers=["class", "n", "p_visible", "eta_mean", "eta_std"],
+            tablefmt="simple"))
+
     # ── JSON lookup table ─────────────────────────────────────────────────────
-    lookup = build_lookup_table(berth_df, args.min_samples)
+    lookup = build_lookup_table(berth_df, class_df, args.min_samples)
     with open(args.out, "w") as f:
         json.dump(lookup, f, indent=2)
     print(f"\nLookup table ({len(lookup)} entries) written to {args.out}")

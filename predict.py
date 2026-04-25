@@ -85,6 +85,36 @@ def _get_origin(locs):
     return locs[0]["tiploc"] if locs else None
 
 
+def _classify_train(headcode: str, locs: list) -> str:
+    """
+    Classify a train into one of four routing categories:
+      'freight'           — headcode first digit 0, 4, or 6
+      'ecs'               — headcode first digit 5 (empty coaching stock)
+      'passenger_local'   — passenger train with >3 stops after Reading
+      'passenger_express' — passenger train with ≤3 stops after Reading
+
+    Uses the schedule locations already loaded for this train, so no extra
+    DB query is needed.
+    """
+    if not headcode:
+        return "passenger_express"
+    first = headcode[0]
+    if first in "046":
+        return "freight"
+    if first == "5":
+        return "ecs"
+
+    # Passenger: count intermediate calling points after Reading
+    rdng_idx = next((i for i, l in enumerate(locs) if l["tiploc"] == "RDNGSTN"), None)
+    if rdng_idx is None:
+        return "passenger_express"
+    stops_after = sum(
+        1 for l in locs[rdng_idx + 1:]
+        if l["arrival"] or l["departure"]
+    )
+    return "passenger_local" if stops_after > 3 else "passenger_express"
+
+
 def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
     """
     Return up to n upcoming trains sorted by berth ETA.
@@ -172,6 +202,7 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
         headcode_str = s["headcode"] or "????"
         delay_secs   = trust_client.get_delay(headcode_str)
         source       = "SCHED"
+        train_class  = _classify_train(headcode_str, locs)
 
         # Check if the train is already in the TD area with a known routing
         pos = td_client.get_position(headcode_str)
@@ -179,8 +210,8 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
             berth = pos["berth"]
             if routing.is_off_path(berth):
                 continue  # confirmed not passing our section
-            if routing.is_on_path(berth, direction):
-                eta_s = routing.eta_secs(berth, direction)
+            if routing.is_on_path(berth, direction, train_class):
+                eta_s = routing.eta_secs(berth, direction, train_class)
                 if eta_s is not None:
                     eta    = pos["ts"] + timedelta(seconds=eta_s)
                     source = "TD"
@@ -235,6 +266,7 @@ def get_upcoming(n: int = 6, lookahead_mins: int = 120) -> list[dict]:
             "uid":          s["uid"],
             "delay_secs":   delay_secs,
             "source":       source,
+            "train_class":  train_class,
         })
 
     conn.close()

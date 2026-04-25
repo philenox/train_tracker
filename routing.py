@@ -13,8 +13,9 @@ import json
 import os
 from datetime import datetime
 
-ROUTING_TABLE_PATH  = "routing_table.json"
+ROUTING_TABLE_PATH   = "routing_table.json"
 OFF_PATH_MIN_SAMPLES = 5   # min observations to confidently call a berth off-path
+MIN_CLASS_SAMPLES    = 3   # min per-class observations before using class-specific stats
 
 _table: dict      = {}
 _loaded_at: datetime | None = None
@@ -35,34 +36,49 @@ def _load():
     _loaded_at   = datetime.now()
 
 
-def _entry(berth: str, direction: str) -> dict | None:
+def _entry(berth: str, direction: str, train_class: str | None = None) -> dict | None:
+    """
+    Look up a routing table entry.  If train_class is given, tries the
+    class-specific key first ("BERTH__DIR__CLASS"), then falls back to the
+    overall key ("BERTH__DIR") if the class entry is absent or has fewer than
+    MIN_CLASS_SAMPLES observations.
+    """
     _load()
+    if train_class:
+        class_key = f"{berth}__{direction}__{train_class}"
+        class_entry = _table.get(class_key)
+        if class_entry and class_entry.get("n_trains", 0) >= MIN_CLASS_SAMPLES:
+            return class_entry
     return _table.get(f"{berth}__{direction}")
 
 
-def lookup(berth: str, direction: str) -> dict | None:
-    """Return the full routing table entry for (berth, direction), or None."""
-    return _entry(berth, direction)
+def lookup(berth: str, direction: str, train_class: str | None = None) -> dict | None:
+    """Return the full routing table entry for (berth, direction[, class]), or None."""
+    return _entry(berth, direction, train_class)
 
 
-def eta_secs(berth: str, direction: str) -> float | None:
+def eta_secs(berth: str, direction: str, train_class: str | None = None) -> float | None:
     """Return mean ETA in seconds from this berth to the visible berth, or None."""
-    entry = _entry(berth, direction)
+    entry = _entry(berth, direction, train_class)
     return entry["eta_mean"] if entry and entry.get("eta_mean") is not None else None
 
 
-def p_visible(berth: str, direction: str) -> float | None:
+def p_visible(berth: str, direction: str, train_class: str | None = None) -> float | None:
     """Return fraction of observed trains from this berth that reached the visible berth."""
-    entry = _entry(berth, direction)
+    entry = _entry(berth, direction, train_class)
     return entry["p_visible"] if entry else None
 
 
-def is_on_path(berth: str, direction: str) -> bool:
+def is_on_path(berth: str, direction: str, train_class: str | None = None) -> bool:
     """
     True if this berth is in a known WB or EB chain leading to a visible berth
     with high confidence (p_visible >= 0.8, at least 2 observed samples).
+
+    When train_class is supplied the class-specific p_visible is used if the
+    entry has enough samples, giving more accurate predictions for freight,
+    ECS, and the express/local passenger split.
     """
-    entry = _entry(berth, direction)
+    entry = _entry(berth, direction, train_class)
     if not entry:
         return False
     return entry.get("p_visible", 0) >= 0.8 and entry.get("n_trains", 0) >= 2

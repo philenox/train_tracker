@@ -1,3874 +1,5698 @@
 {
   "0475__??": {
-    "berth": "0475",
-    "direction": "??",
     "n_trains": 140,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0475",
+    "direction": "??"
   },
   "0784__??": {
-    "berth": "0784",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0784",
+    "direction": "??"
   },
   "0784__EB": {
-    "berth": "0784",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 224.5,
     "eta_std": 36.8,
     "eta_min": 198.9,
-    "eta_max": 702.2
+    "eta_max": 702.2,
+    "berth": "0784",
+    "direction": "EB"
   },
   "0784__WB": {
-    "berth": "0784",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2197.5,
     "eta_std": 1092.3,
     "eta_min": 1425.1,
-    "eta_max": 2969.8
+    "eta_max": 2969.8,
+    "berth": "0784",
+    "direction": "WB"
   },
   "0786__??": {
-    "berth": "0786",
-    "direction": "??",
     "n_trains": 617,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0786",
+    "direction": "??"
   },
   "0792__??": {
-    "berth": "0792",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0792",
+    "direction": "??"
   },
   "0792__EB": {
-    "berth": "0792",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 262.0,
     "eta_std": 39.7,
     "eta_min": 236.2,
-    "eta_max": 778.6
+    "eta_max": 778.6,
+    "berth": "0792",
+    "direction": "EB"
   },
   "0792__WB": {
-    "berth": "0792",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2258.5,
     "eta_std": 1074.8,
     "eta_min": 1498.5,
-    "eta_max": 3018.5
+    "eta_max": 3018.5,
+    "berth": "0792",
+    "direction": "WB"
   },
   "0793__??": {
-    "berth": "0793",
-    "direction": "??",
     "n_trains": 23,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0793",
+    "direction": "??"
   },
   "0794__??": {
-    "berth": "0794",
-    "direction": "??",
     "n_trains": 619,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0794",
+    "direction": "??"
   },
   "0795__??": {
-    "berth": "0795",
-    "direction": "??",
     "n_trains": 616,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0795",
+    "direction": "??"
   },
   "0800__??": {
-    "berth": "0800",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0800",
+    "direction": "??"
   },
   "0800__EB": {
-    "berth": "0800",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 300.0,
     "eta_std": 41.7,
     "eta_min": 273.6,
-    "eta_max": 856.2
+    "eta_max": 856.2,
+    "berth": "0800",
+    "direction": "EB"
   },
   "0800__WB": {
-    "berth": "0800",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2320.8,
     "eta_std": 1056.4,
     "eta_min": 1573.8,
-    "eta_max": 3067.8
+    "eta_max": 3067.8,
+    "berth": "0800",
+    "direction": "WB"
   },
   "0802__??": {
-    "berth": "0802",
-    "direction": "??",
     "n_trains": 619,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0802",
+    "direction": "??"
   },
   "0805__??": {
-    "berth": "0805",
-    "direction": "??",
     "n_trains": 25,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0805",
+    "direction": "??"
   },
   "0807__??": {
-    "berth": "0807",
-    "direction": "??",
     "n_trains": 853,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0807",
+    "direction": "??"
   },
   "0808__??": {
-    "berth": "0808",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0808",
+    "direction": "??"
   },
   "0808__EB": {
-    "berth": "0808",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 338.8,
     "eta_std": 44.0,
     "eta_min": 310.4,
-    "eta_max": 939.2
+    "eta_max": 939.2,
+    "berth": "0808",
+    "direction": "EB"
   },
   "0808__WB": {
-    "berth": "0808",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2384.3,
     "eta_std": 1037.2,
     "eta_min": 1650.9,
-    "eta_max": 3117.8
+    "eta_max": 3117.8,
+    "berth": "0808",
+    "direction": "WB"
   },
   "0810__??": {
-    "berth": "0810",
-    "direction": "??",
     "n_trains": 619,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0810",
+    "direction": "??"
   },
   "0811__??": {
-    "berth": "0811",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0811",
+    "direction": "??"
   },
   "0813__??": {
-    "berth": "0813",
-    "direction": "??",
     "n_trains": 25,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0813",
+    "direction": "??"
   },
   "0815__??": {
-    "berth": "0815",
-    "direction": "??",
     "n_trains": 617,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0815",
+    "direction": "??"
   },
   "0816__??": {
-    "berth": "0816",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0816",
+    "direction": "??"
   },
   "0816__EB": {
-    "berth": "0816",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 378.5,
     "eta_std": 47.7,
     "eta_min": 348.1,
-    "eta_max": 1029.1
+    "eta_max": 1029.1,
+    "berth": "0816",
+    "direction": "EB"
   },
   "0816__WB": {
-    "berth": "0816",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2447.1,
     "eta_std": 1018.7,
     "eta_min": 1726.8,
-    "eta_max": 3167.4
+    "eta_max": 3167.4,
+    "berth": "0816",
+    "direction": "WB"
   },
   "0818__??": {
-    "berth": "0818",
-    "direction": "??",
     "n_trains": 619,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0818",
+    "direction": "??"
   },
   "0819__??": {
-    "berth": "0819",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0819",
+    "direction": "??"
   },
   "0821__??": {
-    "berth": "0821",
-    "direction": "??",
     "n_trains": 25,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0821",
+    "direction": "??"
   },
   "0823__??": {
-    "berth": "0823",
-    "direction": "??",
     "n_trains": 855,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0823",
+    "direction": "??"
   },
   "0824__??": {
-    "berth": "0824",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0824",
+    "direction": "??"
   },
   "0824__EB": {
-    "berth": "0824",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 421.5,
     "eta_std": 50.9,
     "eta_min": 385.9,
-    "eta_max": 1131.1
+    "eta_max": 1131.1,
+    "berth": "0824",
+    "direction": "EB"
   },
   "0824__WB": {
-    "berth": "0824",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2512.9,
     "eta_std": 1001.1,
     "eta_min": 1805.0,
-    "eta_max": 3220.7
+    "eta_max": 3220.7,
+    "berth": "0824",
+    "direction": "WB"
   },
   "0826__??": {
-    "berth": "0826",
-    "direction": "??",
     "n_trains": 619,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0826",
+    "direction": "??"
   },
   "0829__??": {
-    "berth": "0829",
-    "direction": "??",
     "n_trains": 26,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0829",
+    "direction": "??"
   },
   "0831__??": {
-    "berth": "0831",
-    "direction": "??",
     "n_trains": 617,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0831",
+    "direction": "??"
   },
   "0837__??": {
-    "berth": "0837",
-    "direction": "??",
     "n_trains": 26,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0837",
+    "direction": "??"
   },
   "0839__??": {
-    "berth": "0839",
-    "direction": "??",
     "n_trains": 855,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0839",
+    "direction": "??"
   },
   "0841__??": {
-    "berth": "0841",
-    "direction": "??",
     "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0841",
+    "direction": "??"
   },
   "0845__??": {
-    "berth": "0845",
-    "direction": "??",
     "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0845",
+    "direction": "??"
   },
   "0847__??": {
-    "berth": "0847",
-    "direction": "??",
     "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0847",
+    "direction": "??"
   },
   "0848__??": {
-    "berth": "0848",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0848",
+    "direction": "??"
   },
   "0856__??": {
-    "berth": "0856",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0856",
+    "direction": "??"
   },
   "0862__??": {
-    "berth": "0862",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0862",
+    "direction": "??"
   },
   "0864__??": {
-    "berth": "0864",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0864",
+    "direction": "??"
   },
   "0878__??": {
-    "berth": "0878",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0878",
+    "direction": "??"
   },
   "0880__??": {
-    "berth": "0880",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0880",
+    "direction": "??"
   },
   "0884__??": {
-    "berth": "0884",
-    "direction": "??",
     "n_trains": 16,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0884",
+    "direction": "??"
   },
   "0896__??": {
-    "berth": "0896",
-    "direction": "??",
     "n_trains": 267,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "0896",
+    "direction": "??"
   },
   "1610__??": {
-    "berth": "1610",
-    "direction": "??",
     "n_trains": 320,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1610",
+    "direction": "??"
   },
   "1612__??": {
-    "berth": "1612",
-    "direction": "??",
     "n_trains": 776,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1612",
+    "direction": "??"
   },
   "1614__??": {
-    "berth": "1614",
-    "direction": "??",
     "n_trains": 320,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1614",
+    "direction": "??"
   },
   "1616__??": {
-    "berth": "1616",
-    "direction": "??",
     "n_trains": 776,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1616",
+    "direction": "??"
   },
   "1618__??": {
-    "berth": "1618",
-    "direction": "??",
     "n_trains": 320,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1618",
+    "direction": "??"
   },
   "1620__??": {
-    "berth": "1620",
-    "direction": "??",
     "n_trains": 776,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1620",
+    "direction": "??"
   },
   "1621__??": {
-    "berth": "1621",
-    "direction": "??",
     "n_trains": 335,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1621",
+    "direction": "??"
   },
   "1621__WB": {
-    "berth": "1621",
-    "direction": "WB",
     "n_trains": 805,
     "n_visible": 805,
     "p_visible": 1.0,
     "eta_mean": 613.9,
     "eta_std": 136.3,
     "eta_min": 292.5,
-    "eta_max": 1781.2
+    "eta_max": 1781.2,
+    "berth": "1621",
+    "direction": "WB"
   },
   "1622__??": {
-    "berth": "1622",
-    "direction": "??",
     "n_trains": 785,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1622",
+    "direction": "??"
   },
   "1623__??": {
-    "berth": "1623",
-    "direction": "??",
     "n_trains": 762,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1623",
+    "direction": "??"
   },
   "1623__WB": {
-    "berth": "1623",
-    "direction": "WB",
     "n_trains": 16,
     "n_visible": 16,
     "p_visible": 1.0,
     "eta_mean": 925.2,
     "eta_std": 395.1,
     "eta_min": 649.2,
-    "eta_max": 2036.2
+    "eta_max": 2036.2,
+    "berth": "1623",
+    "direction": "WB"
   },
   "1624__??": {
-    "berth": "1624",
-    "direction": "??",
     "n_trains": 785,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1624",
+    "direction": "??"
   },
   "1625__??": {
-    "berth": "1625",
-    "direction": "??",
     "n_trains": 336,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1625",
+    "direction": "??"
   },
   "1625__WB": {
-    "berth": "1625",
-    "direction": "WB",
     "n_trains": 806,
     "n_visible": 806,
     "p_visible": 1.0,
     "eta_mean": 591.3,
     "eta_std": 135.8,
     "eta_min": 271.7,
-    "eta_max": 1760.0
+    "eta_max": 1760.0,
+    "berth": "1625",
+    "direction": "WB"
   },
   "1626__??": {
-    "berth": "1626",
-    "direction": "??",
     "n_trains": 311,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1626",
+    "direction": "??"
   },
   "1627__??": {
-    "berth": "1627",
-    "direction": "??",
     "n_trains": 762,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1627",
+    "direction": "??"
   },
   "1627__WB": {
-    "berth": "1627",
-    "direction": "WB",
     "n_trains": 16,
     "n_visible": 16,
     "p_visible": 1.0,
     "eta_mean": 883.2,
     "eta_std": 394.5,
     "eta_min": 618.6,
-    "eta_max": 1990.7
+    "eta_max": 1990.7,
+    "berth": "1627",
+    "direction": "WB"
   },
   "1628__??": {
-    "berth": "1628",
-    "direction": "??",
     "n_trains": 784,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1628",
+    "direction": "??"
   },
   "1629__??": {
-    "berth": "1629",
-    "direction": "??",
     "n_trains": 314,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1629",
+    "direction": "??"
   },
   "1629__WB": {
-    "berth": "1629",
-    "direction": "WB",
     "n_trains": 806,
     "n_visible": 806,
     "p_visible": 1.0,
     "eta_mean": 567.0,
     "eta_std": 135.2,
     "eta_min": 249.0,
-    "eta_max": 1737.2
+    "eta_max": 1737.2,
+    "berth": "1629",
+    "direction": "WB"
   },
   "1630__??": {
-    "berth": "1630",
-    "direction": "??",
     "n_trains": 795,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1630",
+    "direction": "??"
   },
   "1631__??": {
-    "berth": "1631",
-    "direction": "??",
     "n_trains": 784,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1631",
+    "direction": "??"
   },
   "1631__WB": {
-    "berth": "1631",
-    "direction": "WB",
     "n_trains": 16,
     "n_visible": 16,
     "p_visible": 1.0,
     "eta_mean": 838.6,
     "eta_std": 393.4,
     "eta_min": 577.8,
-    "eta_max": 1940.8
+    "eta_max": 1940.8,
+    "berth": "1631",
+    "direction": "WB"
   },
   "1632__??": {
-    "berth": "1632",
-    "direction": "??",
     "n_trains": 251,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1632",
+    "direction": "??"
   },
   "1633__??": {
-    "berth": "1633",
-    "direction": "??",
     "n_trains": 314,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1633",
+    "direction": "??"
   },
   "1633__WB": {
-    "berth": "1633",
-    "direction": "WB",
     "n_trains": 806,
     "n_visible": 806,
     "p_visible": 1.0,
     "eta_mean": 535.8,
     "eta_std": 133.8,
     "eta_min": 219.2,
-    "eta_max": 1706.7
+    "eta_max": 1706.7,
+    "berth": "1633",
+    "direction": "WB"
   },
   "1635__??": {
-    "berth": "1635",
-    "direction": "??",
     "n_trains": 784,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1635",
+    "direction": "??"
   },
   "1635__WB": {
-    "berth": "1635",
-    "direction": "WB",
     "n_trains": 16,
     "n_visible": 16,
     "p_visible": 1.0,
     "eta_mean": 785.1,
     "eta_std": 390.5,
     "eta_min": 516.4,
-    "eta_max": 1886.1
+    "eta_max": 1886.1,
+    "berth": "1635",
+    "direction": "WB"
   },
   "1636__??": {
-    "berth": "1636",
-    "direction": "??",
     "n_trains": 249,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1636",
+    "direction": "??"
   },
   "1637__??": {
-    "berth": "1637",
-    "direction": "??",
     "n_trains": 783,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1637",
+    "direction": "??"
   },
   "1637__WB": {
-    "berth": "1637",
-    "direction": "WB",
     "n_trains": 16,
     "n_visible": 16,
     "p_visible": 1.0,
     "eta_mean": 748.0,
     "eta_std": 388.5,
     "eta_min": 478.6,
-    "eta_max": 1852.9
+    "eta_max": 1852.9,
+    "berth": "1637",
+    "direction": "WB"
   },
   "1639__??": {
-    "berth": "1639",
-    "direction": "??",
     "n_trains": 9,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1639",
+    "direction": "??"
   },
   "1640__??": {
-    "berth": "1640",
-    "direction": "??",
     "n_trains": 310,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1640",
+    "direction": "??"
   },
   "1642__??": {
-    "berth": "1642",
-    "direction": "??",
     "n_trains": 789,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1642",
+    "direction": "??"
   },
   "1643__??": {
-    "berth": "1643",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1643",
+    "direction": "??"
   },
   "1644__??": {
-    "berth": "1644",
-    "direction": "??",
     "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1644",
+    "direction": "??"
   },
   "1646__??": {
-    "berth": "1646",
-    "direction": "??",
     "n_trains": 317,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1646",
+    "direction": "??"
   },
   "1648__??": {
-    "berth": "1648",
-    "direction": "??",
     "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1648",
+    "direction": "??"
   },
   "1650__??": {
-    "berth": "1650",
-    "direction": "??",
     "n_trains": 317,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1650",
+    "direction": "??"
   },
   "1652__??": {
-    "berth": "1652",
-    "direction": "??",
     "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1652",
+    "direction": "??"
   },
   "1653__??": {
-    "berth": "1653",
-    "direction": "??",
     "n_trains": 7,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1653",
+    "direction": "??"
   },
   "1655__??": {
-    "berth": "1655",
-    "direction": "??",
     "n_trains": 314,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1655",
+    "direction": "??"
   },
   "1655__WB": {
-    "berth": "1655",
-    "direction": "WB",
     "n_trains": 806,
     "n_visible": 806,
     "p_visible": 1.0,
     "eta_mean": 512.9,
     "eta_std": 131.9,
     "eta_min": 198.2,
-    "eta_max": 1683.5
+    "eta_max": 1683.5,
+    "berth": "1655",
+    "direction": "WB"
   },
   "1657__??": {
-    "berth": "1657",
-    "direction": "??",
     "n_trains": 783,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1657",
+    "direction": "??"
   },
   "1657__WB": {
-    "berth": "1657",
-    "direction": "WB",
     "n_trains": 16,
     "n_visible": 16,
     "p_visible": 1.0,
     "eta_mean": 688.4,
     "eta_std": 354.2,
     "eta_min": 442.0,
-    "eta_max": 1822.4
+    "eta_max": 1822.4,
+    "berth": "1657",
+    "direction": "WB"
   },
   "1658__??": {
-    "berth": "1658",
-    "direction": "??",
     "n_trains": 317,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1658",
+    "direction": "??"
   },
   "1659__??": {
-    "berth": "1659",
-    "direction": "??",
     "n_trains": 318,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1659",
+    "direction": "??"
   },
   "1659__WB": {
-    "berth": "1659",
-    "direction": "WB",
     "n_trains": 814,
     "n_visible": 814,
     "p_visible": 1.0,
     "eta_mean": 493.3,
     "eta_std": 129.4,
     "eta_min": 180.4,
-    "eta_max": 1662.5
+    "eta_max": 1662.5,
+    "berth": "1659",
+    "direction": "WB"
   },
   "1660__??": {
-    "berth": "1660",
-    "direction": "??",
     "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1660",
+    "direction": "??"
   },
   "1661__??": {
-    "berth": "1661",
-    "direction": "??",
     "n_trains": 786,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1661",
+    "direction": "??"
   },
   "1661__WB": {
-    "berth": "1661",
-    "direction": "WB",
     "n_trains": 8,
     "n_visible": 8,
     "p_visible": 1.0,
     "eta_mean": 724.2,
     "eta_std": 470.7,
     "eta_min": 447.0,
-    "eta_max": 1795.7
+    "eta_max": 1795.7,
+    "berth": "1661",
+    "direction": "WB"
   },
   "1662__??": {
-    "berth": "1662",
-    "direction": "??",
     "n_trains": 317,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1662",
+    "direction": "??"
   },
   "1663__??": {
-    "berth": "1663",
-    "direction": "??",
     "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1663",
+    "direction": "??"
   },
   "1663__WB": {
-    "berth": "1663",
-    "direction": "WB",
     "n_trains": 814,
     "n_visible": 814,
     "p_visible": 1.0,
     "eta_mean": 460.6,
     "eta_std": 126.0,
     "eta_min": 151.5,
-    "eta_max": 1632.1
+    "eta_max": 1632.1,
+    "berth": "1663",
+    "direction": "WB"
   },
   "1664__??": {
-    "berth": "1664",
-    "direction": "??",
     "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1664",
+    "direction": "??"
   },
   "1665__??": {
-    "berth": "1665",
-    "direction": "??",
     "n_trains": 786,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1665",
+    "direction": "??"
   },
   "1665__WB": {
-    "berth": "1665",
-    "direction": "WB",
     "n_trains": 8,
     "n_visible": 8,
     "p_visible": 1.0,
     "eta_mean": 662.8,
     "eta_std": 472.5,
     "eta_min": 394.0,
-    "eta_max": 1735.9
+    "eta_max": 1735.9,
+    "berth": "1665",
+    "direction": "WB"
   },
   "1666__??": {
-    "berth": "1666",
-    "direction": "??",
     "n_trains": 317,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1666",
+    "direction": "??"
   },
   "1667__??": {
-    "berth": "1667",
-    "direction": "??",
     "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1667",
+    "direction": "??"
   },
   "1667__WB": {
-    "berth": "1667",
-    "direction": "WB",
     "n_trains": 814,
     "n_visible": 814,
     "p_visible": 1.0,
     "eta_mean": 430.2,
     "eta_std": 122.3,
     "eta_min": 126.6,
-    "eta_max": 1607.6
+    "eta_max": 1607.6,
+    "berth": "1667",
+    "direction": "WB"
   },
   "1668__??": {
-    "berth": "1668",
-    "direction": "??",
     "n_trains": 782,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1668",
+    "direction": "??"
   },
   "1669__??": {
-    "berth": "1669",
-    "direction": "??",
     "n_trains": 786,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1669",
+    "direction": "??"
   },
   "1669__WB": {
-    "berth": "1669",
-    "direction": "WB",
     "n_trains": 8,
     "n_visible": 8,
     "p_visible": 1.0,
     "eta_mean": 615.4,
     "eta_std": 474.4,
     "eta_min": 345.7,
-    "eta_max": 1689.0
+    "eta_max": 1689.0,
+    "berth": "1669",
+    "direction": "WB"
   },
   "1670__??": {
-    "berth": "1670",
-    "direction": "??",
     "n_trains": 32,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1670",
+    "direction": "??"
   },
   "1672__??": {
-    "berth": "1672",
-    "direction": "??",
     "n_trains": 283,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1672",
+    "direction": "??"
   },
   "1674__??": {
-    "berth": "1674",
-    "direction": "??",
     "n_trains": 65,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1674",
+    "direction": "??"
   },
   "1675__??": {
-    "berth": "1675",
-    "direction": "??",
     "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1675",
+    "direction": "??"
   },
   "1675__WB": {
-    "berth": "1675",
-    "direction": "WB",
     "n_trains": 814,
     "n_visible": 814,
     "p_visible": 1.0,
     "eta_mean": 404.4,
     "eta_std": 119.5,
     "eta_min": 105.5,
-    "eta_max": 1587.3
+    "eta_max": 1587.3,
+    "berth": "1675",
+    "direction": "WB"
   },
   "1676__??": {
-    "berth": "1676",
-    "direction": "??",
     "n_trains": 744,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1676",
+    "direction": "??"
   },
   "1677__??": {
-    "berth": "1677",
-    "direction": "??",
     "n_trains": 768,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1677",
+    "direction": "??"
   },
   "1677__WB": {
-    "berth": "1677",
-    "direction": "WB",
     "n_trains": 8,
     "n_visible": 8,
     "p_visible": 1.0,
     "eta_mean": 558.3,
     "eta_std": 477.6,
     "eta_min": 292.5,
-    "eta_max": 1640.8
+    "eta_max": 1640.8,
+    "berth": "1677",
+    "direction": "WB"
   },
   "1679__??": {
-    "berth": "1679",
-    "direction": "??",
     "n_trains": 37,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1679",
+    "direction": "??"
   },
   "1681__??": {
-    "berth": "1681",
-    "direction": "??",
     "n_trains": 8,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1681",
+    "direction": "??"
   },
   "1682__??": {
-    "berth": "1682",
-    "direction": "??",
     "n_trains": 123,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1682",
+    "direction": "??"
   },
   "1682__WB": {
-    "berth": "1682",
-    "direction": "WB",
     "n_trains": 8,
     "n_visible": 8,
     "p_visible": 1.0,
     "eta_mean": 515.9,
     "eta_std": 120.4,
     "eta_min": 355.4,
-    "eta_max": 700.0
+    "eta_max": 700.0,
+    "berth": "1682",
+    "direction": "WB"
   },
   "1684__??": {
-    "berth": "1684",
-    "direction": "??",
     "n_trains": 81,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1684",
+    "direction": "??"
   },
   "1684__WB": {
-    "berth": "1684",
-    "direction": "WB",
     "n_trains": 26,
     "n_visible": 26,
     "p_visible": 1.0,
     "eta_mean": 766.0,
     "eta_std": 648.4,
     "eta_min": 399.6,
-    "eta_max": 3263.1
+    "eta_max": 3263.1,
+    "berth": "1684",
+    "direction": "WB"
   },
   "1685__??": {
-    "berth": "1685",
-    "direction": "??",
     "n_trains": 311,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1685",
+    "direction": "??"
   },
   "1685__WB": {
-    "berth": "1685",
-    "direction": "WB",
     "n_trains": 822,
     "n_visible": 822,
     "p_visible": 1.0,
     "eta_mean": 361.5,
     "eta_std": 124.2,
     "eta_min": 75.2,
-    "eta_max": 1568.6
+    "eta_max": 1568.6,
+    "berth": "1685",
+    "direction": "WB"
   },
   "1686__??": {
-    "berth": "1686",
-    "direction": "??",
     "n_trains": 2,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1686",
+    "direction": "??"
   },
   "1687__??": {
-    "berth": "1687",
-    "direction": "??",
     "n_trains": 759,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1687",
+    "direction": "??"
   },
   "1688__??": {
-    "berth": "1688",
-    "direction": "??",
     "n_trains": 54,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1688",
+    "direction": "??"
   },
   "1689__??": {
-    "berth": "1689",
-    "direction": "??",
     "n_trains": 60,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1689",
+    "direction": "??"
   },
   "1690__??": {
-    "berth": "1690",
-    "direction": "??",
     "n_trains": 218,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1690",
+    "direction": "??"
   },
   "1691__??": {
-    "berth": "1691",
-    "direction": "??",
     "n_trains": 54,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1691",
+    "direction": "??"
   },
   "1692__??": {
-    "berth": "1692",
-    "direction": "??",
     "n_trains": 67,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1692",
+    "direction": "??"
   },
   "1693__??": {
-    "berth": "1693",
-    "direction": "??",
     "n_trains": 288,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1693",
+    "direction": "??"
   },
   "1694__??": {
-    "berth": "1694",
-    "direction": "??",
     "n_trains": 143,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1694",
+    "direction": "??"
   },
   "1695__??": {
-    "berth": "1695",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1695",
+    "direction": "??"
   },
   "1696__??": {
-    "berth": "1696",
-    "direction": "??",
     "n_trains": 95,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1696",
+    "direction": "??"
   },
   "1697__??": {
-    "berth": "1697",
-    "direction": "??",
     "n_trains": 291,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1697",
+    "direction": "??"
   },
   "1698__??": {
-    "berth": "1698",
-    "direction": "??",
     "n_trains": 410,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1698",
+    "direction": "??"
   },
   "1699__??": {
-    "berth": "1699",
-    "direction": "??",
     "n_trains": 44,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1699",
+    "direction": "??"
   },
   "1700__??": {
-    "berth": "1700",
-    "direction": "??",
     "n_trains": 67,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1700",
+    "direction": "??"
   },
   "1702__??": {
-    "berth": "1702",
-    "direction": "??",
     "n_trains": 138,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1702",
+    "direction": "??"
   },
   "1704__??": {
-    "berth": "1704",
-    "direction": "??",
     "n_trains": 92,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1704",
+    "direction": "??"
   },
   "1706__??": {
-    "berth": "1706",
-    "direction": "??",
     "n_trains": 427,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1706",
+    "direction": "??"
   },
   "1707__??": {
-    "berth": "1707",
-    "direction": "??",
     "n_trains": 319,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1707",
+    "direction": "??"
   },
   "1707__WB": {
-    "berth": "1707",
-    "direction": "WB",
     "n_trains": 20,
     "n_visible": 20,
     "p_visible": 1.0,
     "eta_mean": 422.6,
     "eta_std": 393.0,
     "eta_min": 132.7,
-    "eta_max": 1490.6
+    "eta_max": 1490.6,
+    "berth": "1707",
+    "direction": "WB"
   },
   "1709__??": {
-    "berth": "1709",
-    "direction": "??",
     "n_trains": 136,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1709",
+    "direction": "??"
   },
   "1709__WB": {
-    "berth": "1709",
-    "direction": "WB",
     "n_trains": 227,
     "n_visible": 227,
     "p_visible": 1.0,
     "eta_mean": 308.9,
     "eta_std": 114.0,
     "eta_min": 109.5,
-    "eta_max": 1137.7
+    "eta_max": 1137.7,
+    "berth": "1709",
+    "direction": "WB"
   },
   "1711__??": {
-    "berth": "1711",
-    "direction": "??",
     "n_trains": 2,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1711",
+    "direction": "??"
   },
   "1711__WB": {
-    "berth": "1711",
-    "direction": "WB",
     "n_trains": 609,
     "n_visible": 609,
     "p_visible": 1.0,
     "eta_mean": 292.7,
     "eta_std": 99.5,
     "eta_min": 47.9,
-    "eta_max": 1416.5
+    "eta_max": 1416.5,
+    "berth": "1711",
+    "direction": "WB"
   },
   "1713__??": {
-    "berth": "1713",
-    "direction": "??",
     "n_trains": 8,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1713",
+    "direction": "??"
   },
   "1714__??": {
-    "berth": "1714",
-    "direction": "??",
     "n_trains": 4,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1714",
+    "direction": "??"
   },
   "1716__??": {
-    "berth": "1716",
-    "direction": "??",
     "n_trains": 469,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1716",
+    "direction": "??"
   },
   "1716__WB": {
-    "berth": "1716",
-    "direction": "WB",
     "n_trains": 30,
     "n_visible": 30,
     "p_visible": 1.0,
     "eta_mean": 614.7,
     "eta_std": 125.7,
     "eta_min": 383.5,
-    "eta_max": 865.8
+    "eta_max": 865.8,
+    "berth": "1716",
+    "direction": "WB"
   },
   "1717__??": {
-    "berth": "1717",
-    "direction": "??",
     "n_trains": 331,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1717",
+    "direction": "??"
   },
   "1719__??": {
-    "berth": "1719",
-    "direction": "??",
     "n_trains": 294,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1719",
+    "direction": "??"
   },
   "1720__??": {
-    "berth": "1720",
-    "direction": "??",
     "n_trains": 164,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1720",
+    "direction": "??"
   },
   "1720__WB": {
-    "berth": "1720",
-    "direction": "WB",
     "n_trains": 3,
     "n_visible": 3,
     "p_visible": 1.0,
     "eta_mean": 2191.0,
     "eta_std": 1380.0,
     "eta_min": 644.0,
-    "eta_max": 3295.5
+    "eta_max": 3295.5,
+    "berth": "1720",
+    "direction": "WB"
   },
   "1721__??": {
-    "berth": "1721",
-    "direction": "??",
     "n_trains": 309,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1721",
+    "direction": "??"
   },
   "1722__??": {
-    "berth": "1722",
-    "direction": "??",
     "n_trains": 3,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1722",
+    "direction": "??"
   },
   "1723__??": {
-    "berth": "1723",
-    "direction": "??",
     "n_trains": 59,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1723",
+    "direction": "??"
   },
   "1724__EB": {
-    "berth": "1724",
-    "direction": "EB",
     "n_trains": 825,
     "n_visible": 825,
     "p_visible": 1.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1724",
+    "direction": "EB"
   },
   "1726__??": {
-    "berth": "1726",
-    "direction": "??",
     "n_trains": 287,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1726",
+    "direction": "??"
   },
   "1727__??": {
-    "berth": "1727",
-    "direction": "??",
     "n_trains": 714,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1727",
+    "direction": "??"
   },
   "1728__??": {
-    "berth": "1728",
-    "direction": "??",
     "n_trains": 144,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1728",
+    "direction": "??"
   },
   "1729__??": {
-    "berth": "1729",
-    "direction": "??",
     "n_trains": 88,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1729",
+    "direction": "??"
   },
   "1730__??": {
-    "berth": "1730",
-    "direction": "??",
     "n_trains": 346,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1730",
+    "direction": "??"
   },
   "1731__??": {
-    "berth": "1731",
-    "direction": "??",
     "n_trains": 115,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1731",
+    "direction": "??"
   },
   "1731__WB": {
-    "berth": "1731",
-    "direction": "WB",
     "n_trains": 52,
     "n_visible": 52,
     "p_visible": 1.0,
     "eta_mean": 91.5,
     "eta_std": 46.2,
     "eta_min": 62.9,
-    "eta_max": 351.8
+    "eta_max": 351.8,
+    "berth": "1731",
+    "direction": "WB"
   },
   "1732__??": {
-    "berth": "1732",
-    "direction": "??",
     "n_trains": 101,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1732",
+    "direction": "??"
   },
   "1733__WB": {
-    "berth": "1733",
-    "direction": "WB",
     "n_trains": 819,
     "n_visible": 819,
     "p_visible": 1.0,
     "eta_mean": 58.4,
     "eta_std": 12.7,
     "eta_min": 26.2,
-    "eta_max": 208.4
+    "eta_max": 208.4,
+    "berth": "1733",
+    "direction": "WB"
   },
   "1735__??": {
-    "berth": "1735",
-    "direction": "??",
     "n_trains": 391,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1735",
+    "direction": "??"
   },
   "1737__??": {
-    "berth": "1737",
-    "direction": "??",
     "n_trains": 92,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1737",
+    "direction": "??"
   },
   "1738__??": {
-    "berth": "1738",
-    "direction": "??",
     "n_trains": 140,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1738",
+    "direction": "??"
   },
   "1738__WB": {
-    "berth": "1738",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2014.8,
     "eta_std": 1867.7,
     "eta_min": 694.2,
-    "eta_max": 3335.5
+    "eta_max": 3335.5,
+    "berth": "1738",
+    "direction": "WB"
   },
   "1741__??": {
-    "berth": "1741",
-    "direction": "??",
     "n_trains": 115,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1741",
+    "direction": "??"
   },
   "1742__??": {
-    "berth": "1742",
-    "direction": "??",
     "n_trains": 27,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1742",
+    "direction": "??"
   },
   "1742__EB": {
-    "berth": "1742",
-    "direction": "EB",
     "n_trains": 825,
     "n_visible": 825,
     "p_visible": 1.0,
     "eta_mean": 28.2,
     "eta_std": 9.1,
     "eta_min": 0.7,
-    "eta_max": 142.2
+    "eta_max": 142.2,
+    "berth": "1742",
+    "direction": "EB"
   },
   "1743__WB": {
-    "berth": "1743",
-    "direction": "WB",
     "n_trains": 871,
     "n_visible": 871,
     "p_visible": 1.0,
     "eta_mean": 20.5,
     "eta_std": 4.9,
     "eta_min": 11.1,
-    "eta_max": 69.6
+    "eta_max": 69.6,
+    "berth": "1743",
+    "direction": "WB"
   },
   "1744__??": {
-    "berth": "1744",
-    "direction": "??",
     "n_trains": 604,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1744",
+    "direction": "??"
   },
   "1744__WB": {
-    "berth": "1744",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2077.5,
     "eta_std": 1844.5,
     "eta_min": 773.3,
-    "eta_max": 3381.8
+    "eta_max": 3381.8,
+    "berth": "1744",
+    "direction": "WB"
   },
   "1745__??": {
-    "berth": "1745",
-    "direction": "??",
     "n_trains": 391,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1745",
+    "direction": "??"
   },
   "1746__??": {
-    "berth": "1746",
-    "direction": "??",
     "n_trains": 32,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1746",
+    "direction": "??"
   },
   "1747__??": {
-    "berth": "1747",
-    "direction": "??",
     "n_trains": 99,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1747",
+    "direction": "??"
   },
   "1751__??": {
-    "berth": "1751",
-    "direction": "??",
     "n_trains": 134,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1751",
+    "direction": "??"
   },
   "1752__??": {
-    "berth": "1752",
-    "direction": "??",
     "n_trains": 27,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1752",
+    "direction": "??"
   },
   "1752__EB": {
-    "berth": "1752",
-    "direction": "EB",
     "n_trains": 825,
     "n_visible": 825,
     "p_visible": 1.0,
     "eta_mean": 54.1,
     "eta_std": 14.4,
     "eta_min": 1.2,
-    "eta_max": 233.7
+    "eta_max": 233.7,
+    "berth": "1752",
+    "direction": "EB"
   },
   "1753__??": {
-    "berth": "1753",
-    "direction": "??",
     "n_trains": 4,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1753",
+    "direction": "??"
   },
   "1754__??": {
-    "berth": "1754",
-    "direction": "??",
     "n_trains": 657,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1754",
+    "direction": "??"
   },
   "1754__WB": {
-    "berth": "1754",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2141.3,
     "eta_std": 1801.7,
     "eta_min": 867.3,
-    "eta_max": 3415.3
+    "eta_max": 3415.3,
+    "berth": "1754",
+    "direction": "WB"
   },
   "1757__WB": {
-    "berth": "1757",
-    "direction": "WB",
     "n_trains": 871,
     "n_visible": 871,
     "p_visible": 1.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1757",
+    "direction": "WB"
   },
   "1758__??": {
-    "berth": "1758",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1758",
+    "direction": "??"
   },
   "1758__EB": {
-    "berth": "1758",
-    "direction": "EB",
     "n_trains": 825,
     "n_visible": 825,
     "p_visible": 1.0,
     "eta_mean": 101.3,
     "eta_std": 25.4,
     "eta_min": 2.0,
-    "eta_max": 448.4
+    "eta_max": 448.4,
+    "berth": "1758",
+    "direction": "EB"
   },
   "1758__WB": {
-    "berth": "1758",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 1927.6,
     "eta_std": 1246.7,
     "eta_min": 1046.1,
-    "eta_max": 2809.1
+    "eta_max": 2809.1,
+    "berth": "1758",
+    "direction": "WB"
   },
   "1759__??": {
-    "berth": "1759",
-    "direction": "??",
     "n_trains": 634,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1759",
+    "direction": "??"
   },
   "1760__??": {
-    "berth": "1760",
-    "direction": "??",
     "n_trains": 11,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1760",
+    "direction": "??"
   },
   "1761__??": {
-    "berth": "1761",
-    "direction": "??",
     "n_trains": 17,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1761",
+    "direction": "??"
   },
   "1762__??": {
-    "berth": "1762",
-    "direction": "??",
     "n_trains": 618,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1762",
+    "direction": "??"
   },
   "1764__??": {
-    "berth": "1764",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1764",
+    "direction": "??"
   },
   "1764__EB": {
-    "berth": "1764",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 150.4,
     "eta_std": 32.4,
     "eta_min": 128.6,
-    "eta_max": 543.1
+    "eta_max": 543.1,
+    "berth": "1764",
+    "direction": "EB"
   },
   "1764__WB": {
-    "berth": "1764",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2055.7,
     "eta_std": 1153.9,
     "eta_min": 1239.8,
-    "eta_max": 2871.6
+    "eta_max": 2871.6,
+    "berth": "1764",
+    "direction": "WB"
   },
   "1766__??": {
-    "berth": "1766",
-    "direction": "??",
     "n_trains": 618,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1766",
+    "direction": "??"
   },
   "1769__??": {
-    "berth": "1769",
-    "direction": "??",
     "n_trains": 634,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1769",
+    "direction": "??"
   },
   "1771__??": {
-    "berth": "1771",
-    "direction": "??",
     "n_trains": 17,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1771",
+    "direction": "??"
   },
   "1772__??": {
-    "berth": "1772",
-    "direction": "??",
     "n_trains": 56,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1772",
+    "direction": "??"
   },
   "1772__EB": {
-    "berth": "1772",
-    "direction": "EB",
     "n_trains": 824,
     "n_visible": 824,
     "p_visible": 1.0,
     "eta_mean": 187.6,
     "eta_std": 34.6,
     "eta_min": 162.2,
-    "eta_max": 628.2
+    "eta_max": 628.2,
+    "berth": "1772",
+    "direction": "EB"
   },
   "1772__WB": {
-    "berth": "1772",
-    "direction": "WB",
     "n_trains": 2,
     "n_visible": 2,
     "p_visible": 1.0,
     "eta_mean": 2133.1,
     "eta_std": 1115.0,
     "eta_min": 1344.7,
-    "eta_max": 2921.5
+    "eta_max": 2921.5,
+    "berth": "1772",
+    "direction": "WB"
   },
   "1774__??": {
-    "berth": "1774",
-    "direction": "??",
     "n_trains": 618,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1774",
+    "direction": "??"
   },
   "1775__??": {
-    "berth": "1775",
-    "direction": "??",
     "n_trains": 23,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1775",
+    "direction": "??"
   },
   "1777__??": {
-    "berth": "1777",
-    "direction": "??",
     "n_trains": 627,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1777",
+    "direction": "??"
   },
   "1779__??": {
-    "berth": "1779",
-    "direction": "??",
     "n_trains": 2,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1779",
+    "direction": "??"
   },
   "1785__??": {
-    "berth": "1785",
-    "direction": "??",
     "n_trains": 23,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1785",
+    "direction": "??"
   },
   "1787__??": {
-    "berth": "1787",
-    "direction": "??",
     "n_trains": 615,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "1787",
+    "direction": "??"
   },
   "2778__??": {
-    "berth": "2778",
-    "direction": "??",
     "n_trains": 535,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2778",
+    "direction": "??"
   },
   "2780__??": {
-    "berth": "2780",
-    "direction": "??",
     "n_trains": 6,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2780",
+    "direction": "??"
   },
   "2782__??": {
-    "berth": "2782",
-    "direction": "??",
     "n_trains": 546,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2782",
+    "direction": "??"
   },
   "2783__??": {
-    "berth": "2783",
-    "direction": "??",
     "n_trains": 538,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2783",
+    "direction": "??"
   },
   "2784__??": {
-    "berth": "2784",
-    "direction": "??",
     "n_trains": 53,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2784",
+    "direction": "??"
   },
   "2785__??": {
-    "berth": "2785",
-    "direction": "??",
     "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2785",
+    "direction": "??"
   },
   "2787__??": {
-    "berth": "2787",
-    "direction": "??",
     "n_trains": 486,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2787",
+    "direction": "??"
   },
   "2800__??": {
-    "berth": "2800",
-    "direction": "??",
     "n_trains": 2,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2800",
+    "direction": "??"
   },
   "2801__??": {
-    "berth": "2801",
-    "direction": "??",
     "n_trains": 795,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2801",
+    "direction": "??"
   },
   "2802__??": {
-    "berth": "2802",
-    "direction": "??",
     "n_trains": 1039,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2802",
+    "direction": "??"
   },
   "2802__WB": {
-    "berth": "2802",
-    "direction": "WB",
     "n_trains": 30,
     "n_visible": 30,
     "p_visible": 1.0,
     "eta_mean": 670.7,
     "eta_std": 127.6,
     "eta_min": 424.3,
-    "eta_max": 912.0
+    "eta_max": 912.0,
+    "berth": "2802",
+    "direction": "WB"
   },
   "2803__??": {
-    "berth": "2803",
-    "direction": "??",
     "n_trains": 57,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2803",
+    "direction": "??"
   },
   "2804__??": {
-    "berth": "2804",
-    "direction": "??",
     "n_trains": 5,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2804",
+    "direction": "??"
   },
   "2805__??": {
-    "berth": "2805",
-    "direction": "??",
     "n_trains": 96,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2805",
+    "direction": "??"
   },
   "2806__??": {
-    "berth": "2806",
-    "direction": "??",
     "n_trains": 1035,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2806",
+    "direction": "??"
   },
   "2806__WB": {
-    "berth": "2806",
-    "direction": "WB",
     "n_trains": 30,
     "n_visible": 30,
     "p_visible": 1.0,
     "eta_mean": 744.7,
     "eta_std": 131.8,
     "eta_min": 480.5,
-    "eta_max": 996.2
+    "eta_max": 996.2,
+    "berth": "2806",
+    "direction": "WB"
   },
   "2807__??": {
-    "berth": "2807",
-    "direction": "??",
     "n_trains": 128,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2807",
+    "direction": "??"
   },
   "2809__??": {
-    "berth": "2809",
-    "direction": "??",
     "n_trains": 1074,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2809",
+    "direction": "??"
   },
   "2812__??": {
-    "berth": "2812",
-    "direction": "??",
     "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2812",
+    "direction": "??"
   },
   "2815__??": {
-    "berth": "2815",
-    "direction": "??",
     "n_trains": 1068,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2815",
+    "direction": "??"
   },
   "2817__??": {
-    "berth": "2817",
-    "direction": "??",
     "n_trains": 536,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2817",
+    "direction": "??"
   },
   "2824__??": {
-    "berth": "2824",
-    "direction": "??",
     "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2824",
+    "direction": "??"
   },
   "2826__??": {
-    "berth": "2826",
-    "direction": "??",
     "n_trains": 532,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2826",
+    "direction": "??"
   },
   "2828__??": {
-    "berth": "2828",
-    "direction": "??",
     "n_trains": 30,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2828",
+    "direction": "??"
   },
   "2829__??": {
-    "berth": "2829",
-    "direction": "??",
     "n_trains": 536,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2829",
+    "direction": "??"
   },
   "2830__??": {
-    "berth": "2830",
-    "direction": "??",
     "n_trains": 15,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2830",
+    "direction": "??"
   },
   "2831__??": {
-    "berth": "2831",
-    "direction": "??",
     "n_trains": 536,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2831",
+    "direction": "??"
   },
   "2832__??": {
-    "berth": "2832",
-    "direction": "??",
     "n_trains": 12,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2832",
+    "direction": "??"
   },
   "2834__??": {
-    "berth": "2834",
-    "direction": "??",
     "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2834",
+    "direction": "??"
   },
   "2835__??": {
-    "berth": "2835",
-    "direction": "??",
     "n_trains": 13,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2835",
+    "direction": "??"
   },
   "2836__??": {
-    "berth": "2836",
-    "direction": "??",
     "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2836",
+    "direction": "??"
   },
   "2837__??": {
-    "berth": "2837",
-    "direction": "??",
     "n_trains": 528,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2837",
+    "direction": "??"
   },
   "2839__??": {
-    "berth": "2839",
-    "direction": "??",
     "n_trains": 10,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2839",
+    "direction": "??"
   },
   "2840__??": {
-    "berth": "2840",
-    "direction": "??",
     "n_trains": 530,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2840",
+    "direction": "??"
   },
   "2841__??": {
-    "berth": "2841",
-    "direction": "??",
     "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2841",
+    "direction": "??"
   },
   "2842__??": {
-    "berth": "2842",
-    "direction": "??",
     "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2842",
+    "direction": "??"
   },
   "2844__??": {
-    "berth": "2844",
-    "direction": "??",
     "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2844",
+    "direction": "??"
   },
   "2845__??": {
-    "berth": "2845",
-    "direction": "??",
     "n_trains": 27,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2845",
+    "direction": "??"
   },
   "2846__??": {
-    "berth": "2846",
-    "direction": "??",
     "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2846",
+    "direction": "??"
   },
   "2848__??": {
-    "berth": "2848",
-    "direction": "??",
     "n_trains": 529,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2848",
+    "direction": "??"
   },
   "2849__??": {
-    "berth": "2849",
-    "direction": "??",
     "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2849",
+    "direction": "??"
   },
   "2851__??": {
-    "berth": "2851",
-    "direction": "??",
     "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2851",
+    "direction": "??"
   },
   "2852__??": {
-    "berth": "2852",
-    "direction": "??",
     "n_trains": 46,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2852",
+    "direction": "??"
   },
   "2853__??": {
-    "berth": "2853",
-    "direction": "??",
     "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2853",
+    "direction": "??"
   },
   "2854__??": {
-    "berth": "2854",
-    "direction": "??",
     "n_trains": 72,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2854",
+    "direction": "??"
   },
   "2855__??": {
-    "berth": "2855",
-    "direction": "??",
     "n_trains": 534,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2855",
+    "direction": "??"
   },
   "2856__??": {
-    "berth": "2856",
-    "direction": "??",
     "n_trains": 438,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2856",
+    "direction": "??"
   },
   "2857__??": {
-    "berth": "2857",
-    "direction": "??",
     "n_trains": 534,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2857",
+    "direction": "??"
   },
   "2859__??": {
-    "berth": "2859",
-    "direction": "??",
     "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2859",
+    "direction": "??"
   },
   "2860__??": {
-    "berth": "2860",
-    "direction": "??",
     "n_trains": 180,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2860",
+    "direction": "??"
   },
   "2862__??": {
-    "berth": "2862",
-    "direction": "??",
     "n_trains": 216,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2862",
+    "direction": "??"
   },
   "2865__??": {
-    "berth": "2865",
-    "direction": "??",
     "n_trains": 515,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2865",
+    "direction": "??"
   },
   "2867__??": {
-    "berth": "2867",
-    "direction": "??",
     "n_trains": 45,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2867",
+    "direction": "??"
   },
   "2868__??": {
-    "berth": "2868",
-    "direction": "??",
     "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2868",
+    "direction": "??"
   },
   "2870__??": {
-    "berth": "2870",
-    "direction": "??",
     "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2870",
+    "direction": "??"
   },
   "2871__??": {
-    "berth": "2871",
-    "direction": "??",
     "n_trains": 51,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2871",
+    "direction": "??"
   },
   "2873__??": {
-    "berth": "2873",
-    "direction": "??",
     "n_trains": 172,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2873",
+    "direction": "??"
   },
   "2875__??": {
-    "berth": "2875",
-    "direction": "??",
     "n_trains": 216,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2875",
+    "direction": "??"
   },
   "2877__??": {
-    "berth": "2877",
-    "direction": "??",
     "n_trains": 402,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "2877",
+    "direction": "??"
   },
   "6781__??": {
-    "berth": "6781",
-    "direction": "??",
     "n_trains": 2,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6781",
+    "direction": "??"
   },
   "6783__??": {
-    "berth": "6783",
-    "direction": "??",
     "n_trains": 15,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6783",
+    "direction": "??"
   },
   "6810__??": {
-    "berth": "6810",
-    "direction": "??",
     "n_trains": 2,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6810",
+    "direction": "??"
   },
   "6812__??": {
-    "berth": "6812",
-    "direction": "??",
     "n_trains": 9,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6812",
+    "direction": "??"
   },
   "6817__??": {
-    "berth": "6817",
-    "direction": "??",
     "n_trains": 7,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6817",
+    "direction": "??"
   },
   "6821__??": {
-    "berth": "6821",
-    "direction": "??",
     "n_trains": 7,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6821",
+    "direction": "??"
   },
   "6825__??": {
-    "berth": "6825",
-    "direction": "??",
     "n_trains": 9,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6825",
+    "direction": "??"
   },
   "6828__??": {
-    "berth": "6828",
-    "direction": "??",
     "n_trains": 4,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6828",
+    "direction": "??"
   },
   "6837__??": {
-    "berth": "6837",
-    "direction": "??",
     "n_trains": 6,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "6837",
+    "direction": "??"
   },
   "A641__??": {
-    "berth": "A641",
-    "direction": "??",
     "n_trains": 246,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A641",
+    "direction": "??"
   },
   "A701__??": {
-    "berth": "A701",
-    "direction": "??",
     "n_trains": 237,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A701",
+    "direction": "??"
   },
   "A703__??": {
-    "berth": "A703",
-    "direction": "??",
     "n_trains": 115,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A703",
+    "direction": "??"
   },
   "A705__??": {
-    "berth": "A705",
-    "direction": "??",
     "n_trains": 78,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A705",
+    "direction": "??"
   },
   "A705__WB": {
-    "berth": "A705",
-    "direction": "WB",
     "n_trains": 3,
     "n_visible": 3,
     "p_visible": 1.0,
     "eta_mean": 201.5,
     "eta_std": 47.7,
     "eta_min": 172.3,
-    "eta_max": 256.5
+    "eta_max": 256.5,
+    "berth": "A705",
+    "direction": "WB"
   },
   "A786__??": {
-    "berth": "A786",
-    "direction": "??",
     "n_trains": 161,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A786",
+    "direction": "??"
   },
   "A788__??": {
-    "berth": "A788",
-    "direction": "??",
     "n_trains": 172,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A788",
+    "direction": "??"
   },
   "A790__??": {
-    "berth": "A790",
-    "direction": "??",
     "n_trains": 156,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A790",
+    "direction": "??"
   },
   "A864__??": {
-    "berth": "A864",
-    "direction": "??",
     "n_trains": 129,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "A864",
+    "direction": "??"
   },
   "B501__??": {
-    "berth": "B501",
-    "direction": "??",
     "n_trains": 533,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "B501",
+    "direction": "??"
   },
   "B701__??": {
-    "berth": "B701",
-    "direction": "??",
     "n_trains": 237,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "B701",
+    "direction": "??"
   },
   "B703__??": {
-    "berth": "B703",
-    "direction": "??",
     "n_trains": 114,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "B703",
+    "direction": "??"
   },
   "B705__??": {
-    "berth": "B705",
-    "direction": "??",
     "n_trains": 59,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "B705",
+    "direction": "??"
   },
   "B705__WB": {
-    "berth": "B705",
-    "direction": "WB",
     "n_trains": 3,
     "n_visible": 3,
     "p_visible": 1.0,
     "eta_mean": 201.7,
     "eta_std": 47.7,
     "eta_min": 172.5,
-    "eta_max": 256.7
+    "eta_max": 256.7,
+    "berth": "B705",
+    "direction": "WB"
   },
   "B786__??": {
-    "berth": "B786",
-    "direction": "??",
     "n_trains": 161,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "B786",
+    "direction": "??"
   },
   "B788__??": {
-    "berth": "B788",
-    "direction": "??",
     "n_trains": 167,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "B788",
+    "direction": "??"
   },
   "B790__??": {
-    "berth": "B790",
-    "direction": "??",
     "n_trains": 156,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "B790",
+    "direction": "??"
   },
   "BYDN__??": {
-    "berth": "BYDN",
-    "direction": "??",
     "n_trains": 250,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "BYDN",
+    "direction": "??"
   },
   "BYUP__??": {
-    "berth": "BYUP",
-    "direction": "??",
     "n_trains": 249,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "BYUP",
+    "direction": "??"
   },
   "DW57__??": {
-    "berth": "DW57",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW57",
+    "direction": "??"
   },
   "DW59__??": {
-    "berth": "DW59",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW59",
+    "direction": "??"
   },
   "DW62__??": {
-    "berth": "DW62",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW62",
+    "direction": "??"
   },
   "DW63__??": {
-    "berth": "DW63",
-    "direction": "??",
     "n_trains": 403,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW63",
+    "direction": "??"
   },
   "DW67__??": {
-    "berth": "DW67",
-    "direction": "??",
     "n_trains": 263,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW67",
+    "direction": "??"
   },
   "DW69__??": {
-    "berth": "DW69",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW69",
+    "direction": "??"
   },
   "DW70__??": {
-    "berth": "DW70",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW70",
+    "direction": "??"
   },
   "DW72__??": {
-    "berth": "DW72",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW72",
+    "direction": "??"
   },
   "DW74__??": {
-    "berth": "DW74",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW74",
+    "direction": "??"
   },
   "DW75__??": {
-    "berth": "DW75",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW75",
+    "direction": "??"
   },
   "DW80__??": {
-    "berth": "DW80",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW80",
+    "direction": "??"
   },
   "DW81__??": {
-    "berth": "DW81",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW81",
+    "direction": "??"
   },
   "DW83__??": {
-    "berth": "DW83",
-    "direction": "??",
     "n_trains": 265,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW83",
+    "direction": "??"
   },
   "DW85__??": {
-    "berth": "DW85",
-    "direction": "??",
     "n_trains": 266,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW85",
+    "direction": "??"
   },
   "DW86__??": {
-    "berth": "DW86",
-    "direction": "??",
     "n_trains": 267,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW86",
+    "direction": "??"
   },
   "DW89__??": {
-    "berth": "DW89",
-    "direction": "??",
     "n_trains": 266,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "DW89",
+    "direction": "??"
   },
   "F821__??": {
-    "berth": "F821",
-    "direction": "??",
     "n_trains": 20,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "F821",
+    "direction": "??"
   },
   "F849__??": {
-    "berth": "F849",
-    "direction": "??",
     "n_trains": 26,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "F849",
+    "direction": "??"
   },
   "K100__??": {
-    "berth": "K100",
-    "direction": "??",
     "n_trains": 402,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "K100",
+    "direction": "??"
   },
   "K103__??": {
-    "berth": "K103",
-    "direction": "??",
     "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "K103",
+    "direction": "??"
   },
   "K105__??": {
-    "berth": "K105",
-    "direction": "??",
     "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "K105",
+    "direction": "??"
   },
   "R641__??": {
-    "berth": "R641",
-    "direction": "??",
     "n_trains": 246,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R641",
+    "direction": "??"
   },
   "R701__??": {
-    "berth": "R701",
-    "direction": "??",
     "n_trains": 236,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R701",
+    "direction": "??"
   },
   "R703__??": {
-    "berth": "R703",
-    "direction": "??",
     "n_trains": 117,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R703",
+    "direction": "??"
   },
   "R705__??": {
-    "berth": "R705",
-    "direction": "??",
     "n_trains": 90,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R705",
+    "direction": "??"
   },
   "R786__??": {
-    "berth": "R786",
-    "direction": "??",
     "n_trains": 162,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R786",
+    "direction": "??"
   },
   "R788__??": {
-    "berth": "R788",
-    "direction": "??",
     "n_trains": 174,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R788",
+    "direction": "??"
   },
   "R790__??": {
-    "berth": "R790",
-    "direction": "??",
     "n_trains": 157,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R790",
+    "direction": "??"
   },
   "R864__??": {
-    "berth": "R864",
-    "direction": "??",
     "n_trains": 130,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "R864",
+    "direction": "??"
   },
   "REC2__??": {
-    "berth": "REC2",
-    "direction": "??",
     "n_trains": 2,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "REC2",
+    "direction": "??"
   },
   "SSTC__??": {
-    "berth": "SSTC",
-    "direction": "??",
     "n_trains": 90,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "SSTC",
+    "direction": "??"
   },
   "SSTE__??": {
-    "berth": "SSTE",
-    "direction": "??",
     "n_trains": 118,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "SSTE",
+    "direction": "??"
   },
   "STON__??": {
-    "berth": "STON",
-    "direction": "??",
     "n_trains": 3,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "STON",
+    "direction": "??"
   },
   "UPTE__??": {
-    "berth": "UPTE",
-    "direction": "??",
     "n_trains": 9,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UPTE",
+    "direction": "??"
   },
   "UW57__??": {
-    "berth": "UW57",
-    "direction": "??",
     "n_trains": 393,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW57",
+    "direction": "??"
   },
   "UW63__??": {
-    "berth": "UW63",
-    "direction": "??",
     "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW63",
+    "direction": "??"
   },
   "UW64__??": {
-    "berth": "UW64",
-    "direction": "??",
     "n_trains": 392,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW64",
+    "direction": "??"
   },
   "UW69__??": {
-    "berth": "UW69",
-    "direction": "??",
     "n_trains": 254,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW69",
+    "direction": "??"
   },
   "UW71__??": {
-    "berth": "UW71",
-    "direction": "??",
     "n_trains": 253,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW71",
+    "direction": "??"
   },
   "UW72__??": {
-    "berth": "UW72",
-    "direction": "??",
     "n_trains": 253,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW72",
+    "direction": "??"
   },
   "UW74__??": {
-    "berth": "UW74",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW74",
+    "direction": "??"
   },
   "UW75__??": {
-    "berth": "UW75",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW75",
+    "direction": "??"
   },
   "UW76__??": {
-    "berth": "UW76",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW76",
+    "direction": "??"
   },
   "UW80__??": {
-    "berth": "UW80",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW80",
+    "direction": "??"
   },
   "UW82__??": {
-    "berth": "UW82",
-    "direction": "??",
     "n_trains": 253,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW82",
+    "direction": "??"
   },
   "UW83__??": {
-    "berth": "UW83",
-    "direction": "??",
     "n_trains": 253,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW83",
+    "direction": "??"
   },
   "UW86__??": {
-    "berth": "UW86",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW86",
+    "direction": "??"
   },
   "UW90__??": {
-    "berth": "UW90",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW90",
+    "direction": "??"
   },
   "UW91__??": {
-    "berth": "UW91",
-    "direction": "??",
     "n_trains": 252,
     "n_visible": 0,
     "p_visible": 0.0,
     "eta_mean": null,
     "eta_std": null,
     "eta_min": null,
-    "eta_max": null
+    "eta_max": null,
+    "berth": "UW91",
+    "direction": "??"
+  },
+  "0784__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 258.5,
+    "eta_std": 70.9,
+    "eta_min": 205.3,
+    "eta_max": 400.1,
+    "berth": "0784",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "0784__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 516.0,
+    "eta_std": 163.4,
+    "eta_min": 396.9,
+    "eta_max": 702.2,
+    "berth": "0784",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "0784__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 222.7,
+    "eta_std": 29.3,
+    "eta_min": 198.9,
+    "eta_max": 566.4,
+    "berth": "0784",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "0784__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 241.9,
+    "eta_std": 68.8,
+    "eta_min": 204.7,
+    "eta_max": 469.2,
+    "berth": "0784",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "0784__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2197.5,
+    "eta_std": 1092.3,
+    "eta_min": 1425.1,
+    "eta_max": 2969.8,
+    "berth": "0784",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "0792__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 295.9,
+    "eta_std": 70.9,
+    "eta_min": 241.4,
+    "eta_max": 437.2,
+    "berth": "0792",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "0792__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 589.0,
+    "eta_std": 166.3,
+    "eta_min": 467.6,
+    "eta_max": 778.6,
+    "berth": "0792",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "0792__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 259.9,
+    "eta_std": 30.1,
+    "eta_min": 236.2,
+    "eta_max": 603.2,
+    "berth": "0792",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "0792__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 285.0,
+    "eta_std": 92.8,
+    "eta_min": 242.1,
+    "eta_max": 628.5,
+    "berth": "0792",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "0792__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2258.5,
+    "eta_std": 1074.8,
+    "eta_min": 1498.5,
+    "eta_max": 3018.5,
+    "berth": "0792",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "0800__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 333.7,
+    "eta_std": 70.5,
+    "eta_min": 278.9,
+    "eta_max": 474.2,
+    "berth": "0800",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "0800__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 663.8,
+    "eta_std": 169.0,
+    "eta_min": 538.8,
+    "eta_max": 856.2,
+    "berth": "0800",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "0800__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 297.8,
+    "eta_std": 31.1,
+    "eta_min": 273.6,
+    "eta_max": 640.6,
+    "berth": "0800",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "0800__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 322.8,
+    "eta_std": 94.7,
+    "eta_min": 279.4,
+    "eta_max": 675.2,
+    "berth": "0800",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "0800__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2320.8,
+    "eta_std": 1056.4,
+    "eta_min": 1573.8,
+    "eta_max": 3067.8,
+    "berth": "0800",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "0808__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 372.2,
+    "eta_std": 70.5,
+    "eta_min": 317.0,
+    "eta_max": 512.5,
+    "berth": "0808",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "0808__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 739.7,
+    "eta_std": 175.5,
+    "eta_min": 609.0,
+    "eta_max": 939.2,
+    "berth": "0808",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "0808__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 336.5,
+    "eta_std": 32.2,
+    "eta_min": 310.4,
+    "eta_max": 679.4,
+    "berth": "0808",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "0808__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 361.8,
+    "eta_std": 98.6,
+    "eta_min": 317.6,
+    "eta_max": 732.1,
+    "berth": "0808",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "0808__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2384.3,
+    "eta_std": 1037.2,
+    "eta_min": 1650.9,
+    "eta_max": 3117.8,
+    "berth": "0808",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "0816__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 412.1,
+    "eta_std": 69.5,
+    "eta_min": 355.4,
+    "eta_max": 549.9,
+    "berth": "0816",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "0816__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 819.2,
+    "eta_std": 184.8,
+    "eta_min": 680.8,
+    "eta_max": 1029.1,
+    "berth": "0816",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "0816__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 375.9,
+    "eta_std": 33.6,
+    "eta_min": 348.1,
+    "eta_max": 723.0,
+    "berth": "0816",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "0816__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 406.4,
+    "eta_std": 124.0,
+    "eta_min": 355.2,
+    "eta_max": 889.6,
+    "berth": "0816",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "0816__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2447.1,
+    "eta_std": 1018.7,
+    "eta_min": 1726.8,
+    "eta_max": 3167.4,
+    "berth": "0816",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "0824__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 458.0,
+    "eta_std": 67.1,
+    "eta_min": 394.8,
+    "eta_max": 588.1,
+    "berth": "0824",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "0824__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 908.7,
+    "eta_std": 195.9,
+    "eta_min": 761.8,
+    "eta_max": 1131.1,
+    "berth": "0824",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "0824__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 418.7,
+    "eta_std": 35.6,
+    "eta_min": 385.9,
+    "eta_max": 780.6,
+    "berth": "0824",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "0824__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 447.4,
+    "eta_std": 126.3,
+    "eta_min": 392.5,
+    "eta_max": 940.2,
+    "berth": "0824",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "0824__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2512.9,
+    "eta_std": 1001.1,
+    "eta_min": 1805.0,
+    "eta_max": 3220.7,
+    "berth": "0824",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1621__WB__freight": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 984.1,
+    "eta_std": 5.0,
+    "eta_min": 980.6,
+    "eta_max": 987.7,
+    "berth": "1621",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1621__WB__passenger_express": {
+    "n_trains": 235,
+    "n_visible": 235,
+    "p_visible": 1.0,
+    "eta_mean": 614.7,
+    "eta_std": 114.7,
+    "eta_min": 470.3,
+    "eta_max": 1613.8,
+    "berth": "1621",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1621__WB__passenger_local": {
+    "n_trains": 567,
+    "n_visible": 567,
+    "p_visible": 1.0,
+    "eta_mean": 611.6,
+    "eta_std": 142.3,
+    "eta_min": 292.5,
+    "eta_max": 1781.2,
+    "berth": "1621",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1623__WB__freight": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 891.2,
+    "eta_std": 268.3,
+    "eta_min": 727.7,
+    "eta_max": 1434.5,
+    "berth": "1623",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1623__WB__passenger_express": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 702.0,
+    "eta_std": 43.3,
+    "eta_min": 649.2,
+    "eta_max": 750.0,
+    "berth": "1623",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1623__WB__passenger_local": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 1192.8,
+    "eta_std": 581.8,
+    "eta_min": 688.7,
+    "eta_max": 2036.2,
+    "berth": "1623",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1625__WB__freight": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 936.9,
+    "eta_std": 4.7,
+    "eta_min": 933.5,
+    "eta_max": 940.3,
+    "berth": "1625",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1625__WB__passenger_express": {
+    "n_trains": 235,
+    "n_visible": 235,
+    "p_visible": 1.0,
+    "eta_mean": 592.1,
+    "eta_std": 114.2,
+    "eta_min": 449.3,
+    "eta_max": 1591.2,
+    "berth": "1625",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1625__WB__passenger_local": {
+    "n_trains": 568,
+    "n_visible": 568,
+    "p_visible": 1.0,
+    "eta_mean": 589.2,
+    "eta_std": 142.0,
+    "eta_min": 271.7,
+    "eta_max": 1760.0,
+    "berth": "1625",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1627__WB__freight": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 836.0,
+    "eta_std": 269.6,
+    "eta_min": 672.2,
+    "eta_max": 1381.8,
+    "berth": "1627",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1627__WB__passenger_express": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 671.5,
+    "eta_std": 43.7,
+    "eta_min": 618.6,
+    "eta_max": 721.2,
+    "berth": "1627",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1627__WB__passenger_local": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 1159.2,
+    "eta_std": 576.5,
+    "eta_min": 658.1,
+    "eta_max": 1990.7,
+    "berth": "1627",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1629__WB__freight": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 887.5,
+    "eta_std": 5.3,
+    "eta_min": 883.8,
+    "eta_max": 891.3,
+    "berth": "1629",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1629__WB__passenger_express": {
+    "n_trains": 235,
+    "n_visible": 235,
+    "p_visible": 1.0,
+    "eta_mean": 567.8,
+    "eta_std": 113.5,
+    "eta_min": 426.7,
+    "eta_max": 1567.1,
+    "berth": "1629",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1629__WB__passenger_local": {
+    "n_trains": 568,
+    "n_visible": 568,
+    "p_visible": 1.0,
+    "eta_mean": 565.0,
+    "eta_std": 141.7,
+    "eta_min": 249.0,
+    "eta_max": 1737.2,
+    "berth": "1629",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1631__WB__freight": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 778.4,
+    "eta_std": 268.7,
+    "eta_min": 615.1,
+    "eta_max": 1322.5,
+    "berth": "1631",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1631__WB__passenger_express": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 638.5,
+    "eta_std": 43.6,
+    "eta_min": 586.4,
+    "eta_max": 689.9,
+    "berth": "1631",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1631__WB__passenger_local": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 1123.0,
+    "eta_std": 570.2,
+    "eta_min": 625.9,
+    "eta_max": 1940.8,
+    "berth": "1631",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1633__WB__freight": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 822.8,
+    "eta_std": 7.7,
+    "eta_min": 817.4,
+    "eta_max": 828.2,
+    "berth": "1633",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1633__WB__passenger_express": {
+    "n_trains": 235,
+    "n_visible": 235,
+    "p_visible": 1.0,
+    "eta_mean": 536.4,
+    "eta_std": 112.3,
+    "eta_min": 397.2,
+    "eta_max": 1533.0,
+    "berth": "1633",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1633__WB__passenger_local": {
+    "n_trains": 568,
+    "n_visible": 568,
+    "p_visible": 1.0,
+    "eta_mean": 534.0,
+    "eta_std": 140.5,
+    "eta_min": 219.2,
+    "eta_max": 1706.7,
+    "berth": "1633",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1635__WB__freight": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 709.8,
+    "eta_std": 253.6,
+    "eta_min": 554.3,
+    "eta_max": 1222.9,
+    "berth": "1635",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1635__WB__passenger_express": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 599.4,
+    "eta_std": 43.7,
+    "eta_min": 550.4,
+    "eta_max": 653.9,
+    "berth": "1635",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1635__WB__passenger_local": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 1077.8,
+    "eta_std": 567.3,
+    "eta_min": 586.1,
+    "eta_max": 1886.1,
+    "berth": "1635",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1637__WB__freight": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 667.2,
+    "eta_std": 241.7,
+    "eta_min": 517.6,
+    "eta_max": 1155.6,
+    "berth": "1637",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1637__WB__passenger_express": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 570.5,
+    "eta_std": 43.4,
+    "eta_min": 528.3,
+    "eta_max": 626.1,
+    "berth": "1637",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1637__WB__passenger_local": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 1040.8,
+    "eta_std": 570.1,
+    "eta_min": 553.9,
+    "eta_max": 1852.9,
+    "berth": "1637",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1655__WB__freight": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 778.7,
+    "eta_std": 8.7,
+    "eta_min": 772.6,
+    "eta_max": 784.8,
+    "berth": "1655",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1655__WB__passenger_express": {
+    "n_trains": 235,
+    "n_visible": 235,
+    "p_visible": 1.0,
+    "eta_mean": 513.0,
+    "eta_std": 109.7,
+    "eta_min": 375.5,
+    "eta_max": 1491.0,
+    "berth": "1655",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1655__WB__passenger_local": {
+    "n_trains": 568,
+    "n_visible": 568,
+    "p_visible": 1.0,
+    "eta_mean": 511.4,
+    "eta_std": 138.9,
+    "eta_min": 198.2,
+    "eta_max": 1683.5,
+    "berth": "1655",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1657__WB__freight": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 625.6,
+    "eta_std": 220.9,
+    "eta_min": 484.7,
+    "eta_max": 1071.2,
+    "berth": "1657",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1657__WB__passenger_express": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 535.6,
+    "eta_std": 46.0,
+    "eta_min": 493.4,
+    "eta_max": 591.0,
+    "berth": "1657",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1657__WB__passenger_local": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 935.3,
+    "eta_std": 535.8,
+    "eta_min": 521.5,
+    "eta_max": 1822.4,
+    "berth": "1657",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1659__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 599.2,
+    "eta_std": 274.8,
+    "eta_min": 404.9,
+    "eta_max": 793.5,
+    "berth": "1659",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1659__WB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 815.4,
+    "eta_std": 133.2,
+    "eta_min": 729.2,
+    "eta_max": 968.8,
+    "berth": "1659",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1659__WB__passenger_express": {
+    "n_trains": 238,
+    "n_visible": 238,
+    "p_visible": 1.0,
+    "eta_mean": 492.1,
+    "eta_std": 101.8,
+    "eta_min": 357.0,
+    "eta_max": 1321.0,
+    "berth": "1659",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1659__WB__passenger_local": {
+    "n_trains": 571,
+    "n_visible": 571,
+    "p_visible": 1.0,
+    "eta_mean": 491.7,
+    "eta_std": 137.1,
+    "eta_min": 180.4,
+    "eta_max": 1662.5,
+    "berth": "1659",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1661__WB__freight": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 507.1,
+    "eta_std": 37.6,
+    "eta_min": 456.6,
+    "eta_max": 552.7,
+    "berth": "1661",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1661__WB__passenger_local": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 1405.6,
+    "eta_std": 551.7,
+    "eta_min": 1015.5,
+    "eta_max": 1795.7,
+    "berth": "1661",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1663__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 534.6,
+    "eta_std": 309.8,
+    "eta_min": 315.5,
+    "eta_max": 753.6,
+    "berth": "1663",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1663__WB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 720.5,
+    "eta_std": 90.2,
+    "eta_min": 658.8,
+    "eta_max": 823.9,
+    "berth": "1663",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1663__WB__passenger_express": {
+    "n_trains": 238,
+    "n_visible": 238,
+    "p_visible": 1.0,
+    "eta_mean": 459.1,
+    "eta_std": 97.4,
+    "eta_min": 328.2,
+    "eta_max": 1274.4,
+    "berth": "1663",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1663__WB__passenger_local": {
+    "n_trains": 571,
+    "n_visible": 571,
+    "p_visible": 1.0,
+    "eta_mean": 459.7,
+    "eta_std": 134.7,
+    "eta_min": 151.5,
+    "eta_max": 1632.1,
+    "berth": "1663",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1665__WB__freight": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 440.7,
+    "eta_std": 35.3,
+    "eta_min": 394.0,
+    "eta_max": 482.4,
+    "berth": "1665",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1665__WB__passenger_local": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 1349.5,
+    "eta_std": 546.4,
+    "eta_min": 963.1,
+    "eta_max": 1735.9,
+    "berth": "1665",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1667__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 487.6,
+    "eta_std": 326.1,
+    "eta_min": 257.1,
+    "eta_max": 718.2,
+    "berth": "1667",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1667__WB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 585.7,
+    "eta_std": 21.5,
+    "eta_min": 560.9,
+    "eta_max": 600.2,
+    "berth": "1667",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1667__WB__passenger_express": {
+    "n_trains": 238,
+    "n_visible": 238,
+    "p_visible": 1.0,
+    "eta_mean": 430.0,
+    "eta_std": 95.7,
+    "eta_min": 300.3,
+    "eta_max": 1242.2,
+    "berth": "1667",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1667__WB__passenger_local": {
+    "n_trains": 571,
+    "n_visible": 571,
+    "p_visible": 1.0,
+    "eta_mean": 429.3,
+    "eta_std": 131.2,
+    "eta_min": 126.6,
+    "eta_max": 1607.6,
+    "berth": "1667",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1669__WB__freight": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 387.7,
+    "eta_std": 31.1,
+    "eta_min": 345.7,
+    "eta_max": 421.6,
+    "berth": "1669",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1669__WB__passenger_local": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 1308.8,
+    "eta_std": 537.6,
+    "eta_min": 928.7,
+    "eta_max": 1689.0,
+    "berth": "1669",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1675__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 448.0,
+    "eta_std": 325.7,
+    "eta_min": 217.7,
+    "eta_max": 678.3,
+    "berth": "1675",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1675__WB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 469.1,
+    "eta_std": 134.1,
+    "eta_min": 314.5,
+    "eta_max": 554.2,
+    "berth": "1675",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1675__WB__passenger_express": {
+    "n_trains": 238,
+    "n_visible": 238,
+    "p_visible": 1.0,
+    "eta_mean": 406.1,
+    "eta_std": 94.1,
+    "eta_min": 277.0,
+    "eta_max": 1219.3,
+    "berth": "1675",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1675__WB__passenger_local": {
+    "n_trains": 571,
+    "n_visible": 571,
+    "p_visible": 1.0,
+    "eta_mean": 403.2,
+    "eta_std": 128.0,
+    "eta_min": 105.5,
+    "eta_max": 1587.3,
+    "berth": "1675",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1677__WB__freight": {
+    "n_trains": 5,
+    "n_visible": 5,
+    "p_visible": 1.0,
+    "eta_mean": 324.5,
+    "eta_std": 24.6,
+    "eta_min": 292.5,
+    "eta_max": 351.3,
+    "berth": "1677",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1677__WB__passenger_local": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 1255.9,
+    "eta_std": 544.4,
+    "eta_min": 871.0,
+    "eta_max": 1640.8,
+    "berth": "1677",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1682__WB__passenger_local": {
+    "n_trains": 8,
+    "n_visible": 8,
+    "p_visible": 1.0,
+    "eta_mean": 515.9,
+    "eta_std": 120.4,
+    "eta_min": 355.4,
+    "eta_max": 700.0,
+    "berth": "1682",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1684__WB__passenger_express": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 1699.6,
+    "eta_std": 1420.1,
+    "eta_min": 399.6,
+    "eta_max": 3263.1,
+    "berth": "1684",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1684__WB__passenger_local": {
+    "n_trains": 22,
+    "n_visible": 22,
+    "p_visible": 1.0,
+    "eta_mean": 596.3,
+    "eta_std": 127.2,
+    "eta_min": 410.6,
+    "eta_max": 837.0,
+    "berth": "1684",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1685__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 336.7,
+    "eta_std": 246.4,
+    "eta_min": 162.5,
+    "eta_max": 510.9,
+    "berth": "1685",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1685__WB__freight": {
+    "n_trains": 8,
+    "n_visible": 8,
+    "p_visible": 1.0,
+    "eta_mean": 261.1,
+    "eta_std": 128.4,
+    "eta_min": 156.4,
+    "eta_max": 478.1,
+    "berth": "1685",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1685__WB__passenger_express": {
+    "n_trains": 240,
+    "n_visible": 240,
+    "p_visible": 1.0,
+    "eta_mean": 364.4,
+    "eta_std": 92.7,
+    "eta_min": 241.5,
+    "eta_max": 1184.5,
+    "berth": "1685",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1685__WB__passenger_local": {
+    "n_trains": 572,
+    "n_visible": 572,
+    "p_visible": 1.0,
+    "eta_mean": 361.8,
+    "eta_std": 134.6,
+    "eta_min": 75.2,
+    "eta_max": 1568.6,
+    "berth": "1685",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1707__WB__passenger_local": {
+    "n_trains": 20,
+    "n_visible": 20,
+    "p_visible": 1.0,
+    "eta_mean": 422.6,
+    "eta_std": 393.0,
+    "eta_min": 132.7,
+    "eta_max": 1490.6,
+    "berth": "1707",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1709__WB__passenger_express": {
+    "n_trains": 56,
+    "n_visible": 56,
+    "p_visible": 1.0,
+    "eta_mean": 342.5,
+    "eta_std": 162.5,
+    "eta_min": 109.5,
+    "eta_max": 1137.7,
+    "berth": "1709",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1709__WB__passenger_local": {
+    "n_trains": 171,
+    "n_visible": 171,
+    "p_visible": 1.0,
+    "eta_mean": 297.8,
+    "eta_std": 90.8,
+    "eta_min": 126.4,
+    "eta_max": 902.9,
+    "berth": "1709",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1711__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 272.7,
+    "eta_std": 236.0,
+    "eta_min": 105.8,
+    "eta_max": 439.6,
+    "berth": "1711",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1711__WB__freight": {
+    "n_trains": 8,
+    "n_visible": 8,
+    "p_visible": 1.0,
+    "eta_mean": 180.6,
+    "eta_std": 124.8,
+    "eta_min": 92.8,
+    "eta_max": 392.1,
+    "berth": "1711",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1711__WB__passenger_express": {
+    "n_trains": 188,
+    "n_visible": 188,
+    "p_visible": 1.0,
+    "eta_mean": 295.5,
+    "eta_std": 51.7,
+    "eta_min": 198.5,
+    "eta_max": 557.6,
+    "berth": "1711",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1711__WB__passenger_local": {
+    "n_trains": 411,
+    "n_visible": 411,
+    "p_visible": 1.0,
+    "eta_mean": 293.7,
+    "eta_std": 113.2,
+    "eta_min": 47.9,
+    "eta_max": 1416.5,
+    "berth": "1711",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1716__WB__passenger_local": {
+    "n_trains": 30,
+    "n_visible": 30,
+    "p_visible": 1.0,
+    "eta_mean": 614.7,
+    "eta_std": 125.7,
+    "eta_min": 383.5,
+    "eta_max": 865.8,
+    "berth": "1716",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1720__WB__passenger_express": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 2191.0,
+    "eta_std": 1380.0,
+    "eta_min": 644.0,
+    "eta_max": 3295.5,
+    "berth": "1720",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1724__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1724",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "1724__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1724",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "1724__EB__passenger_express": {
+    "n_trains": 797,
+    "n_visible": 797,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1724",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "1724__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1724",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "1731__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 216.2,
+    "eta_std": 191.8,
+    "eta_min": 80.6,
+    "eta_max": 351.8,
+    "berth": "1731",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1731__WB__passenger_express": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 94.7,
+    "eta_std": 20.5,
+    "eta_min": 75.1,
+    "eta_max": 116.0,
+    "berth": "1731",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1731__WB__passenger_local": {
+    "n_trains": 47,
+    "n_visible": 47,
+    "p_visible": 1.0,
+    "eta_mean": 86.0,
+    "eta_std": 29.0,
+    "eta_min": 62.9,
+    "eta_max": 231.9,
+    "berth": "1731",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1733__WB__ecs": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 63.7,
+    "eta_std": 10.5,
+    "eta_min": 56.3,
+    "eta_max": 71.1,
+    "berth": "1733",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1733__WB__freight": {
+    "n_trains": 8,
+    "n_visible": 8,
+    "p_visible": 1.0,
+    "eta_mean": 72.7,
+    "eta_std": 21.0,
+    "eta_min": 50.0,
+    "eta_max": 108.0,
+    "berth": "1733",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1733__WB__passenger_express": {
+    "n_trains": 242,
+    "n_visible": 242,
+    "p_visible": 1.0,
+    "eta_mean": 58.6,
+    "eta_std": 8.6,
+    "eta_min": 50.7,
+    "eta_max": 103.6,
+    "berth": "1733",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1733__WB__passenger_local": {
+    "n_trains": 567,
+    "n_visible": 567,
+    "p_visible": 1.0,
+    "eta_mean": 58.1,
+    "eta_std": 13.8,
+    "eta_min": 26.2,
+    "eta_max": 208.4,
+    "berth": "1733",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1738__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2014.8,
+    "eta_std": 1867.7,
+    "eta_min": 694.2,
+    "eta_max": 3335.5,
+    "berth": "1738",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1742__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 31.0,
+    "eta_std": 7.1,
+    "eta_min": 21.8,
+    "eta_max": 42.9,
+    "berth": "1742",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "1742__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 45.2,
+    "eta_std": 6.5,
+    "eta_min": 39.3,
+    "eta_max": 52.2,
+    "berth": "1742",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "1742__EB__passenger_express": {
+    "n_trains": 797,
+    "n_visible": 797,
+    "p_visible": 1.0,
+    "eta_mean": 28.1,
+    "eta_std": 9.2,
+    "eta_min": 0.7,
+    "eta_max": 142.2,
+    "berth": "1742",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "1742__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 27.3,
+    "eta_std": 4.4,
+    "eta_min": 21.9,
+    "eta_max": 36.4,
+    "berth": "1742",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "1743__WB__ecs": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": 29.9,
+    "eta_std": 7.0,
+    "eta_min": 24.0,
+    "eta_max": 39.4,
+    "berth": "1743",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1743__WB__freight": {
+    "n_trains": 8,
+    "n_visible": 8,
+    "p_visible": 1.0,
+    "eta_mean": 31.4,
+    "eta_std": 6.7,
+    "eta_min": 22.8,
+    "eta_max": 41.7,
+    "berth": "1743",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1743__WB__passenger_express": {
+    "n_trains": 245,
+    "n_visible": 245,
+    "p_visible": 1.0,
+    "eta_mean": 20.0,
+    "eta_std": 3.4,
+    "eta_min": 16.8,
+    "eta_max": 49.1,
+    "berth": "1743",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1743__WB__passenger_local": {
+    "n_trains": 614,
+    "n_visible": 614,
+    "p_visible": 1.0,
+    "eta_mean": 20.5,
+    "eta_std": 5.2,
+    "eta_min": 11.1,
+    "eta_max": 69.6,
+    "berth": "1743",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1744__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2077.5,
+    "eta_std": 1844.5,
+    "eta_min": 773.3,
+    "eta_max": 3381.8,
+    "berth": "1744",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1752__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 58.8,
+    "eta_std": 10.1,
+    "eta_min": 43.8,
+    "eta_max": 72.4,
+    "berth": "1752",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "1752__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 97.2,
+    "eta_std": 18.5,
+    "eta_min": 81.2,
+    "eta_max": 117.5,
+    "berth": "1752",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "1752__EB__passenger_express": {
+    "n_trains": 797,
+    "n_visible": 797,
+    "p_visible": 1.0,
+    "eta_mean": 53.7,
+    "eta_std": 12.8,
+    "eta_min": 1.2,
+    "eta_max": 184.1,
+    "berth": "1752",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "1752__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 61.8,
+    "eta_std": 42.3,
+    "eta_min": 43.4,
+    "eta_max": 233.7,
+    "berth": "1752",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "1754__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2141.3,
+    "eta_std": 1801.7,
+    "eta_min": 867.3,
+    "eta_max": 3415.3,
+    "berth": "1754",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1757__WB__ecs": {
+    "n_trains": 4,
+    "n_visible": 4,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1757",
+    "direction": "WB",
+    "train_class": "ecs"
+  },
+  "1757__WB__freight": {
+    "n_trains": 8,
+    "n_visible": 8,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1757",
+    "direction": "WB",
+    "train_class": "freight"
+  },
+  "1757__WB__passenger_express": {
+    "n_trains": 245,
+    "n_visible": 245,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1757",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1757__WB__passenger_local": {
+    "n_trains": 614,
+    "n_visible": 614,
+    "p_visible": 1.0,
+    "eta_mean": null,
+    "eta_std": null,
+    "eta_min": null,
+    "eta_max": null,
+    "berth": "1757",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "1758__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 119.4,
+    "eta_std": 33.9,
+    "eta_min": 86.4,
+    "eta_max": 184.1,
+    "berth": "1758",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "1758__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 221.6,
+    "eta_std": 67.7,
+    "eta_min": 164.8,
+    "eta_max": 296.6,
+    "berth": "1758",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "1758__EB__passenger_express": {
+    "n_trains": 797,
+    "n_visible": 797,
+    "p_visible": 1.0,
+    "eta_mean": 100.5,
+    "eta_std": 23.1,
+    "eta_min": 2.0,
+    "eta_max": 448.4,
+    "berth": "1758",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "1758__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 110.7,
+    "eta_std": 51.3,
+    "eta_min": 85.7,
+    "eta_max": 315.5,
+    "berth": "1758",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "1758__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 1927.6,
+    "eta_std": 1246.7,
+    "eta_min": 1046.1,
+    "eta_max": 2809.1,
+    "berth": "1758",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1764__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 184.5,
+    "eta_std": 71.1,
+    "eta_min": 132.4,
+    "eta_max": 327.0,
+    "berth": "1764",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "1764__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 366.5,
+    "eta_std": 154.7,
+    "eta_min": 254.9,
+    "eta_max": 543.1,
+    "berth": "1764",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "1764__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 148.9,
+    "eta_std": 26.8,
+    "eta_min": 128.6,
+    "eta_max": 494.8,
+    "berth": "1764",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "1764__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 166.8,
+    "eta_std": 61.8,
+    "eta_min": 132.0,
+    "eta_max": 369.2,
+    "berth": "1764",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "1764__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2055.7,
+    "eta_std": 1153.9,
+    "eta_min": 1239.8,
+    "eta_max": 2871.6,
+    "berth": "1764",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "1772__EB__ecs": {
+    "n_trains": 6,
+    "n_visible": 6,
+    "p_visible": 1.0,
+    "eta_mean": 222.2,
+    "eta_std": 71.4,
+    "eta_min": 168.9,
+    "eta_max": 364.8,
+    "berth": "1772",
+    "direction": "EB",
+    "train_class": "ecs"
+  },
+  "1772__EB__freight": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 444.0,
+    "eta_std": 161.4,
+    "eta_min": 327.6,
+    "eta_max": 628.2,
+    "berth": "1772",
+    "direction": "EB",
+    "train_class": "freight"
+  },
+  "1772__EB__passenger_express": {
+    "n_trains": 796,
+    "n_visible": 796,
+    "p_visible": 1.0,
+    "eta_mean": 186.0,
+    "eta_std": 27.9,
+    "eta_min": 162.2,
+    "eta_max": 530.9,
+    "berth": "1772",
+    "direction": "EB",
+    "train_class": "passenger_express"
+  },
+  "1772__EB__passenger_local": {
+    "n_trains": 19,
+    "n_visible": 19,
+    "p_visible": 1.0,
+    "eta_mean": 204.6,
+    "eta_std": 64.9,
+    "eta_min": 167.6,
+    "eta_max": 414.0,
+    "berth": "1772",
+    "direction": "EB",
+    "train_class": "passenger_local"
+  },
+  "1772__WB__passenger_express": {
+    "n_trains": 2,
+    "n_visible": 2,
+    "p_visible": 1.0,
+    "eta_mean": 2133.1,
+    "eta_std": 1115.0,
+    "eta_min": 1344.7,
+    "eta_max": 2921.5,
+    "berth": "1772",
+    "direction": "WB",
+    "train_class": "passenger_express"
+  },
+  "2802__WB__passenger_local": {
+    "n_trains": 30,
+    "n_visible": 30,
+    "p_visible": 1.0,
+    "eta_mean": 670.7,
+    "eta_std": 127.6,
+    "eta_min": 424.3,
+    "eta_max": 912.0,
+    "berth": "2802",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "2806__WB__passenger_local": {
+    "n_trains": 30,
+    "n_visible": 30,
+    "p_visible": 1.0,
+    "eta_mean": 744.7,
+    "eta_std": 131.8,
+    "eta_min": 480.5,
+    "eta_max": 996.2,
+    "berth": "2806",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "A705__WB__passenger_local": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 201.5,
+    "eta_std": 47.7,
+    "eta_min": 172.3,
+    "eta_max": 256.5,
+    "berth": "A705",
+    "direction": "WB",
+    "train_class": "passenger_local"
+  },
+  "B705__WB__passenger_local": {
+    "n_trains": 3,
+    "n_visible": 3,
+    "p_visible": 1.0,
+    "eta_mean": 201.7,
+    "eta_std": 47.7,
+    "eta_min": 172.5,
+    "eta_max": 256.7,
+    "berth": "B705",
+    "direction": "WB",
+    "train_class": "passenger_local"
   }
 }
