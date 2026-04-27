@@ -53,6 +53,10 @@ SCROLL_STEPS      = 34    # number of 1-second scroll steps
 SCROLL_SPEED      = 1     # characters advanced per scroll step
 SCROLL_TICK       = 0.25  # seconds per scroll step
 
+EASTER_EGG_INTERVAL  = 7 * 24 * 3600   # once per week
+EASTER_EGG_MSG       = "  love you Beckett  -  Dad  "
+EASTER_EGG_STATE     = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".easter_egg_last")
+
 # Path to the rpi-rgb-led-matrix fonts directory
 FONT_DIR = os.environ.get("LED_FONT_DIR", "/home/plenox/rpi-rgb-led-matrix/fonts")
 
@@ -146,6 +150,48 @@ def render(matrix, canvas, font, time_font, trains, scroll_tick: int):
     return matrix.SwapOnVSync(canvas)
 
 
+def _easter_egg_due() -> bool:
+    """Return True once per EASTER_EGG_INTERVAL; record the timestamp."""
+    try:
+        with open(EASTER_EGG_STATE) as f:
+            last = float(f.read().strip())
+        if time.time() - last < EASTER_EGG_INTERVAL:
+            return False
+    except FileNotFoundError:
+        # First run: set baseline now so the first message appears one week later.
+        with open(EASTER_EGG_STATE, "w") as f:
+            f.write(str(time.time()))
+        return False
+    except Exception:
+        return False
+    with open(EASTER_EGG_STATE, "w") as f:
+        f.write(str(time.time()))
+    return True
+
+
+def _run_easter_egg(matrix, canvas, font) -> object:
+    """Scroll EASTER_EGG_MSG across the full display and return the canvas."""
+    # 7x13 font: roughly 7px per char
+    char_px    = 7
+    text_width = len(EASTER_EGG_MSG) * char_px
+    y_baseline = 40   # vertically centred for 7x13 font in 64px display
+    step_px    = 2    # pixels per frame
+    frame_s    = 0.03 # seconds per frame
+
+    x = 128
+    while x > -text_width:
+        canvas.Clear()
+        graphics.DrawText(canvas, font, x, y_baseline, COLOR_AMBER, EASTER_EGG_MSG)
+        canvas = matrix.SwapOnVSync(canvas)
+        x -= step_px
+        time.sleep(frame_s)
+
+    time.sleep(0.5)
+    canvas.Clear()
+    canvas = matrix.SwapOnVSync(canvas)
+    return canvas
+
+
 def main():
     if not os.environ.get("NR_USERNAME") or not os.environ.get("NR_PASSWORD"):
         print("Error: NR_USERNAME/NR_PASSWORD not set in .env")
@@ -166,7 +212,8 @@ def main():
 
     _base_trains      = []
     _base_trains_lock = threading.Lock()
-    last_db_check     = 0
+    last_db_check         = 0
+    last_easter_egg_check = 0
 
     def _bg_db_refresh():
         with contextlib.redirect_stdout(io.StringIO()):
@@ -199,6 +246,11 @@ def main():
         if now - last_db_check >= DB_CHECK_INTERVAL:
             threading.Thread(target=_bg_db_refresh, daemon=True, name="db-refresh").start()
             last_db_check = now
+
+        if now - last_easter_egg_check >= 60:
+            last_easter_egg_check = now
+            if _easter_egg_due():
+                canvas = _run_easter_egg(matrix, canvas, time_font)
 
         with _base_trains_lock:
             trains = list(_base_trains)
