@@ -48,9 +48,10 @@ ROW_H             = 12    # pixels per row — 5 rows fit in 64 physical rows
 MAX_JOURNEY_CHARS = 16    # characters visible in journey field (128px wide display)
 TD_INJECT_TTL     = 120   # seconds to keep a TD-detected train visible after passing
 DB_CHECK_INTERVAL = 3600  # check schedule staleness every hour
-SCROLL_PERIOD     = 20    # seconds of static (truncated) display before scrolling
-SCROLL_STEPS      = 8     # number of 1-second scroll steps
-SCROLL_SPEED      = 2     # characters advanced per scroll step
+SCROLL_PERIOD     = 10    # seconds of static (truncated) display before scrolling
+SCROLL_STEPS      = 34    # number of 1-second scroll steps
+SCROLL_SPEED      = 1     # characters advanced per scroll step
+SCROLL_TICK       = 0.25  # seconds per scroll step
 
 # Path to the rpi-rgb-led-matrix fonts directory
 FONT_DIR = os.environ.get("LED_FONT_DIR", "/home/plenox/rpi-rgb-led-matrix/fonts")
@@ -91,22 +92,22 @@ def _fmt_eta(eta: datetime) -> str:
 
 def _journey_text(origin: str, dest: str, scroll_tick: int) -> str:
     """Return the journey string for the current scroll_tick.
-
     For short journeys (fits in MAX_JOURNEY_CHARS) always returns the full string.
     For long journeys: shows truncated text for SCROLL_PERIOD seconds, then slides
     a MAX_JOURNEY_CHARS-wide window across the full string over SCROLL_STEPS seconds,
     then repeats.
     """
-    full = f"{origin} > {dest}"
-    if len(full) <= MAX_JOURNEY_CHARS:
-        return full
-    overflow = len(full) - MAX_JOURNEY_CHARS
-    phase = scroll_tick % (SCROLL_PERIOD + SCROLL_STEPS)
-    if phase < SCROLL_PERIOD:
-        return full[:MAX_JOURNEY_CHARS - 1] + "~"
-    offset = min((phase - SCROLL_PERIOD) * SCROLL_SPEED, overflow)
+    full = f"{origin} > {dest}"                                                                                                                                                                                                                  
+    if len(full) <= MAX_JOURNEY_CHARS:                                                                                                                                                                                                           
+        return full                   
+    overflow = len(full) - MAX_JOURNEY_CHARS                                                                                                                                                                                                     
+    static_ticks = int(SCROLL_PERIOD / SCROLL_TICK)
+    scroll_ticks = SCROLL_STEPS
+    phase = scroll_tick % (static_ticks + scroll_ticks)                                                                                                                                                                                          
+    if phase < static_ticks:                           
+        return full[:MAX_JOURNEY_CHARS - 1] + "~"                                                                                                                                                                                                
+    offset = min((phase - static_ticks) * SCROLL_SPEED, overflow)
     return full[offset:offset + MAX_JOURNEY_CHARS]
-
 
 def render(matrix, canvas, font, time_font, trains, scroll_tick: int):
     """Render up to 4 upcoming trains + current time onto the LED matrix canvas.
@@ -163,13 +164,26 @@ def main():
     print("Starting TRUST feed listener...")
     trust_client.start()
 
-    trains        = []
-    last_refresh  = 0
-    last_db_check = 0
+    _base_trains      = []
+    _base_trains_lock = threading.Lock()
+    last_db_check     = 0
 
     def _bg_db_refresh():
         with contextlib.redirect_stdout(io.StringIO()):
             schedule_db.refresh_if_stale()
+
+    def _predict_worker():
+        nonlocal _base_trains
+        while True:
+            try:
+                result = predict.get_upcoming(n=4)
+                with _base_trains_lock:
+                    _base_trains = result
+            except Exception as e:
+                print(f"[predict] Error: {e}")
+            time.sleep(REFRESH_SECS)
+
+    threading.Thread(target=_predict_worker, daemon=True, name="predict").start()
 
     def shutdown(sig, frame):
         matrix.Clear()
@@ -186,13 +200,8 @@ def main():
             threading.Thread(target=_bg_db_refresh, daemon=True, name="db-refresh").start()
             last_db_check = now
 
-        # Refresh prediction list periodically
-        if now - last_refresh >= REFRESH_SECS:
-            try:
-                trains = predict.get_upcoming(n=4)
-                last_refresh = now
-            except Exception as e:
-                print(f"[predict] Error: {e}")
+        with _base_trains_lock:
+            trains = list(_base_trains)
 
         # Check if TD has a recent detection to inject/update
         for berth, direction in [
@@ -236,7 +245,7 @@ def main():
             trains = trains[:4]
 
         try:
-            canvas = render(matrix, canvas, font, time_font, trains, int(time.time()))
+            canvas = render(matrix, canvas, font, time_font, trains, int(time.time()/SCROLL_TICK))
         except Exception as e:
             print(f"[render] Error: {e}")
             try:
@@ -254,7 +263,7 @@ def main():
             print(f"  {t['direction']}  {_fmt_eta(t['eta']):<6}  {origin} > {t['destination']}")
         print()
 
-        time.sleep(TD_REFRESH)
+        time.sleep(SCROLL_TICK)
 
 
 if __name__ == "__main__":
