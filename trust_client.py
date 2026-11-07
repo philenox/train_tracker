@@ -103,8 +103,7 @@ class _Listener(stomp.ConnectionListener):
         self.conn = conn
 
     def on_disconnected(self):
-        time.sleep(5)
-        _connect(self.conn)
+        print("[trust_client] disconnected; keepalive thread will reconnect")
 
     def on_error(self, frame):
         print(f"[trust_client] STOMP error: {frame.body}")
@@ -200,9 +199,13 @@ def start():
 
     def _keepalive():
         while True:
+            time.sleep(5)
             if not conn.is_connected():
-                time.sleep(5)
-            time.sleep(1)
+                try:
+                    _connect(conn)
+                    print("[trust_client] reconnected")
+                except Exception as e:
+                    print(f"[trust_client] reconnect failed: {e}")
 
     def _cache_loop():
         while True:
